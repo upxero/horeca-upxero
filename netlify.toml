@@ -2,7 +2,7 @@
   base = "frontend"
   command = "npm run build"
   publish = "build"
-  functions = "../netlify/functions"
+  functions = "netlify/functions"  # nu relatief aan frontend
 
 [[redirects]]
   from = "/api/*"
@@ -13,3 +13,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
+

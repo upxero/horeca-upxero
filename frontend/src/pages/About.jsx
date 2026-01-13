@@ -57,9 +57,10 @@ const About = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Wij helpen horeca-ondernemers in België om meer online bestellingen te genereren 
-                zonder hoge commissies te betalen aan bestelplatforms. Onze missie is om elke restaurant 
-                toegang te geven tot professionele online ordering technologie.
+                Wij helpen horeca-ondernemers in België om meer directe online bestellingen te ontvangen,
+                zonder commissies en zonder extra werkdruk.
+                Met Upxero brengen we website, online bestellen en een slimme WhatsApp-assistent
+                samen in één eenvoudige en beheerde oplossing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
@@ -98,10 +99,11 @@ const About = () => {
               Onze Missie
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Wij geloven dat elke horeca-ondernemer de mogelijkheid moet hebben om direct 
-              online bestellingen te ontvangen zonder afhankelijk te zijn van dure bestelplatforms. 
-              Met Upxero maken we professionele online ordering technologie toegankelijk voor elk restaurant, 
-              van kleine frituren tot grote brasseries.
+              Wij geloven dat elke horeca-ondernemer controle moet hebben over zijn bestellingen,
+              klanten en winst.
+              Daarom bouwen we oplossingen waarbij klanten automatisch geholpen worden
+              en rechtstreeks online bestellen,
+              zonder telefoons, zonder chaos en zonder commissies.
             </p>
           </div>
 
@@ -158,23 +160,35 @@ const About = () => {
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="text-lg leading-relaxed">
-              Upxero is ontstaan uit frustratie. Frustratie over hoe bestelplatforms zoals Deliveroo 
-              en Uber Eats horeca-ondernemers uitknijpen met commissies tot 30% per bestelling. 
-              We zagen restaurants hard werken om aan het einde van de maand nauwelijks winst over te houden.
+              Upxero is ontstaan vanuit één duidelijke frustratie:
+              te veel horeca-ondernemers verliezen marge en tijd
+              door omslachtige bestelprocessen en commissies per bestelling.
+
+              Wij zagen restaurants constant onderbroken worden
+              door telefoons, berichten en onduidelijke bestellingen,
+              terwijl dit perfect eenvoudiger kan.
             </p>
             <p className="text-lg leading-relaxed">
-              Daarom hebben we Upxero opgericht: een complete online besteloplossing zonder commissies. 
-              Restaurants betalen alleen een vast maandbedrag en houden 100% van hun winst. Zo simpel is het.
+              Daarom hebben we Upxero opgericht:
+              een volledig beheerde online besteloplossing
+              waarbij klanten automatisch geholpen worden
+              en rechtstreeks online bestellen.
+
+              Geen commissies.
+              Geen technische zorgen.
+              Geen ruis in de zaak.
             </p>
             <p className="text-lg leading-relaxed">
-              Vandaag helpen we meer dan 150 restaurants in België om succesvol online bestellingen te 
-              ontvangen. Van kleine frituren tot grote restaurants - ze profiteren allemaal van meer 
-              directe bestellingen en hogere winstmarges.
+              Vandaag helpen we horecazaken in heel België
+              om meer directe bestellingen te ontvangen
+              en tegelijk rust te brengen in hun dagelijkse werking.
             </p>
             <p className="text-lg leading-relaxed">
-              Onze aanpak is simpel: we leveren professionele technologie, maar houden het eenvoudig voor 
-              de restaurateur. Geen technische kennis nodig, geen gedoe met updates of onderhoud. 
-              Wij regelen alles, u ontvangt alleen bestellingen.
+              Onze filosofie is simpel:
+              technologie mag krachtig zijn,
+              maar moet onzichtbaar blijven voor de restaurateur.
+              Wij regelen alles,
+              u focust op uw zaak.
             </p>
           </div>
         </div>
@@ -212,8 +226,8 @@ const About = () => {
                 description: "Vaste maandprijzen zonder verborgen kosten. U weet precies waar u aan toe bent."
               },
               {
-                title: "Belgische Focus",
-                description: "Wij begrijpen de Belgische markt en horeca-sector. Alles is afgestemd op lokale behoeften."
+                title: "Slimme WhatsApp-assistent",
+                description: "Klanten krijgen automatisch antwoord op veelgestelde vragen en worden altijd doorgestuurd naar online bestellen. Geen bestellingen via WhatsApp, wel minder onderbrekingen."
               }
             ].map((item, index) => (
               <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all">

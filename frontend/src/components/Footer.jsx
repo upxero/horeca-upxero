@@ -18,7 +18,8 @@ export const Footer = () => {
               <span className="text-2xl font-bold text-white">Upxero</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              De complete, commissievrije online besteloplossing voor horeca in België.
+              Upxero helpt horecazaken in België om meer directe bestellingen te ontvangen
+              via hun eigen website, online bestellen en WhatsApp — zonder commissies.
             </p>
             <div className="flex space-x-3">
               <a
@@ -68,13 +69,13 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm hover:text-orange-500 transition-colors">
-                  Over Ons
+                <Link to="/contact" className="text-sm hover:text-orange-500 transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm hover:text-orange-500 transition-colors">
-                  Contact
+                <Link to="/about" className="text-sm hover:text-orange-500 transition-colors">
+                  Over Ons
                 </Link>
               </li>
             </ul>
@@ -84,10 +85,10 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Diensten</h3>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Horeca Website</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Online Bestelsysteem</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Marketing & SEO</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Support & Onderhoud</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">Eigen horeca website</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">Online bestellen zonder commissie</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">WhatsApp assistent voor klanten</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">Volledig beheer & support</li>
             </ul>
           </div>
 
@@ -119,7 +120,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © {currentYear} Upxero. Alle rechten voorbehouden.
+              © {currentYear} Upxero — gebouwd voor horeca in België
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy-policy" className="hover:text-orange-500 transition-colors">

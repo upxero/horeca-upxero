@@ -19,17 +19,19 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block mb-4 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">
-                0% Commissie per Bestelling
+                Meer bestellingen. Minder telefoons. 0% commissie.
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Meer online bestellingen{' '}
+                Meer online bestellingen,{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
-                  zonder commissie
+                  zonder commissie én zonder telefoondruk
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Stop met het betalen van hoge commissies aan Deliveroo en Uber Eats. 
-                Met Upxero krijgt u een professionele website én online bestelsysteem voor een vast maandbedrag.
+                Stop met hoge commissies én eindeloze telefoontjes.
+                Met Upxero krijgt u een professionele horecawebsite, online bestellen
+                en een slimme WhatsApp-assistent die klanten automatisch helpt —
+                voor een vast maandbedrag.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
@@ -86,11 +88,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Het probleem met bestelplatforms
+              De echte problemen van online bestellen vandaag
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Deliveroo, Uber Eats en andere platforms rekenen tot 30% commissie per bestelling. 
-              Dat betekent dat u een groot deel van uw winst verliest.
+              Veel restaurants verliezen niet alleen marge aan commissies,
+              maar ook tijd aan telefoons, fouten en onderbrekingen tijdens de service.
             </p>
           </div>
 
@@ -114,7 +116,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Geen Controle</h3>
                 <p className="text-gray-600">
-                  U hebt geen eigendom over klantgegevens en bent afhankelijk van het platform.
+                  Bestellingen en klanten lopen via externe platformen.
+                  U bouwt geen eigen klantenbestand op en mist directe communicatie.
                 </p>
               </CardContent>
             </Card>
@@ -124,9 +127,10 @@ const Home = () => {
                 <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
                   <span className="text-3xl">📉</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Lagere Marges</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Constante telefoons</h3>
                 <p className="text-gray-600">
-                  Door hoge commissies worden uw winstmarges zo klein dat online bestellen nauwelijks rendabel is.
+                  Tijdens piekmomenten rinkelt de telefoon nonstop.
+                  Dat zorgt voor stress, fouten in bestellingen en minder focus in de keuken.
                 </p>
               </CardContent>
             </Card>
@@ -139,11 +143,12 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              De Upxero oplossing
+              De Upxero totaaloplossing
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Een complete, commissievrije online besteloplossing. Betaal alleen een vast maandbedrag 
-              en houd 100% van uw winst.
+              Een complete oplossing voor moderne horecazaken:
+              uw eigen website, online bestellen én een slimme WhatsApp-assistent
+              die klanten automatisch begeleidt naar bestellen.
             </p>
           </div>
 
@@ -278,15 +283,16 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Klaar om te starten?
+            Meer bestellingen. Minder onderbrekingen.
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Vraag vandaag nog een gratis demo aan en ontdek hoe u meer kunt verdienen 
-            met uw eigen online bestelplatform.
+            Bekijk in een gratis demo hoe klanten automatisch geholpen worden
+            en rechtstreeks online bestellen — zonder commissies
+            en zonder extra werk voor uw team.
           </p>
           <Link to="/contact">
             <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2">
-              Vraag Gratis Demo Aan
+              Bekijk Gratis Demo
               <ArrowRight size={20} />
             </Button>
           </Link>

@@ -13,79 +13,94 @@ const Services = () => {
       id: 1,
       icon: Globe,
       title: "Professionele Horeca Website",
-      description: "Een moderne, mobile-first website die uw restaurant perfect presenteert aan potentiële klanten.",
+      description: "Een snelle, mobile-first website die bezoekers omzet in bestellingen en klanten meteen de juiste weg toont.",
       image: "https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg",
       features: [
-        "Modern en responsive design",
-        "Geoptimaliseerd voor mobiele apparaten",
-        "SEO-vriendelijk voor betere vindbaarheid",
-        "Snelle laadtijden",
-        "Menu presentatie met foto's",
-        "Openingstijden en locatie-informatie"
+        "Modern en professioneel design",
+        "Geoptimaliseerd voor mobiel bestellen",
+        "Duidelijke call-to-actions (bestellen & contact)",
+        "Snelle laadtijden voor hogere conversie",
+        "Overzichtelijke menupresentatie",
+        "Perfecte basis voor online bestellen en WhatsApp"
       ]
     },
     {
       id: 2,
       icon: ShoppingCart,
-      title: "Online Bestelsysteem",
-      description: "Een geïntegreerd bestelsysteem waarmee klanten direct bij u kunnen bestellen zonder commissies.",
+      title: "Online Bestellen Zonder Commissie",
+      description: "Klanten bestellen rechtstreeks via uw eigen website. Geen tussenpartijen, geen kosten per bestelling.",
       image: "https://images.pexels.com/photos/12935041/pexels-photo-12935041.jpeg",
       features: [
-        "0% commissie per bestelling",
-        "Real-time ordernotificaties",
-        "Afhaling en takeaway opties",
-        "Meerdere betaalmethoden",
-        "Orderhistorie en tracking",
-        "Klantaccounts met herhalingsbestellingen"
+        "100% commissievrij",
+        "Afhaling en takeaway",
+        "Realtime bestelmeldingen",
+        "Veilige online betalingen",
+        "Minder fouten dan telefonische bestellingen",
+        "Volledig geïntegreerd in uw website"
       ]
     },
     {
       id: 3,
       icon: Smartphone,
-      title: "Gebrande Bestelapp",
-      description: "Uw eigen iOS en Android app met uw huisstijl en logo voor maximale klantloyaliteit.",
+      title: "Slimme WhatsApp Bestel-Assistent",
+      description: "Beantwoordt automatisch vragen van klanten en stuurt hen door naar uw online bestelpagina. Geen telefoons meer tijdens de service.",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
       features: [
-        "Volledig in uw huisstijl",
-        "Push notificaties voor aanbiedingen",
-        "Loyaliteitsprogramma integratie",
-        "iOS en Android beschikbaar",
-        "Eenvoudig bestellen met één klik",
-        "Offline menu beschikbaar"
+        "Automatische antwoorden op veelgestelde vragen",
+        "Doorverwijzing naar online bestellen",
+        "Ondersteunt Nederlands en Engels",
+        "Geen bestellingen via WhatsApp (minder fouten)",
+        "Actief 24/7, ook buiten openingsuren",
+        "Minder onderbrekingen in de zaak"
       ]
     },
     {
-      id: 4,
-      icon: Settings,
-      title: "Volledig Beheerd & Support",
-      description: "Wij zorgen voor alles - van hosting tot updates en technische ondersteuning.",
-      image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
-      features: [
-        "24/7 hosting en uptime monitoring",
-        "Automatische updates en backups",
-        "Technische support via email en telefoon",
-        "Menu aanpassingen en wijzigingen",
-        "Veilige betaalverwerking",
-        "Regelmatige performance optimalisatie"
-      ]
-    }
+    id: 4,
+    icon: Settings,
+    title: "Volledig Beheerd & Ondersteund",
+    description: "Wij regelen alles technisch. U focust op koken en service, wij doen de rest.",
+    image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
+    features: [
+      "Hosting, beveiliging en updates inbegrepen",
+      "Monitoring en technische opvolging",
+      "Aanpassingen aan menu of content op aanvraag",
+      "Snelle support via email",
+      "Doorlopende optimalisatie",
+      "Geen technische kennis nodig"
+    ]
+  }
   ];
 
   const additionalServices = [
     {
-      title: "Marketing & SEO",
-      description: "Verhoog uw online zichtbaarheid en trek meer klanten aan",
-      items: ["Google Business optimalisatie", "Lokale SEO", "Social media integratie", "Email marketing"]
+      title: "Marketing & Zichtbaarheid",
+      description: "Meer bezoekers en meer bestellingen via uw eigen kanalen",
+      items: [
+        "Google Business optimalisatie",
+        "Lokale vindbaarheid",
+        "Conversiegerichte content",
+        "Doorverwijzing vanuit WhatsApp"
+      ]
     },
     {
-      title: "Rapportage & Analytics",
-      description: "Inzicht in uw online bestellingen en klantgedrag",
-      items: ["Verkooprapporten", "Populairste gerechten", "Klantstatistieken", "Conversie tracking"]
+      title: "Inzichten & Optimalisatie",
+      description: "Beter begrijpen wat werkt en waar klanten afhaken",
+      items: [
+        "Overzicht van bestellingen",
+        "Populairste gerechten",
+        "Conversie-inzichten",
+        "Maandelijkse optimalisatie"
+      ]
     },
     {
-      title: "Integraties",
-      description: "Koppel uw bestaande systemen aan uw online platform",
-      items: ["Kassasysteem integratie", "Boekhoud software", "Keukenprinters", "Externe bezorgdiensten"]
+      title: "Doorverwijzingen & Koppelingen",
+      description: "Alles werkt samen in één duidelijke flow",
+      items: [
+        "WhatsApp → online bestellen",
+        "Website → directe bestelling",
+        "Minder telefonische druk",
+        "Consistente klantenervaring"
+      ]
     }
   ];
 
@@ -104,8 +119,10 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Een complete, commissievrije online besteloplossing voor uw horeca business. 
-              Alles wat u nodig heeft onder één dak.
+              Alles wat uw restaurant nodig heeft om meer directe bestellingen te krijgen,
+              zonder commissies en zonder extra werk.
+              Van website en online bestellen tot een slimme WhatsApp-assistent
+              die uw klanten automatisch begeleidt.
             </p>
           </div>
         </div>

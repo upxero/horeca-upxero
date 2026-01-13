@@ -112,8 +112,10 @@ const Contact = () => {
               {' '}aan
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ontdek hoe Upxero uw restaurant kan helpen meer online bestellingen te ontvangen 
-              zonder commissies. Vul het formulier in en we nemen binnen 24 uur contact met u op.
+              Ontdek hoe uw restaurant meer directe bestellingen kan krijgen,
+              zonder commissies en zonder extra telefoons.
+              We tonen u hoe uw website, online bestellen en een slimme WhatsApp-assistent
+              samenwerken in één eenvoudige flow.
             </p>
           </div>
         </div>
@@ -128,8 +130,12 @@ const Contact = () => {
               <Card className="bg-white border-0 shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Aanvraagformulier
+                    Vraag uw gratis demo aan
                   </h2>
+                  <p className="text-gray-600 mb-8">
+                    We laten u zien hoe klanten automatisch worden geholpen
+                    en rechtstreeks online bestellen, zonder onderbrekingen in uw zaak.
+                  </p>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
@@ -224,7 +230,7 @@ const Contact = () => {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Vertel ons meer over uw restaurant en wat u zoekt..."
+                        placeholder="Bijvoorbeeld: veel telefonische bestellingen, vragen via WhatsApp, of te veel commissie via platformen"
                         className="w-full px-4 py-3 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                       />
                     </div>
@@ -257,7 +263,8 @@ const Contact = () => {
                     </Button>
 
                     <p className="text-sm text-gray-600 text-center">
-                      We respecteren uw privacy en delen uw gegevens niet met derden.
+                      Uw gegevens worden enkel gebruikt om contact op te nemen over uw demo.
+                      Geen spam, geen verplichtingen.
                     </p>
                   </form>
                 </CardContent>
@@ -274,8 +281,8 @@ const Contact = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Snel Contact</h3>
-                  <p className="text-blue-100">We reageren binnen 24 uur op uw aanvraag</p>
+                  <h3 className="text-2xl font-bold mb-2">Eenvoudige flow</h3>
+                  <p className="text-blue-100">Website, online bestellen en WhatsApp perfect op elkaar afgestemd</p>
                 </div>
               </div>
 
@@ -313,7 +320,7 @@ const Contact = () => {
                         1
                       </div>
                       <span className="text-gray-700">
-                        We nemen binnen 24 uur contact met u op
+                        We nemen contact op om uw huidige situatie te begrijpen
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -321,7 +328,7 @@ const Contact = () => {
                         2
                       </div>
                       <span className="text-gray-700">
-                        We plannen een demo om de oplossing te laten zien
+                        U krijgt een demo van de website, het bestelsysteem en de WhatsApp-assistent
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -329,7 +336,7 @@ const Contact = () => {
                         3
                       </div>
                       <span className="text-gray-700">
-                        U ontvangt een voorstel op maat voor uw restaurant
+                        We stellen een oplossing voor die past bij uw restaurant
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -337,7 +344,7 @@ const Contact = () => {
                         4
                       </div>
                       <span className="text-gray-700">
-                        We starten met de setup en binnen 2 weken bent u live!
+                        Binnen 2 weken kunnen klanten automatisch bestellen
                       </span>
                     </li>
                   </ul>

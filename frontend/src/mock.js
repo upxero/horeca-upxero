@@ -1,4 +1,4 @@
-// Mock data for Upxero website
+// Mock data for Upxero website – updated concept (Website + Online Ordering + WhatsApp Assistant)
 
 export const testimonials = [
   {
@@ -6,8 +6,8 @@ export const testimonials = [
     name: "Marc Janssens",
     business: "Brasserie De Gouden Leeuw",
     location: "Antwerpen",
-    image: "https://images.unsplash.com/photo-1643834776503-891726ed42c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxjaGVmJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY3Nzc4ODcwfDA&ixlib=rb-4.1.0&q=85",
-    text: "Sinds we met Upxero werken, zijn onze online bestellingen met 45% gestegen. Geen commissies meer betalen aan Deliveroo en Uber Eats - eindelijk houden we onze winst!",
+    image: "https://images.unsplash.com/photo-1643834776503-891726ed42c6?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "Sinds we met Upxero werken, krijgen we meer online bestellingen én veel minder telefoontjes. Klanten worden automatisch via WhatsApp geholpen en bestellen direct via onze website. Dat scheelt enorm tijdens de service.",
     rating: 5
   },
   {
@@ -16,7 +16,7 @@ export const testimonials = [
     business: "Pizzeria La Stella",
     location: "Gent",
     image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg",
-    text: "De website en bestelapp zien er zeer professioneel uit. Klanten vinden het gemakkelijk om te bestellen, en wij hoeven nergens meer aan te denken. Alles wordt voor ons geregeld.",
+    text: "De combinatie van online bestellen en de WhatsApp-assistent is ideaal. Klanten stellen minder vragen en bestellen sneller. Alles ziet er professioneel uit en wij hoeven zelf niets te beheren.",
     rating: 5
   },
   {
@@ -24,8 +24,8 @@ export const testimonials = [
     name: "Dirk Peeters",
     business: "Frituur 't Hoekske",
     location: "Leuven",
-    image: "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxjaGVmJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY3Nzc4ODcwfDA&ixlib=rb-4.1.0&q=85",
-    text: "Geweldige service! We hebben nu onze eigen bestelwebsite zonder technische kennis nodig te hebben. De support is snel en altijd bereikbaar.",
+    image: "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "Vroeger stond de telefoon constant roodgloeiend. Nu stuurt WhatsApp klanten automatisch door naar de bestelpagina. Minder fouten, minder stress en meer controle over onze bestellingen.",
     rating: 5
   }
 ];
@@ -34,42 +34,42 @@ export const faqs = [
   {
     id: 1,
     question: "Moet ik commissie betalen per bestelling?",
-    answer: "Nee, absoluut niet. U betaalt alleen een vast maandbedrag. Alle bestellingen zijn 100% commissievrij - u houdt al uw winst."
+    answer: "Nee. U betaalt een vast maandbedrag. Alle bestellingen via uw website zijn volledig commissievrij."
   },
   {
     id: 2,
-    question: "Hoe snel kan ik starten?",
-    answer: "Na uw aanmelding kunnen we binnen 2 weken live gaan. We regelen alles voor u: website opzetten, menu invoeren, betaalsysteem koppelen en uw team opleiden."
+    question: "Wat doet de WhatsApp-assistent precies?",
+    answer: "De WhatsApp-assistent beantwoordt automatisch veelgestelde vragen en begeleidt klanten naar uw online bestelpagina. Bestellingen zelf verlopen altijd via uw website."
   },
   {
     id: 3,
-    question: "Moet ik technische kennis hebben?",
-    answer: "Helemaal niet. Wij beheren alles voor u: hosting, updates, onderhoud en support. U hoeft alleen bestellingen te ontvangen en klaar te maken."
+    question: "Neemt de WhatsApp-assistent bestellingen aan?",
+    answer: "Nee. De assistent neemt geen bestellingen aan, maar stuurt klanten altijd door naar het online bestelsysteem. Zo vermijdt u fouten en misverstanden."
   },
   {
     id: 4,
-    question: "Kan ik mijn menu zelf aanpassen?",
-    answer: "Ja, u krijgt toegang tot een eenvoudig beheerpaneel waar u uw menu, prijzen en openingsuren kunt aanpassen wanneer u wilt."
+    question: "Heb ik technische kennis nodig?",
+    answer: "Helemaal niet. Wij regelen alles: website, online bestellen, WhatsApp-flow, hosting, updates en support."
   },
   {
     id: 5,
-    question: "Welke betaalmethoden worden ondersteund?",
-    answer: "We ondersteunen alle populaire betaalmethoden: Bancontact, Visa, Mastercard, Paypal en contant bij afhaling."
+    question: "Kan ik mijn menu of openingstijden aanpassen?",
+    answer: "Ja. U kunt uw menu, prijzen en openingstijden eenvoudig aanpassen wanneer u dat wilt."
   },
   {
     id: 6,
-    question: "Wat gebeurt er als ik wil stoppen?",
-    answer: "U kunt maandelijks opzeggen. Er zijn geen lange contracten of verborgen kosten."
+    question: "Hoe snel kan ik live gaan?",
+    answer: "In de meeste gevallen kunnen we binnen 1 à 2 weken live gaan, inclusief website, menu en WhatsApp-assistent."
   },
   {
     id: 7,
-    question: "Krijg ik ook een mobiele app?",
-    answer: "Onze oplossing werkt perfect op alle toestellen via een mobile-first website. Klanten kunnen eenvoudig bestellen via hun smartphone zonder app te installeren."
+    question: "Op welke toestellen werkt het systeem?",
+    answer: "Alles werkt perfect op smartphone, tablet en desktop. Uw website en bestelpagina zijn volledig mobile-first."
   },
   {
     id: 8,
-    question: "Hoe ontvang ik bestellingen?",
-    answer: "U ontvangt bestellingen via email en via een geluidsnotificatie op uw tablet of smartphone. Daarnaast kunt u bestellingen real-time volgen in uw beheerpaneel."
+    question: "Kan ik maandelijks opzeggen?",
+    answer: "Ja. Al onze plannen zijn maandelijks opzegbaar, zonder lange contracten of verborgen kosten."
   }
 ];
 
@@ -77,28 +77,28 @@ export const services = [
   {
     id: 1,
     title: "Professionele Horeca Website",
-    description: "Een moderne, mobile-first website die uw restaurant perfect presenteert. Optimaal voor conversie en SEO.",
+    description: "Een snelle, mobile-first website die uw restaurant professioneel presenteert en bezoekers omzet in bestellingen.",
     icon: "Globe",
     image: "https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg"
   },
   {
     id: 2,
-    title: "Online Bestelsysteem",
-    description: "Geïntegreerd bestelsysteem voor afhaling en takeaway. Geen commissies, directe bestellingen naar uw zaak.",
+    title: "Online Bestellen Zonder Commissie",
+    description: "Directe bestellingen via uw eigen website voor afhaling en takeaway. Geen tussenpartijen, geen kosten per bestelling.",
     icon: "ShoppingCart",
     image: "https://images.pexels.com/photos/12935041/pexels-photo-12935041.jpeg"
   },
   {
     id: 3,
-    title: "Gebrande Bestelapp",
-    description: "Uw eigen iOS en Android app met uw branding. Verhoog klantloyaliteit en herhaalbestellingen.",
-    icon: "Smartphone",
+    title: "Slimme WhatsApp Assistent",
+    description: "Beantwoordt automatisch vragen van klanten en stuurt hen door naar uw online bestelpagina. Minder telefoons, meer rust.",
+    icon: "MessageCircle",
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3"
   },
   {
     id: 4,
-    title: "Volledig Beheerd",
-    description: "Hosting, updates, onderhoud en support - wij regelen alles. U hoeft nergens aan te denken.",
+    title: "Volledig Beheerde Oplossing",
+    description: "Hosting, updates, onderhoud en support inbegrepen. U focust op uw zaak, wij doen de rest.",
     icon: "Settings",
     image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9"
   }
@@ -108,22 +108,22 @@ export const benefits = [
   {
     id: 1,
     title: "0% Commissie",
-    description: "Behoud 100% van uw winst. Geen commissies per bestelling zoals bij Deliveroo of Uber Eats.",
+    description: "U behoudt 100% van uw omzet. Geen commissies per bestelling, enkel een vast maandbedrag.",
     icon: "TrendingUp",
     image: "https://images.pexels.com/photos/12935048/pexels-photo-12935048.jpeg"
   },
   {
     id: 2,
-    title: "Meer Directe Bestellingen",
-    description: "Klanten bestellen direct bij u. Verhoog uw omzet zonder tussenpartijen.",
-    icon: "Target",
+    title: "Minder Telefoons, Minder Fouten",
+    description: "Klanten krijgen automatisch antwoorden via WhatsApp en bestellen zelf online. Minder onderbrekingen tijdens de service.",
+    icon: "PhoneOff",
     image: "https://images.pexels.com/photos/9461799/pexels-photo-9461799.jpeg"
   },
   {
     id: 3,
-    title: "Mobile-First Design",
-    description: "Perfect werkend op smartphones en tablets. 80% van uw klanten bestelt via mobiel.",
-    icon: "Smartphone",
+    title: "Meer Directe Bestellingen",
+    description: "Klanten bestellen rechtstreeks bij u via uw website. Meer controle, meer marge en meer herhaalbestellingen.",
+    icon: "Target",
     image: "https://images.pexels.com/photos/6605239/pexels-photo-6605239.jpeg"
   }
 ];
@@ -137,6 +137,7 @@ export const pricingPlans = [
     description: "Voor restaurants die al een website hebben.",
     features: [
       "Online bestelsysteem (afhaling & takeaway)",
+      "WhatsApp bestel-assistent",
       "Menu setup & integratie",
       "Hosting, updates & beveiliging",
       "Email support"
@@ -148,10 +149,11 @@ export const pricingPlans = [
     name: "Grow",
     price: "129",
     period: "maand",
-    description: "Complete oplossing voor horecazaken.",
+    description: "Complete oplossing voor moderne horecazaken.",
     features: [
       "Professionele horeca website",
       "Online bestelsysteem",
+      "WhatsApp bestel-assistent",
       "Menu setup",
       "Hosting, updates & beveiliging",
       "Email support"
@@ -176,8 +178,9 @@ export const pricingPlans = [
 ];
 
 export const stats = [
-  { label: "Tevreden Klanten", value: "150+", icon: "Users" },
+  { label: "Tevreden Restaurants", value: "150+", icon: "Users" },
   { label: "Bestellingen per Maand", value: "25.000+", icon: "ShoppingBag" },
-  { label: "Gemiddelde Omzetgroei", value: "45%", icon: "TrendingUp" },
+  { label: "Minder Telefonische Bestellingen", value: "−60%", icon: "PhoneOff" },
   { label: "Support Responstijd", value: "<2u", icon: "Clock" }
 ];
+

@@ -34,10 +34,14 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-br from-blue-900 to-blue-700 text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl transition-transform group-hover:scale-105">
-              U
+            <div className="bg-gradient-to-br from-blue-900 to-blue-700 w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
+              <img
+                src="images/logo-white.png"
+                alt="Upxero logo"
+                className="w-6 h-6"
+              />
             </div>
-            <span className="text-2xl font-bold text-blue-900">Upxero</span>
+            <span className="text-2xl font-bold text-blue-900">UPXERO</span>
           </Link>
 
           {/* Desktop Navigation */}

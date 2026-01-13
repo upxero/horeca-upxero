@@ -16,29 +16,120 @@ import { Footer } from '../components/Footer';
 const Pricing = () => {
   const comparisonFeatures = [
     {
-      category: "Basis",
+      category: "Basis online bestellen",
       features: [
-        { name: "Online bestelsysteem (afhaling & takeaway)", start: true, grow: true, boost: true },
-        { name: "Menu setup & integratie", start: true, grow: true, boost: true },
-        { name: "Professionele horeca website", start: false, grow: true, boost: true },
-        { name: "Hosting, updates & beveiliging", start: true, grow: true, boost: true }
-      ]
+        {
+          name: "Online bestelsysteem voor afhaling & takeaway",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Menu setup & volledige integratie",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Koppeling met GloriaFood (betrouwbaar & commissievrij)",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Hosting, updates & beveiliging volledig beheerd",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+      ],
     },
     {
-      category: "Optimalisatie",
+      category: "Website & uitstraling",
       features: [
-        { name: "Conversie-optimalisatie", start: false, grow: false, boost: true },
-        { name: "Google Business integratie", start: false, grow: false, boost: true },
-        { name: "Rapportage & optimalisatie", start: false, grow: false, boost: true }
-      ]
+        {
+          name: "Gebruik van bestaande website",
+          start: true,
+          grow: false,
+          boost: false,
+        },
+        {
+          name: "Professionele horeca website (mobile-first)",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "SEO-basis voor lokale vindbaarheid",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+      ],
     },
     {
-      category: "Support",
+      category: "WhatsApp & klanten",
       features: [
-        { name: "Email support", start: true, grow: true, boost: true },
-        { name: "Prioriteit support", start: false, grow: false, boost: true }
-      ]
-    }
+        {
+          name: "WhatsApp-knop op uw website",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Automatisch WhatsApp-antwoord met bestel-link",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Klanten worden gestuurd naar online bestellen (geen chaos)",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+      ],
+    },
+    {
+      category: "Optimalisatie & groei",
+      features: [
+        {
+          name: "Conversie-optimalisatie (meer bestellingen uit hetzelfde verkeer)",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+        {
+          name: "Google Business integratie (bestellen via Google)",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+        {
+          name: "Rapportage & continue optimalisatie",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+      ],
+    },
+    {
+      category: "Support & ontzorging",
+      features: [
+        {
+          name: "Email support",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Prioriteit support & persoonlijk advies",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+      ],
+    },
   ];
 
   return (
@@ -140,10 +231,10 @@ const Pricing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Vergelijk alle functies
+              Alles inbegrepen, duidelijk vergeleken
             </h2>
             <p className="text-xl text-gray-600">
-              Een gedetailleerd overzicht van wat elk plan biedt
+              Geen technische details, wel volledige duidelijkheid over wat wij voor u regelen.
             </p>
           </div>
 

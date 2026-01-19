@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
@@ -77,21 +77,21 @@ const Contact = () => {
       link: "mailto:info@upxero.com"
     },
     {
-      icon: Phone,
-      title: "Telefoon",
-      content: "+32 123 456 789",
-      link: "tel:+32123456789"
+      icon: MessageCircle,
+      title: "WhatsApp",
+      content: "Chat via WhatsApp",
+      link: "https://wa.me/3197010268675"
     },
     {
       icon: MapPin,
-      title: "Locatie",
-      content: "België",
+      title: "Regio",
+      content: "België & Nederland",
       link: null
     },
     {
       icon: Clock,
       title: "Werkdagen",
-      content: "Ma-Vr: 9:00 - 18:00",
+      content: "Ma-Vr: 8:00 - 17:00",
       link: null
     }
   ];

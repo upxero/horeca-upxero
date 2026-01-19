@@ -162,7 +162,6 @@ const CookiePolicy = () => {
               <p>Voor vragen over ons cookiebeleid kunt u contact met ons opnemen:</p>
               <ul className="list-none space-y-2">
                 <li><strong>Email:</strong> info@upxero.com</li>
-                <li><strong>Telefoon:</strong> +32 123 456 789</li>
               </ul>
             </section>
           </div>

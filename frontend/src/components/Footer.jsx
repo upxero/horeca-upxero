@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,7 +22,7 @@ export const Footer = () => {
               <span className="text-2xl font-bold text-white">UPXERO</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Upxero helpt horecazaken in België om meer directe bestellingen te ontvangen
+              Upxero helpt horecazaken in België en Nederland om meer directe bestellingen te ontvangen
               via hun eigen website, online bestellen en WhatsApp — zonder commissies.
             </p>
             <div className="flex space-x-3">
@@ -107,15 +107,20 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Phone size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
-                <a href="tel:+32123456789" className="hover:text-orange-500 transition-colors">
-                  +32 123 456 789
+                <MessageCircle size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
+                <a
+                  href="https://wa.me/3197010268675"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-orange-500 transition-colors"
+                >
+                  WhatsApp
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
-                <span>België</span>
-              </li>
+              <MapPin size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
+              <span>België & Nederland</span>
+            </li>
             </ul>
           </div>
         </div>
@@ -124,7 +129,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © {currentYear} Upxero — gebouwd voor horeca in België
+              © {currentYear} Upxero — gebouwd voor horeca in België & Nederland
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy-policy" className="hover:text-orange-500 transition-colors">

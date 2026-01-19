@@ -57,7 +57,7 @@ const About = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Wij helpen horeca-ondernemers in België om meer directe online bestellingen te ontvangen,
+                Wij helpen horeca-ondernemers in België en Nederland om meer directe online bestellingen te ontvangen,
                 zonder commissies en zonder extra werkdruk.
                 Met Upxero brengen we website, online bestellen en een slimme WhatsApp-assistent
                 samen in één eenvoudige en beheerde oplossing.
@@ -179,7 +179,7 @@ const About = () => {
               Geen ruis in de zaak.
             </p>
             <p className="text-lg leading-relaxed">
-              Vandaag helpen we horecazaken in heel België
+              Vandaag helpen we horecazaken in België en Nederland
               om meer directe bestellingen te ontvangen
               en tegelijk rust te brengen in hun dagelijkse werking.
             </p>

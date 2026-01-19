@@ -39,7 +39,7 @@ export const faqs = [
   {
     id: 2,
     question: "Wat doet de WhatsApp-assistent precies?",
-    answer: "De WhatsApp-assistent beantwoordt automatisch veelgestelde vragen en begeleidt klanten naar uw online bestelpagina. Bestellingen zelf verlopen altijd via uw website."
+    answer: "De WhatsApp-assistent beantwoordt automatisch veelgestelde vragen en begeleidt klanten naar uw online bestelpagina. Bestellingen zelf verlopen altijd via uw website. Normaal gebruik is inbegrepen."
   },
   {
     id: 3,
@@ -68,8 +68,8 @@ export const faqs = [
   },
   {
     id: 8,
-    question: "Kan ik maandelijks opzeggen?",
-    answer: "Ja. Al onze plannen zijn maandelijks opzegbaar, zonder lange contracten of verborgen kosten."
+    question: "Kan ik opzeggen wanneer ik wil?",
+    answer: "Ja. Er geldt een minimumduur van 6 maanden. Daarna is het contract maandelijks opzegbaar."
   }
 ];
 
@@ -132,7 +132,7 @@ export const pricingPlans = [
   {
     id: 1,
     name: "Start",
-    price: "79",
+    price: "29",
     period: "maand",
     description: "Voor restaurants die al een website hebben.",
     features: [
@@ -147,7 +147,7 @@ export const pricingPlans = [
   {
     id: 2,
     name: "Grow",
-    price: "129",
+    price: "49",
     period: "maand",
     description: "Complete oplossing voor moderne horecazaken.",
     features: [
@@ -163,7 +163,7 @@ export const pricingPlans = [
   {
     id: 3,
     name: "Boost",
-    price: "179",
+    price: "79",
     period: "maand",
     description: "Voor restaurants die sneller willen groeien.",
     features: [

@@ -238,7 +238,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -277,7 +277,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">

@@ -213,9 +213,9 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
-                        <option value="start">Start - €79/maand</option>
-                        <option value="grow">Grow - €129/maand</option>
-                        <option value="boost">Boost - €179/maand</option>
+                        <option value="start">Start - €29/maand</option>
+                        <option value="grow">Grow - €49/maand</option>
+                        <option value="boost">Boost - €79/maand</option>
                         <option value="not-sure">Nog niet zeker</option>
                       </select>
                     </div>

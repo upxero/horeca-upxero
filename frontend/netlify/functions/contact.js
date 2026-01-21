@@ -27,7 +27,7 @@ exports.handler = async (event) => {
 
   try {
     const data = JSON.parse(event.body);
-    const { name, email, phone, business, planInterest, message } = data;
+    const { name, email, phone, business, planInterest, source, message } = data;
 
     if (!name || !email || !phone || !business || !planInterest) {
       return {
@@ -120,6 +120,11 @@ exports.handler = async (event) => {
                 <div class="field-label">Interesse in Plan:</div>
                 <div class="field-value">${planInterest.charAt(0).toUpperCase() + planInterest.slice(1)}</div>
             </div>
+
+            ${source ? `<div class="field">
+              <div class="field-label">Hoe heeft de klant ons gevonden:</div>
+              <div class="field-value">${source}</div>
+            </div>` : ''}
             
             ${message ? `<div class="field">
                 <div class="field-label">Bericht:</div>

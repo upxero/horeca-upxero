@@ -194,6 +194,75 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Wie zit achter Upxero?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Upxero wordt geleid door twee complementaire profielen:
+              technologie en marketing, perfect afgestemd op de noden van de horeca.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {/* Mike */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src="/images/michael.png"
+                    alt="Portret van Mike"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Mike
+                </h3>
+                <p className="text-blue-900 font-semibold mb-4">
+                  Webontwikkeling & technische infrastructuur
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Mike staat in voor de volledige technische kant van Upxero:
+                  van performante horecawebsites tot online bestelsystemen
+                  en slimme WhatsApp-automatisaties.
+                  Zijn focus ligt op eenvoud, stabiliteit en schaalbaarheid,
+                  zodat restaurants zonder zorgen kunnen groeien.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Mario */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src="/images/mario.png"
+                    alt="Portret van Mario"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Mario
+                </h3>
+                <p className="text-blue-900 font-semibold mb-4">
+                  Marketing & strategische communicatie
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Mario helpt horecazaken om zichtbaar te worden
+                  en meer directe bestellingen te genereren.
+                  Hij vertaalt technologie naar duidelijke communicatie
+                  en zorgt ervoor dat Upxero-klanten
+                  maximaal rendement halen uit hun online aanwezigheid.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

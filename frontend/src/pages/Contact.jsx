@@ -221,6 +221,27 @@ const Contact = () => {
                     </div>
 
                     <div>
+                      <Label htmlFor="source" className="text-gray-900 font-semibold mb-2 block">
+                        Hoe heeft u ons gevonden?
+                      </Label>
+                      <select
+                        id="source"
+                        name="source"
+                        value={formData.source}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
+                      >
+                        <option value="">Selecteer een optie</option>
+                        <option value="google">Google</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="mario">Persoonlijk contact via Mario</option>
+                        <option value="referral">Via een andere horecazaak</option>
+                        <option value="other">Overige</option>
+                      </select>
+                    </div>
+
+                    <div>
                       <Label htmlFor="message" className="text-gray-900 font-semibold mb-2 block">
                         Uw Bericht (Optioneel)
                       </Label>

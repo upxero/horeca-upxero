@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
         <ScrollToTop />
+        <WhatsAppButton />
       </BrowserRouter>
       <CookieBanner />
       <Toaster position="top-right" />

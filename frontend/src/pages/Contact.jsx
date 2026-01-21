@@ -54,8 +54,8 @@ const Contact = () => {
     email: '',
     phone: '',
     business: '',
-    message: '',
     source: '',
+    message: '',
     planInterest: 'grow'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,7 +73,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/.netlify/functions/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,6 +97,7 @@ const Contact = () => {
           email: '',
           phone: '',
           business: '',
+          source: '',
           message: '',
           planInterest: 'grow'
         });

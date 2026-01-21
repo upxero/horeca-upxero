@@ -6,8 +6,83 @@ import { Card, CardContent } from '../components/ui/card';
 import { services } from '../mock';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const Services = () => {
+
+  useSEO({
+    title: "Horeca website, online bestellen & WhatsApp | Diensten Upxero",
+    description:
+      "Ontdek alle Upxero diensten voor restaurants: professionele horeca websites, online bestellen zonder commissie en een slimme WhatsApp bestel-assistent voor België & Nederland.",
+    canonical: "https://www.upxero.com/services",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Diensten voor restaurants",
+      "url": "https://www.upxero.com/services",
+      "description":
+        "Overzicht van diensten voor restaurants: horeca websites, online bestellen zonder commissie en WhatsApp automatisatie.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com"
+      },
+      "mainEntity": {
+        "@type": "Service",
+        "provider": {
+          "@type": "Organization",
+          "name": "Upxero"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Belgium" },
+          { "@type": "Country", "name": "Netherlands" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Upxero Diensten",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Professionele horeca website",
+                "description":
+                  "Snelle, mobile-first horeca website met focus op online bestellingen en conversie."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Online bestellen zonder commissie",
+                "description":
+                  "Online bestelsysteem voor afhaling en takeaway, volledig commissievrij."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "WhatsApp bestel-assistent",
+                "description":
+                  "Automatische WhatsApp assistent die klanten doorstuurt naar online bestellen."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Volledig beheer & support",
+                "description":
+                  "Hosting, updates, beveiliging en technische opvolging inbegrepen."
+              }
+            }
+          ]
+        }
+      }
+    }
+  });
+
   const detailedServices = [
     {
       id: 1,

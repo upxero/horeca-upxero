@@ -1,8 +1,28 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const TermsConditions = () => {
+
+  useSEO({
+    title: "Algemene Voorwaarden | Upxero",
+    description:
+      "De algemene voorwaarden van Upxero voor diensten en overeenkomsten.",
+    canonical: "https://www.upxero.com/terms-conditions",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Algemene Voorwaarden",
+      "url": "https://www.upxero.com/terms-conditions",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com"
+      }
+    }
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <Header />

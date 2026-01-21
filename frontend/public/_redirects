@@ -1,1 +1,6 @@
-/*    /index.html   200
+# Redirect Netlify subdomain → primary domain
+https://upxero.netlify.app/* https://www.upxero.com/:splat 301!
+
+# SPA fallback (React Router)
+ /* /index.html 200
+

@@ -8,8 +8,47 @@ import { Label } from '../components/ui/label';
 import { toast } from 'sonner';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const Contact = () => {
+
+  useSEO({
+    title: "Contact | Vraag een gratis demo aan voor uw restaurant | Upxero",
+    description:
+      "Vraag een gratis demo aan bij Upxero. Ontdek hoe restaurants in België en Nederland meer directe online bestellingen krijgen zonder commissies.",
+    canonical: "https://www.upxero.com/contact",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Upxero",
+      "url": "https://www.upxero.com/contact",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com/",
+        "logo": "https://www.upxero.com/logo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "url": "https://wa.me/3197010268675",
+            "availableLanguage": ["Dutch"],
+            "areaServed": ["BE", "NL"]
+          }
+        ],
+        "areaServed": [
+          { "@type": "Country", "name": "Belgium" },
+          { "@type": "Country", "name": "Netherlands" }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/upxero",
+          "https://www.instagram.com/upxero",
+          "https://www.linkedin.com/company/upxero"
+        ]
+      }
+    }
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

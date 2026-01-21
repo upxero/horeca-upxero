@@ -12,8 +12,63 @@ import {
 import { pricingPlans, faqs } from '../mock';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const Pricing = () => {
+
+  useSEO({
+    title: "Prijzen horeca website & online bestellen | Upxero",
+    description:
+      "Bekijk de transparante prijzen van Upxero voor horeca websites, online bestellen en WhatsApp automatisatie. Commissievrij, maandelijks opzegbaar in België & Nederland.",
+    canonical: "https://www.upxero.com/pricing",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Prijzen Upxero",
+      "url": "https://www.upxero.com/pricing",
+      "description":
+        "Overzicht van prijzen voor horeca websites, online bestellen en WhatsApp automatisatie zonder commissies.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com"
+      },
+      "mainEntity": {
+        "@type": "OfferCatalog",
+        "name": "Upxero Horeca Pakketten",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Start",
+            "price": "29",
+            "priceCurrency": "EUR",
+            "description":
+              "Online bestellen voor restaurants met bestaande website, inclusief hosting en support.",
+            "url": "https://www.upxero.com/pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Grow",
+            "price": "49",
+            "priceCurrency": "EUR",
+            "description":
+              "Complete horeca website met online bestellen en WhatsApp assistent.",
+            "url": "https://www.upxero.com/pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Boost",
+            "price": "79",
+            "priceCurrency": "EUR",
+            "description":
+              "Alles-in-één groeipakket met optimalisatie, Google integratie en rapportage.",
+            "url": "https://www.upxero.com/pricing"
+          }
+        ]
+      }
+    }
+  });
+
   const comparisonFeatures = [
     {
       category: "Basis online bestellen",

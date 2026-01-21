@@ -6,8 +6,38 @@ import { Card, CardContent } from '../components/ui/card';
 import { testimonials, pricingPlans, stats, benefits } from '../mock';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const Home = () => {
+
+  useSEO({
+    title: "Online bestellen & websites voor restaurants | Upxero",
+    description:
+      "Upxero helpt restaurants in België en Nederland meer online bestellingen krijgen zonder commissies. Website, online bestellen en WhatsApp-assistent voor één vast maandbedrag.",
+    canonical: "https://www.upxero.com/",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Upxero",
+      "url": "https://www.upxero.com/",
+      "logo": "https://www.upxero.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://wa.me/3197010268675"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Belgium" },
+        { "@type": "Country", "name": "Netherlands" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/upxero",
+        "https://www.instagram.com/upxero",
+        "https://www.linkedin.com/company/upxero"
+      ]
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-white">
       <Header />

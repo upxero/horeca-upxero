@@ -1,8 +1,28 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const PrivacyPolicy = () => {
+
+  useSEO({
+    title: "Privacy Policy | Upxero",
+    description:
+      "Lees hoe Upxero omgaat met persoonsgegevens en privacy volgens de AVG/GDPR.",
+    canonical: "https://www.upxero.com/privacy-policy",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "url": "https://www.upxero.com/privacy-policy",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com"
+      }
+    }
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <Header />

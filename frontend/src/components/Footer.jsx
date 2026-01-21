@@ -27,7 +27,7 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
@@ -35,7 +35,7 @@ export const Footer = () => {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors"
@@ -43,7 +43,7 @@ export const Footer = () => {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"

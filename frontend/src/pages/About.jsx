@@ -5,8 +5,44 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const About = () => {
+
+  useSEO({
+    title: "Over Upxero | Horeca websites & online bestellen zonder commissie",
+    description:
+      "Leer Upxero kennen. Wij helpen restaurants in België en Nederland groeien met een eigen website, online bestellen en een slimme WhatsApp-assistent — zonder commissies.",
+    canonical: "https://www.upxero.com/about",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Over Upxero",
+      "url": "https://www.upxero.com/about",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Upxero",
+        "url": "https://www.upxero.com/",
+        "logo": "https://www.upxero.com/logo.png",
+        "areaServed": [
+          { "@type": "Country", "name": "Belgium" },
+          { "@type": "Country", "name": "Netherlands" }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "url": "https://wa.me/3197010268675",
+          "availableLanguage": ["Dutch"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/upxero",
+          "https://www.instagram.com/upxero",
+          "https://www.linkedin.com/company/upxero"
+        ]
+      }
+    }
+  });
+
   const values = [
     {
       icon: Target,

@@ -45,6 +45,15 @@ const Services = () => {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
+                "name": "Maatwerk websites & webapplicaties",
+                "description":
+                  "Op maat gemaakte websites en weboplossingen voor niet-horeca bedrijven, uitgewerkt via persoonlijke offerte."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
                 "name": "Professionele horeca website",
                 "description":
                   "Snelle, mobile-first horeca website met focus op online bestellingen en conversie."
@@ -274,6 +283,64 @@ const Services = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Website Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-10 md:p-16 shadow-xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              
+              <div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  Ook geen horeca?
+                </h2>
+                <p className="text-xl text-gray-600 mb-6">
+                  Upxero is gespecialiseerd in horecawebsites en online bestellingen,
+                  maar we bouwen ook <strong>op maat gemaakte websites</strong> voor andere sectoren.
+                </p>
+
+                <ul className="grid grid-cols-2 gap-3 mb-8">
+                  {[
+                    "E-commerce websites",
+                    "Diensten & lokale handelaars",
+                    "Bedrijfssites",
+                    "Online platformen",
+                    "Webapps & maatwerk",
+                    "Unieke projecten"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <Check className="text-blue-700 mt-1" size={18} />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-gray-600 mb-8">
+                  Deze projecten vallen buiten onze vaste horeca-pakketten
+                  en worden altijd uitgewerkt via een <strong>persoonlijke offerte</strong>.
+                </p>
+
+                <Link to="/contact">
+                  <Button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-5 text-lg rounded-lg font-semibold inline-flex items-center gap-2">
+                    Neem contact op
+                    <ArrowRight size={20} />
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                  alt="Maatwerk websites en webapplicaties"
+                  className="rounded-2xl shadow-2xl w-full h-[420px] object-cover"
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent" />
+              </div>
+
+            </div>
           </div>
         </div>
       </section>

@@ -1,21 +1,10 @@
-import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
-export const WhatsAppButton = () => {
-  const phoneNumber = '3197010268675';
-
-  const message = encodeURIComponent(
-    'Hallo 👋 Ik heb interesse in een demo van Upxero en had graag wat extra info.'
-  );
-
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-
+export const WhatsAppButton = ({ onClick }) => {
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat via WhatsApp"
+    <button
+      onClick={onClick}
+      aria-label="Open WhatsApp chat"
       className="
         fixed
         bottom-8
@@ -37,6 +26,6 @@ export const WhatsAppButton = () => {
       "
     >
       <MessageCircle size={26} />
-    </a>
+    </button>
   );
 };

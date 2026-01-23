@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Check, ArrowRight, HelpCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -68,6 +70,17 @@ const Pricing = () => {
       }
     }
   });
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const comparisonFeatures = [
     {
@@ -277,6 +290,106 @@ const Pricing = () => {
                 Ontvang Voorstel Op Maat
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* No Commission Section */}
+      <section
+        id="no-commissions"
+        className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Waarom wij{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">
+                geen commissies
+              </span>{' '}
+              aanrekenen
+            </h2>
+            <p className="text-xl text-gray-600">
+              Uw bestellingen zijn van u. Niet van een platform.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            
+            {/* Left: explanation */}
+            <div className="space-y-6 text-gray-700 text-lg">
+              <p>
+                Grote bestelplatformen rekenen vaak{' '}
+                <strong>15% tot 30% commissie per bestelling</strong>.  
+                Dat lijkt misschien handig, maar op lange termijn kost het u
+                duizenden euro’s per jaar.
+              </p>
+
+              <p>
+                Bij <strong>Upxero</strong> werken we anders.  
+                U betaalt een <strong>vast maandbedrag</strong>, ongeacht hoeveel
+                bestellingen u ontvangt.
+              </p>
+
+              <p>
+                Zo houdt u:
+              </p>
+
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="text-blue-900 mt-1" size={22} />
+                  <span>
+                    <strong>100% van uw omzet</strong> — geen afroming per bestelling
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="text-blue-900 mt-1" size={22} />
+                  <span>
+                    <strong>Direct contact met uw klanten</strong>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="text-blue-900 mt-1" size={22} />
+                  <span>
+                    <strong>Volledige controle</strong> over uw menu, prijzen en acties
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right: visual card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Concreet verschil
+              </h3>
+
+              <div className="space-y-4">
+                <div className="flex justify-between items-center bg-red-50 p-4 rounded-lg">
+                  <span className="font-semibold text-gray-700">
+                    Platformen met commissie
+                  </span>
+                  <span className="text-red-600 font-bold">
+                    −15% tot −30% per bestelling
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center bg-blue-50 p-4 rounded-lg">
+                  <span className="font-semibold text-gray-700">
+                    Upxero
+                  </span>
+                  <span className="text-blue-900 font-bold">
+                    € vast bedrag / maand
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <Link to="/contact">
+                  <Button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-5 text-lg rounded-lg font-semibold transition-all hover:shadow-lg">
+                    Vraag gratis demo aan
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

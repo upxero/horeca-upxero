@@ -1,9 +1,11 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import { Toaster } from './components/ui/sonner';
 import { CookieBanner } from './components/CookieBanner';
 import { ScrollToTop } from './components/ScrollToTop';
 import ScrollToTopOnMount from './components/ScrollToTopOnMount';
+
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Pricing from './pages/Pricing';
@@ -12,13 +14,18 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
+
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { WhatsAppPopup } from './components/WhatsAppPopup';
 
 function App() {
+  const [whatsappOpen, setWhatsappOpen] = useState(false);
+
   return (
     <div className="App">
       <BrowserRouter>
         <ScrollToTopOnMount />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -29,9 +36,16 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
+
         <ScrollToTop />
-        <WhatsAppButton />
+
+        <WhatsAppButton onClick={() => setWhatsappOpen(true)} />
+
+        {whatsappOpen && (
+          <WhatsAppPopup onClose={() => setWhatsappOpen(false)} />
+        )}
       </BrowserRouter>
+
       <CookieBanner />
       <Toaster position="top-right" />
     </div>

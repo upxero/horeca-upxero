@@ -1,4 +1,5 @@
 import { X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const WhatsAppPopup = ({ onClose }) => {
   const businessWhatsAppUrl =
@@ -21,7 +22,7 @@ export const WhatsAppPopup = ({ onClose }) => {
             <p className="font-semibold">👋 Welkom bij Upxero</p>
             <p className="text-xs opacity-90">Chat direct met ons</p>
           </div>
-          <button onClick={onClose}>
+          <button onClick={onClose} aria-label="Sluit chat">
             <X size={18} />
           </button>
         </div>
@@ -39,32 +40,36 @@ export const WhatsAppPopup = ({ onClose }) => {
           {/* Menu buttons */}
           <div className="space-y-2">
 
-            <a
-              href="/services"
-              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100"
+            <Link
+              to="/services"
+              onClick={onClose}
+              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100 transition"
             >
               📍 Voor horeca
-            </a>
+            </Link>
 
-            <a
-              href="/pricing"
-              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100"
+            <Link
+              to="/pricing#plans"
+              onClick={onClose}
+              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100 transition"
             >
               💳 Wat kost het?
-            </a>
+            </Link>
 
-            <a
-              href="/pricing#no-commissions"
-              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100"
+            <Link
+              to="/pricing#no-commissions"
+              onClick={onClose}
+              className="block bg-white border border-gray-300 rounded-lg py-2 px-3 hover:bg-gray-100 transition"
             >
               ⚡ Waarom geen commissies?
-            </a>
+            </Link>
 
+            {/* Externe WhatsApp → GEEN Link */}
             <a
               href={businessWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-green-500 text-white text-center rounded-lg py-2 font-medium hover:bg-green-600"
+              className="block bg-green-500 text-white text-center rounded-lg py-2 font-medium hover:bg-green-600 transition"
             >
               📞 Contact opnemen via WhatsApp
             </a>
@@ -79,3 +84,4 @@ export const WhatsAppPopup = ({ onClose }) => {
     </>
   );
 };
+

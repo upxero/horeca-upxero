@@ -244,7 +244,7 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {/* Mike */}
+            {/* Michael */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
@@ -255,13 +255,13 @@ const About = () => {
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Mike
+                  Michael
                 </h3>
                 <p className="text-blue-900 font-semibold mb-4">
                   Webontwikkeling & technische infrastructuur
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Mike staat in voor de volledige technische kant van Upxero:
+                  Michael staat in voor de volledige technische kant van Upxero:
                   van performante horecawebsites tot online bestelsystemen
                   en slimme WhatsApp-automatisaties.
                   Zijn focus ligt op eenvoud, stabiliteit en schaalbaarheid,

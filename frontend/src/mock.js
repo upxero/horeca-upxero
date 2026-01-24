@@ -134,6 +134,7 @@ export const pricingPlans = [
     name: "Start",
     price: "29",
     period: "maand",
+    setupPrice: 99,
     description: "Voor restaurants die al een website hebben.",
     features: [
       "Online bestelsysteem (afhaling & takeaway)",
@@ -149,6 +150,7 @@ export const pricingPlans = [
     name: "Grow",
     price: "49",
     period: "maand",
+    setupPrice: 199,
     description: "Complete oplossing voor moderne horecazaken.",
     features: [
       "Professionele horeca website",
@@ -165,6 +167,7 @@ export const pricingPlans = [
     name: "Boost",
     price: "79",
     period: "maand",
+    setupPrice: 249,
     description: "Voor restaurants die sneller willen groeien.",
     features: [
       "Alles uit Grow",

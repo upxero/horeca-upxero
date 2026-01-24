@@ -250,12 +250,39 @@ const Pricing = () => {
                 )}
                 <CardContent className="p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-5xl font-bold text-blue-900">€{plan.price}</span>
-                      <span className="text-gray-600 text-lg">/{plan.period}</span>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      {plan.name}
+                    </h3>
+
+                    <div className="mb-2">
+                      <span className="text-5xl font-bold text-blue-900">
+                        €{plan.price}
+                      </span>
+                      <span className="text-gray-600 text-lg">
+                        /{plan.period}
+                      </span>
                     </div>
-                    <p className="text-gray-600">{plan.description}</p>
+
+                    {/* SETUP ACTIE */}
+                    {plan.setupPrice && (
+                      <div className="mb-4">
+                        <p className="text-sm font-semibold text-green-700">
+                          Nu tijdelijk: gratis setup
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          <span className="line-through mr-1">
+                            €{plan.setupPrice} setup
+                          </span>
+                          <span className="text-green-700 font-semibold">
+                            €0
+                          </span>
+                        </p>
+                      </div>
+                    )}
+
+                    <p className="text-gray-600">
+                      {plan.description}
+                    </p>
                   </div>
 
                   <ul className="space-y-4 mb-8">

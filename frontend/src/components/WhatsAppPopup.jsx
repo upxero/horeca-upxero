@@ -74,11 +74,6 @@ export const WhatsAppPopup = ({ onClose }) => {
               📞 Contact opnemen via WhatsApp
             </a>
           </div>
-
-          {/* Footer hint */}
-          <p className="text-xs text-gray-400 text-center pt-1">
-            Je kan altijd overschakelen naar echte WhatsApp 💬
-          </p>
         </div>
       </div>
     </>

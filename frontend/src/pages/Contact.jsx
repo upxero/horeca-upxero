@@ -153,10 +153,9 @@ const Contact = () => {
               {' '}aan
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ontdek hoe uw restaurant meer directe bestellingen kan krijgen,
-              zonder commissies en zonder extra telefoons.
-              We tonen u hoe uw website, online bestellen en een slimme WhatsApp-assistent
-              samenwerken in één eenvoudige flow.
+              Meer directe online bestellingen, zonder commissies of telefoondruk.
+              Upxero combineert uw website, online bestellen en een slimme WhatsApp-flow,
+              met optionele AI-assistent.
             </p>
           </div>
         </div>
@@ -382,31 +381,35 @@ const Contact = () => {
                         1
                       </div>
                       <span className="text-gray-700">
-                        We nemen contact op om uw huidige situatie te begrijpen
+                        We bespreken kort uw huidige situatie en doelstellingen
                       </span>
                     </li>
+
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         2
                       </div>
                       <span className="text-gray-700">
-                        U krijgt een demo van de website, het bestelsysteem en de WhatsApp-assistent
+                        U krijgt een demo van de website, het online bestelsysteem en de WhatsApp-flow
+                        (met optionele AI-assistent)
                       </span>
                     </li>
+
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         3
                       </div>
                       <span className="text-gray-700">
-                        We stellen een oplossing voor die past bij uw restaurant
+                        We stellen een oplossing voor die perfect past bij uw restaurant
                       </span>
                     </li>
+
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         4
                       </div>
                       <span className="text-gray-700">
-                        Binnen 2 weken kunnen klanten automatisch bestellen
+                        Binnen 1 à 2 weken kunnen klanten automatisch online bestellen
                       </span>
                     </li>
                   </ul>

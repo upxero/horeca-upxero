@@ -97,93 +97,98 @@ const Services = () => {
       id: 1,
       icon: Globe,
       title: "Professionele Horeca Website",
-      description: "Een snelle, mobile-first website die bezoekers omzet in bestellingen en klanten meteen de juiste weg toont.",
+      description:
+        "Een snelle, mobile-first website die bezoekers duidelijk begeleidt naar bestellen of contact opnemen.",
       image: "https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg",
       features: [
-        "Modern en professioneel design",
-        "Geoptimaliseerd voor mobiel bestellen",
-        "Duidelijke call-to-actions (bestellen & contact)",
-        "Snelle laadtijden voor hogere conversie",
-        "Overzichtelijke menupresentatie",
-        "Perfecte basis voor online bestellen en WhatsApp"
-      ]
+      "Modern en professioneel horeca-design",
+      "Geoptimaliseerd voor mobiel gebruik",
+      "Duidelijke call-to-actions (bestellen & contact)",
+      "Snelle laadtijden voor hogere conversie",
+      "Overzichtelijke en duidelijke menupresentatie",
+      "Sterke basis voor online bestellen en klantdoorverwijzing"
+    ]
     },
     {
       id: 2,
       icon: ShoppingCart,
       title: "Online Bestellen Zonder Commissie",
-      description: "Klanten bestellen rechtstreeks via uw eigen website. Geen tussenpartijen, geen kosten per bestelling.",
+      description:
+        "Klanten bestellen rechtstreeks via uw eigen website, zonder tussenplatformen of kosten per bestelling.",
       image: "https://images.pexels.com/photos/12935041/pexels-photo-12935041.jpeg",
       features: [
-        "100% commissievrij",
+        "100% commissievrij bestellen",
         "Afhaling en takeaway",
         "Realtime bestelmeldingen",
         "Veilige online betalingen",
         "Minder fouten dan telefonische bestellingen",
-        "Volledig geïntegreerd in uw website"
+        "Volledig geïntegreerd in uw eigen website"
       ]
     },
     {
       id: 3,
       icon: Smartphone,
-      title: "Slimme WhatsApp Bestel-Assistent",
-      description: "Beantwoordt automatisch vragen van klanten en stuurt hen door naar uw online bestelpagina. Geen telefoons meer tijdens de service.",
+      title: "WhatsApp Flow & AI Assistent",
+      description:
+        "Een slimme WhatsApp-oplossing die klanten automatisch begeleidt. De standaard flow stuurt door naar online bestellen, uitbreidbaar met een AI-assistent voor 24/7 klantvragen.",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
       features: [
-        "Automatische antwoorden op veelgestelde vragen",
-        "Doorverwijzing naar online bestellen",
-        "Ondersteunt Nederlands en Engels",
+        "Vaste WhatsApp-flow met vooraf ingestelde antwoorden",
+        "Automatische doorverwijzing naar online bestellen",
         "Geen bestellingen via WhatsApp (minder fouten)",
-        "Actief 24/7, ook buiten openingsuren",
-        "Minder onderbrekingen in de zaak"
+        "Minder telefoons en onderbrekingen tijdens service",
+        "Optioneel uitbreidbaar met AI-assistent",
+        "AI-assistent beantwoordt vragen 24/7, ook buiten openingsuren"
       ]
     },
     {
-    id: 4,
-    icon: Settings,
-    title: "Volledig Beheerd & Ondersteund",
-    description: "Wij regelen alles technisch. U focust op koken en service, wij doen de rest.",
-    image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
-    features: [
-      "Hosting, beveiliging en updates inbegrepen",
-      "Monitoring en technische opvolging",
-      "Aanpassingen aan menu of content op aanvraag",
-      "Snelle support via email",
-      "Doorlopende optimalisatie",
-      "Geen technische kennis nodig"
-    ]
-  }
+      id: 4,
+      icon: Settings,
+      title: "Volledig Beheerd & Ondersteund",
+      description:
+        "Wij regelen alles technisch en praktisch. U focust op uw zaak, wij zorgen voor de rest.",
+      image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
+      features: [
+        "Hosting, beveiliging en updates inbegrepen",
+        "Technische monitoring en opvolging",
+        "Aanpassingen aan menu of content op aanvraag",
+        "Snelle en persoonlijke support via email en WhatsApp",
+        "Doorlopende optimalisatie",
+        "Geen technische kennis nodig"
+      ]
+    }
   ];
 
   const additionalServices = [
     {
       title: "Marketing & Zichtbaarheid",
-      description: "Meer bezoekers en meer bestellingen via uw eigen kanalen",
+      description: "Meer bezoekers en meer directe bestellingen via uw eigen kanalen",
       items: [
         "Google Business optimalisatie",
-        "Lokale vindbaarheid",
+        "Betere lokale vindbaarheid",
         "Conversiegerichte content",
-        "Doorverwijzing vanuit WhatsApp"
+        "Doorverwijzing vanuit WhatsApp naar bestellen"
       ]
     },
     {
       title: "Inzichten & Optimalisatie",
-      description: "Beter begrijpen wat werkt en waar klanten afhaken",
+      description: "Inzicht in wat werkt en waar klanten afhaken",
       items: [
-        "Overzicht van bestellingen",
-        "Populairste gerechten",
+        "Overzicht van online bestellingen",
+        "Populairste gerechten en momenten",
         "Conversie-inzichten",
         "Maandelijkse optimalisatie"
       ]
     },
     {
-      title: "Doorverwijzingen & Koppelingen",
-      description: "Alles werkt samen in één duidelijke flow",
+      title: "Slimme Koppelingen & Flow",
+      description: "Alles werkt samen in één duidelijke bestelervaring",
       items: [
         "WhatsApp → online bestellen",
         "Website → directe bestelling",
         "Minder telefonische druk",
-        "Consistente klantenervaring"
+        "Consistente klantenervaring",
+        "Optioneel uitbreidbaar met AI-assistent (Boost)"
       ]
     }
   ];
@@ -203,10 +208,10 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Alles wat uw restaurant nodig heeft om meer directe bestellingen te krijgen,
-              zonder commissies en zonder extra werk.
-              Van website en online bestellen tot een slimme WhatsApp-assistent
-              die uw klanten automatisch begeleidt.
+              Ontdek hoe uw restaurant meer directe bestellingen ontvangt
+              zonder commissies, zonder extra telefoons en zonder chaos.
+              Met Upxero werken uw website, online bestellen en een slimme
+              AI-gestuurde WhatsApp-assistent samen in één automatische flow.
             </p>
           </div>
         </div>

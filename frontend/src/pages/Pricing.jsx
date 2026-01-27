@@ -136,24 +136,47 @@ const Pricing = () => {
       ],
     },
     {
-      category: "WhatsApp & klanten",
+      category: "WhatsApp & klantenservice",
       features: [
         {
-          name: "WhatsApp-knop op uw website",
+          name: "WhatsApp-knop op de website",
           start: true,
           grow: true,
           boost: true,
         },
         {
-          name: "Automatisch WhatsApp-antwoord met bestel-link",
-          start: false,
+          name: "WhatsApp bestel-flow (vaste antwoorden, geen AI)",
+          start: true,
           grow: true,
           boost: true,
         },
         {
-          name: "Klanten worden gestuurd naar online bestellen (geen chaos)",
+          name: "Klanten automatisch doorsturen naar online bestellen",
           start: false,
           grow: true,
+          boost: true,
+        },
+      ],
+    },
+    {
+      category: "AI Assistant (alleen Boost)",
+      features: [
+        {
+          name: "AI Bestel- & Klantenassistent (24/7)",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+        {
+          name: "AI beantwoordt vrije vragen (menu, allergenen, openingstijden)",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+        {
+          name: "AI stuurt actief aan op bestellen via de website",
+          start: false,
+          grow: false,
           boost: true,
         },
       ],
@@ -185,7 +208,7 @@ const Pricing = () => {
       category: "Support & ontzorging",
       features: [
         {
-          name: "Email support",
+          name: "Email & WhatsApp support",
           start: true,
           grow: true,
           boost: true,

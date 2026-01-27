@@ -49,20 +49,23 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block mb-4 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">
-                Meer bestellingen. Minder telefoons. 0% commissie.
+                Meer bestellingen · Minder telefoons · 0% commissie
               </div>
+
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Meer online bestellingen,{' '}
+                Meer online bestellingen{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
-                  zonder commissie én zonder telefoondruk
+                  zonder commissie en zonder telefoondruk
                 </span>
               </h1>
+
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Stop met hoge commissies én eindeloze telefoontjes.
-                Met Upxero krijgt u een professionele horecawebsite, online bestellen
-                en een slimme WhatsApp-assistent die klanten automatisch helpt —
-                voor een vast maandbedrag.
+                Stop met hoge commissies en constante telefoontjes.
+                Met Upxero krijgt u een professionele horecawebsite,
+                online bestellen en een slimme WhatsApp bestel-flow —
+                uitbreidbaar met een AI-assistent die 24/7 helpt bestellen.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105 flex items-center gap-2">
@@ -71,7 +74,10 @@ const Home = () => {
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button variant="outline" className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold transition-all">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold transition-all"
+                  >
                     Bekijk Prijzen
                   </Button>
                 </Link>
@@ -118,11 +124,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              De echte problemen van online bestellen vandaag
+              Waarom online bestellen vaak meer stress dan winst oplevert
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Veel restaurants verliezen niet alleen marge aan commissies,
-              maar ook tijd aan telefoons, fouten en onderbrekingen tijdens de service.
+              Veel restaurants verliezen marge, tijd en controle
+              door commissies, telefoons en foutgevoelige bestellingen.
             </p>
           </div>
 
@@ -132,9 +138,12 @@ const Home = () => {
                 <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
                   <span className="text-3xl">💸</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Hoge Commissies</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Hoge commissies
+                </h3>
                 <p className="text-gray-600">
-                  Tot 30% commissie per bestelling gaat naar het platform. Bij een bestelling van €100 verliest u €30.
+                  Bestelplatformen nemen vaak 15% tot 30% per bestelling.
+                  Op jaarbasis loopt dat snel op tot duizenden euro’s.
                 </p>
               </CardContent>
             </Card>
@@ -142,11 +151,13 @@ const Home = () => {
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-3xl">❌</span>
+                  <span className="text-3xl">🔒</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Geen Controle</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Geen controle over klanten
+                </h3>
                 <p className="text-gray-600">
-                  Bestellingen en klanten lopen via externe platformen.
+                  Klanten en data blijven bij het platform.
                   U bouwt geen eigen klantenbestand op en mist directe communicatie.
                 </p>
               </CardContent>
@@ -155,11 +166,13 @@ const Home = () => {
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-3xl">📉</span>
+                  <span className="text-3xl">📞</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Constante telefoons</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Constante telefoons
+                </h3>
                 <p className="text-gray-600">
-                  Tijdens piekmomenten rinkelt de telefoon nonstop.
+                  Tijdens piekmomenten blijft de telefoon rinkelen.
                   Dat zorgt voor stress, fouten in bestellingen en minder focus in de keuken.
                 </p>
               </CardContent>
@@ -176,15 +189,18 @@ const Home = () => {
               De Upxero totaaloplossing
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Een complete oplossing voor moderne horecazaken:
-              uw eigen website, online bestellen én een slimme WhatsApp-assistent
-              die klanten automatisch begeleidt naar bestellen.
+              Uw eigen website, commissievrij online bestellen
+              en slimme automatisatie via WhatsApp — uitbreidbaar
+              met een AI-assistent die klanten 24/7 helpt bestellen.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
             {benefits.map((benefit) => (
-              <Card key={benefit.id} className="bg-gradient-to-br from-blue-50 to-white border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <Card
+                key={benefit.id}
+                className="bg-gradient-to-br from-blue-50 to-white border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              >
                 <CardContent className="p-8">
                   <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                     <img
@@ -193,7 +209,9 @@ const Home = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {benefit.title}
+                  </h3>
                   <p className="text-gray-600">{benefit.description}</p>
                 </CardContent>
               </Card>

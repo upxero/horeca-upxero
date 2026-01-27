@@ -1,28 +1,27 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle } from "lucide-react";
 
 export const WhatsAppButton = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      aria-label="Open WhatsApp chat"
+      aria-label="Open chat opties"
       className="
         fixed
-        bottom-8
-        left-8
-        z-40
+        bottom-[96px]
+        right-6
+        z-50
         bg-green-500
         hover:bg-green-600
         text-white
-        p-4
+        w-16
+        h-16
+        flex
+        items-center
+        justify-center
         rounded-full
-        shadow-lg
-        transition-all
-        duration-300
+        shadow-xl
+        transition
         hover:scale-110
-        focus:outline-none
-        focus:ring-2
-        focus:ring-green-500
-        focus:ring-offset-2
       "
     >
       <MessageCircle size={26} />

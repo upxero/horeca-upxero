@@ -22,8 +22,9 @@ export const Footer = () => {
               <span className="text-2xl font-bold text-white">UPXERO</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Upxero helpt horecazaken in België en Nederland om meer directe bestellingen te ontvangen
-              via hun eigen website, online bestellen en WhatsApp — zonder commissies.
+              Upxero helpt horecazaken in België en Nederland met commissievrij
+              online bestellen via hun eigen website en een slimme WhatsApp-flow.
+              Uitbreidbaar met een AI-assistent.
             </p>
             <div className="flex space-x-3">
               <a
@@ -89,10 +90,11 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Diensten</h3>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Eigen horeca website</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">Professionele horeca website</li>
               <li className="hover:text-orange-500 transition-colors cursor-pointer">Online bestellen zonder commissie</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">WhatsApp assistent voor klanten</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Volledig beheer & support</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">WhatsApp bestel-flow (geen AI)</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">AI-assistent (optioneel – Boost)</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">Hosting, updates & support</li>
             </ul>
           </div>
 

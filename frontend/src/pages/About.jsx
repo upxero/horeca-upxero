@@ -93,10 +93,12 @@ const About = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Wij helpen horeca-ondernemers in België en Nederland om meer directe online bestellingen te ontvangen,
-                zonder commissies en zonder extra werkdruk.
-                Met Upxero brengen we website, online bestellen en een slimme WhatsApp-assistent
-                samen in één eenvoudige en beheerde oplossing.
+                Wij helpen horeca-ondernemers in België en Nederland om meer directe
+                online bestellingen te ontvangen, zonder commissies en zonder extra
+                werkdruk. Met Upxero combineren we een professionele website,
+                commissievrij online bestellen en een slimme WhatsApp-flow in één
+                eenvoudige, volledig beheerde oplossing — uitbreidbaar met een
+                AI-assistent.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
@@ -239,7 +241,8 @@ const About = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Upxero wordt geleid door twee complementaire profielen:
-              technologie en marketing, perfect afgestemd op de noden van de horeca.
+              technologie en marketing, perfect afgestemd op de dagelijkse realiteit
+              van moderne horecazaken.
             </p>
           </div>
 
@@ -262,10 +265,11 @@ const About = () => {
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Michael staat in voor de volledige technische kant van Upxero:
-                  van performante horecawebsites tot online bestelsystemen
-                  en slimme WhatsApp-automatisaties.
+                  van performante horecawebsites en commissievrije online bestelsystemen
+                  tot slimme WhatsApp-flows die klanten automatisch begeleiden.
+                  Waar nodig wordt dit uitgebreid met AI-functionaliteit.
                   Zijn focus ligt op eenvoud, stabiliteit en schaalbaarheid,
-                  zodat restaurants zonder zorgen kunnen groeien.
+                  zodat restaurants zonder technische zorgen kunnen groeien.
                 </p>
               </CardContent>
             </Card>
@@ -287,11 +291,11 @@ const About = () => {
                   Marketing & strategische communicatie
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Mario helpt horecazaken om zichtbaar te worden
+                  Mario helpt horecazaken om online zichtbaar te worden
                   en meer directe bestellingen te genereren.
-                  Hij vertaalt technologie naar duidelijke communicatie
-                  en zorgt ervoor dat Upxero-klanten
-                  maximaal rendement halen uit hun online aanwezigheid.
+                  Hij vertaalt technologie en automatisatie naar duidelijke communicatie
+                  en strategie, zodat klanten maximaal rendement halen
+                  uit hun website en online bestelkanalen.
                 </p>
               </CardContent>
             </Card>
@@ -312,27 +316,33 @@ const About = () => {
             {[
               {
                 title: "Volledig Beheerd",
-                description: "Wij zorgen voor hosting, updates, onderhoud en support. U hoeft nergens aan te denken."
+                description:
+                  "Wij zorgen voor hosting, updates, onderhoud en support. U hoeft nergens aan te denken."
               },
               {
                 title: "Snel Live",
-                description: "Binnen 2 weken kunt u al online bestellingen ontvangen. Van setup tot live in recordtijd."
+                description:
+                  "Binnen 1 à 2 weken kunt u online bestellingen ontvangen. Van setup tot live, zonder gedoe."
               },
               {
                 title: "Persoonlijke Support",
-                description: "Direct contact met ons team. Geen robots of automatische antwoorden, maar echte mensen die u helpen."
+                description:
+                  "Direct contact met ons team. Geen chatbots of doorschuifsystemen, maar echte mensen die u helpen."
               },
               {
                 title: "Bewezen Resultaten",
-                description: "Onze klanten zien gemiddeld 45% meer online bestellingen. Die resultaten spreken voor zich."
+                description:
+                  "Onze klanten zien gemiddeld tot 45% meer directe online bestellingen. Resultaten die tellen."
               },
               {
                 title: "Transparante Prijzen",
-                description: "Vaste maandprijzen zonder verborgen kosten. U weet precies waar u aan toe bent."
+                description:
+                  "Vaste maandprijzen zonder verborgen kosten of commissies. U weet altijd waar u aan toe bent."
               },
               {
-                title: "Slimme WhatsApp-assistent",
-                description: "Klanten krijgen automatisch antwoord op veelgestelde vragen en worden altijd doorgestuurd naar online bestellen. Geen bestellingen via WhatsApp, wel minder onderbrekingen."
+                title: "Slimme WhatsApp-automatisatie",
+                description:
+                  "Automatische WhatsApp-flow voor veelgestelde vragen en bestelbegeleiding, uitbreidbaar met een AI-assistent. Geen bestellingen via WhatsApp, wel minder telefoons en onderbrekingen."
               }
             ].map((item, index) => (
               <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all">

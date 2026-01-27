@@ -17,6 +17,7 @@ import CookiePolicy from './pages/CookiePolicy';
 
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { WhatsAppPopup } from './components/WhatsAppPopup';
+import { FloatingSupportHint } from "./components/FloatingSupportHint";
 
 function App() {
   const [whatsappOpen, setWhatsappOpen] = useState(false);
@@ -38,6 +39,7 @@ function App() {
         </Routes>
 
         <ScrollToTop />
+        <FloatingSupportHint />
 
         <WhatsAppButton onClick={() => setWhatsappOpen(true)} />
 

@@ -232,7 +232,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founders Section 
+      {/* Founders Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -246,8 +246,8 @@ const About = () => {
             </p>
           </div>
 
-          {/*<div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {/* Michael 
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {/* Michael */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
@@ -274,7 +274,7 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Mario 
+            {/* Mario */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
@@ -301,7 +301,7 @@ const About = () => {
             </Card>
           </div>
         </div>
-      </section> */}
+      </section> 
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">

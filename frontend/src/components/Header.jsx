@@ -21,6 +21,7 @@ export const Header = () => {
     { name: 'Diensten', path: '/services' },
     { name: 'Prijzen', path: '/pricing' },
     { name: 'Over Ons', path: '/about' },
+    { name: 'Portfolio', path: '/restaurant-portfolio' },
     { name: 'Contact', path: '/contact' }
   ];
 

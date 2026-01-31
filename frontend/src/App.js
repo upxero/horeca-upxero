@@ -11,6 +11,7 @@ import Services from './pages/Services';
 import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PortfolioRestaurants from './pages/PortfolioRestaurants';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/restaurant-portfolio" element={<PortfolioRestaurants />} />
         </Routes>
 
         <ScrollToTop />

@@ -9,7 +9,7 @@ export const FloatingSupportHint = () => {
           flex items-center gap-1
           animate-pulse
         ">
-          👉 Probeer AI-assistent of WhatsApp-flow
+          👉 Vragen? AI-assistent of WhatsApp-flow
         </div>
       </div>
 

@@ -13,9 +13,9 @@ import { useSEO } from '../hooks/useSEO';
 const Contact = () => {
 
   useSEO({
-    title: "Contact | Vraag een gratis demo aan voor uw restaurant | Upxero",
+    title: "Contact | Vraag een gratis preview aan voor uw restaurant | Upxero",
     description:
-      "Vraag een gratis demo aan bij Upxero. Ontdek hoe restaurants in België en Nederland meer directe online bestellingen krijgen zonder commissies.",
+      "Vraag een preview aan bij Upxero. Ontdek hoe restaurants in België en Nederland meer directe online bestellingen krijgen zonder commissies.",
     canonical: "https://www.upxero.com/contact",
     structuredData: {
       "@context": "https://schema.org",
@@ -148,14 +148,24 @@ const Contact = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Vraag een{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
-                Gratis Demo
-              </span>
-              {' '}aan
+                vrijblijvende eerste preview
+              </span>{' '}
+              aan
             </h1>
+
             <p className="text-xl text-gray-600 leading-relaxed">
-              Meer directe online bestellingen, zonder commissies of telefoondruk.
-              Upxero combineert uw website, online bestellen en een slimme WhatsApp-flow,
-              met optionele AI-assistent.
+              Ontdek hoe uw website, online bestellen en WhatsApp perfect kunnen samenwerken.
+              <br className="hidden sm:block" />
+              Gebaseerd op de aanpak die vandaag gebruikt wordt door restaurants zoals{' '}
+              <a
+                href="https://www.korat-thai-sint-niklaas.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 font-semibold hover:underline"
+              >
+                Korat-Thai
+              </a>
+              , volledig afgestemd op uw zaak.
             </p>
           </div>
         </div>
@@ -170,7 +180,7 @@ const Contact = () => {
               <Card className="bg-white border-0 shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Vraag uw gratis demo aan
+                    Vraag uw gratis preview aan
                   </h2>
                   <p className="text-gray-600 mb-8">
                     We laten u zien hoe klanten automatisch worden geholpen
@@ -244,8 +254,9 @@ const Contact = () => {
 
                     <div>
                       <Label htmlFor="planInterest" className="text-gray-900 font-semibold mb-2 block">
-                        Welk Plan Interesseert U?
+                        Wat past het best bij uw situatie?
                       </Label>
+
                       <select
                         id="planInterest"
                         name="planInterest"
@@ -253,10 +264,21 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
-                        <option value="start">Start - €29/maand</option>
-                        <option value="grow">Grow - €49/maand</option>
-                        <option value="boost">Boost - €79/maand</option>
-                        <option value="not-sure">Nog niet zeker</option>
+                        <option value="start">
+                          Start – nog geen website / basis online zichtbaarheid (€29/maand)
+                        </option>
+
+                        <option value="grow">
+                          Grow – bestaande website, meer online bestellingen (€49/maand)
+                        </option>
+
+                        <option value="boost">
+                          Boost – automatisatie, WhatsApp & AI (€79/maand)
+                        </option>
+
+                        <option value="not-sure">
+                          Ik weet het nog niet, graag advies
+                        </option>
                       </select>
                     </div>
 
@@ -291,7 +313,7 @@ const Contact = () => {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Bijvoorbeeld: veel telefonische bestellingen, vragen via WhatsApp, of te veel commissie via platformen"
+                        placeholder="Wat kost u vandaag tijd of omzet? Bijvoorbeeld: telefonische bestellingen, WhatsApp-vragen of commissies van platformen."
                         className="w-full px-4 py-3 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                       />
                     </div>
@@ -324,7 +346,7 @@ const Contact = () => {
                     </Button>
 
                     <p className="text-sm text-gray-600 text-center">
-                      Uw gegevens worden enkel gebruikt om contact op te nemen over uw demo.
+                      Uw gegevens worden enkel gebruikt om contact op te nemen over uw preview.
                       Geen spam, geen verplichtingen.
                     </p>
                   </form>
@@ -390,7 +412,7 @@ const Contact = () => {
                         2
                       </div>
                       <span className="text-gray-700">
-                        U krijgt een demo van de website, het online bestelsysteem en de WhatsApp-flow
+                        U krijgt een preview van de website, het online bestelsysteem en de WhatsApp-flow
                         (met optionele AI-assistent)
                       </span>
                     </li>
@@ -400,7 +422,7 @@ const Contact = () => {
                         3
                       </div>
                       <span className="text-gray-700">
-                        We stellen een oplossing voor die perfect past bij uw restaurant
+                        We stellen een oplossing voor die perfect past bij uw zaak en manier van werken
                       </span>
                     </li>
 

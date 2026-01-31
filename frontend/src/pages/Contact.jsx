@@ -156,16 +156,8 @@ const Contact = () => {
             <p className="text-xl text-gray-600 leading-relaxed">
               Ontdek hoe uw website, online bestellen en WhatsApp perfect kunnen samenwerken.
               <br className="hidden sm:block" />
-              Gebaseerd op de aanpak die vandaag gebruikt wordt door restaurants zoals{' '}
-              <a
-                href="https://www.korat-thai-sint-niklaas.be"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-700 font-semibold hover:underline"
-              >
-                Korat-Thai
-              </a>
-              , volledig afgestemd op uw zaak.
+              Een aanpak die vandaag al wordt ingezet door moderne horecazaken,
+              volledig afgestemd op uw zaak.
             </p>
           </div>
         </div>
@@ -254,7 +246,7 @@ const Contact = () => {
 
                     <div>
                       <Label htmlFor="planInterest" className="text-gray-900 font-semibold mb-2 block">
-                        Wat past het best bij uw situatie?
+                        Wat past het best bij uw huidige situatie?
                       </Label>
 
                       <select
@@ -265,19 +257,19 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
                         <option value="start">
-                          Start – nog geen website / basis online zichtbaarheid (€29/maand)
+                          Start – bestaande website uitbreiden met online bestellen (€29/maand)
                         </option>
 
                         <option value="grow">
-                          Grow – bestaande website, meer online bestellingen (€49/maand)
+                          Grow – nieuwe horeca website + automatisatie (€49/maand)
                         </option>
 
                         <option value="boost">
-                          Boost – automatisatie, WhatsApp & AI (€79/maand)
+                          Boost – AI-Assistent & extra conversie-optimalisatie (€79/maand)
                         </option>
 
                         <option value="not-sure">
-                          Ik weet het nog niet, graag advies
+                          Ik weet het nog niet, ik wil eerst advies
                         </option>
                       </select>
                     </div>

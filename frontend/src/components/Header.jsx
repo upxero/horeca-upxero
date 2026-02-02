@@ -71,7 +71,7 @@ export const Header = () => {
           <div className="hidden md:block">
             <Link to="/contact">
               <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all hover:shadow-lg hover:scale-105">
-                Vraag Gratis Demo Aan
+                Vraag Gratis Preview Aan
               </Button>
             </Link>
           </div>
@@ -106,7 +106,7 @@ export const Header = () => {
             ))}
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-semibold">
-                Vraag Gratis Demo Aan
+                Vraag Gratis Preview Aan
               </Button>
             </Link>
           </nav>

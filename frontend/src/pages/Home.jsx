@@ -245,21 +245,56 @@ const Home = () => {
                     MEEST POPULAIR
                   </div>
                 )}
+
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-5xl font-bold text-blue-900">€{plan.price}</span>
-                    <span className="text-gray-600">/{plan.period}</span>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {plan.name}
+                  </h3>
+
+                  <div className="mb-2">
+                    <span className="text-5xl font-bold text-blue-900">
+                      €{plan.price}
+                    </span>
+                    <span className="text-gray-600">
+                      /{plan.period}
+                    </span>
                   </div>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
+
+                  {/* SETUP ACTIE – exact hetzelfde */}
+                  {plan.setupPrice && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-green-700">
+                        Nu tijdelijk: gratis setup
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        <span className="line-through mr-1">
+                          €{plan.setupPrice} setup
+                        </span>
+                        <span className="text-green-700 font-semibold">
+                          €0
+                        </span>
+                      </p>
+                    </div>
+                  )}
+
+                  <p className="text-gray-600 mb-6">
+                    {plan.description}
+                  </p>
+
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-                        <span className="text-gray-700">{feature}</span>
+                        <Check
+                          className="text-green-600 flex-shrink-0 mt-0.5"
+                          size={20}
+                        />
+                        <span className="text-gray-700">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
+
                   <Link to="/contact">
                     <Button
                       className={`w-full py-6 rounded-lg font-semibold transition-all ${
@@ -278,7 +313,10 @@ const Home = () => {
 
           <div className="text-center mt-12">
             <Link to="/pricing">
-              <Button variant="outline" className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold">
+              <Button
+                variant="outline"
+                className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold"
+              >
                 Alle Prijzen Bekijken
               </Button>
             </Link>

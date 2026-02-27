@@ -69,7 +69,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105 flex items-center gap-2">
-                    Vraag Gratis Demo Aan
+                    Vraag Gratis Preview Aan
                     <ArrowRight size={20} />
                   </Button>
                 </Link>

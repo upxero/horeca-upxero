@@ -222,8 +222,8 @@ export const pricingPlans = [
 ];
 
 export const stats = [
-  { label: "Tevreden Restaurants", value: "150+", icon: "Users" },
-  { label: "Bestellingen per Maand", value: "25.000+", icon: "ShoppingBag" },
+  { label: "Tevreden Restaurants", value: "50+", icon: "Users" },
+  { label: "Bestellingen per Maand", value: "10.000+", icon: "ShoppingBag" },
   { label: "Minder Telefonische Bestellingen", value: "−60%", icon: "PhoneOff" },
   { label: "Support Responstijd", value: "<2u", icon: "Clock" }
 ];

@@ -172,12 +172,15 @@ export const pricingPlans = [
     price: "29",
     period: "maand",
     setupPrice: 99,
-    description: "Voor restaurants die al een website hebben.",
+    description:
+      "Voor restaurants met een bestaande website die online willen verkopen én 1 vacature willen publiceren.",
     features: [
       "Online bestelsysteem (afhaling & takeaway)",
       "WhatsApp bestel-flow (vaste antwoorden, geen AI)",
       "Menu setup & volledige integratie",
       "Hosting, updates & beveiliging",
+      "1 actieve vacature op Talent by Upxero",
+      "Publicatie op talent.upxero.com",
       "Email support"
     ],
     popular: false
@@ -188,7 +191,8 @@ export const pricingPlans = [
     price: "49",
     period: "maand",
     setupPrice: 199,
-    description: "Complete website met slimme automatisatie.",
+    description:
+      "Complete professionele horeca website met automatisatie, domeinnaam en verhoogde zichtbaarheid.",
     features: [
       "Professionele horeca website (mobile-first)",
       "Online bestelsysteem",
@@ -196,6 +200,11 @@ export const pricingPlans = [
       "Klanten automatisch doorsturen naar online bestellen",
       "Menu setup & integratie",
       "Hosting, updates & beveiliging",
+      "Domeinnaam inbegrepen (.be / .nl / .eu / .com)",
+      "2 professionele business e-mail accounts",
+      "3 actieve vacatures op Talent by Upxero",
+      "⭐ Featured vacature badge",
+      "Voorrang in zoekresultaten",
       "Email support"
     ],
     popular: true
@@ -206,7 +215,8 @@ export const pricingPlans = [
     price: "79",
     period: "maand",
     setupPrice: 249,
-    description: "Voor restaurants die meer bestellingen willen zonder extra personeel.",
+    description:
+      "Voor restaurants die maximale groei willen: AI automatisatie, premium zichtbaarheid en volledige business infrastructuur.",
     features: [
       "Alles uit Grow",
       "AI Bestel- & Klantenassistent (24/7)",
@@ -215,6 +225,10 @@ export const pricingPlans = [
       "Conversie-optimalisatie",
       "Google Business integratie",
       "Rapportage & continue optimalisatie",
+      "5 professionele business e-mail accounts",
+      "5 actieve vacatures op Talent by Upxero",
+      "🚀 Prioritaire vacatureplaatsing",
+      "Extra promotionele ondersteuning",
       "Prioriteit support & persoonlijk advies"
     ],
     popular: false

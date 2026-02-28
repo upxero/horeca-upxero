@@ -205,6 +205,47 @@ const Pricing = () => {
       ],
     },
     {
+      category: "Vacatures via Talent by Upxero",
+      features: [
+        {
+          name: "Publicatie op talent.upxero.com",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Aantal actieve vacatures tegelijk",
+          start: "1 vacature",
+          grow: "3 vacatures",
+          boost: "5 vacatures",
+        },
+        {
+          name: "Featured badge voor extra zichtbaarheid",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Voorrang in zoekresultaten",
+          start: false,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Prioritaire plaatsing boven andere vacatures",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+        {
+          name: "Extra promotionele ondersteuning",
+          start: false,
+          grow: false,
+          boost: true,
+        },
+      ],
+    },
+    {
       category: "Support & ontzorging",
       features: [
         {
@@ -333,6 +374,24 @@ const Pricing = () => {
             ))}
           </div>
 
+          <div className="mt-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl p-10 text-center shadow-xl">
+            <h3 className="text-3xl font-bold mb-4">
+              Op zoek naar personeel?
+            </h3>
+            <p className="text-lg mb-6 text-blue-100">
+              Publiceer uw vacatures via ons horeca jobplatform en bereik actief werkzoekenden.
+            </p>
+
+            <a
+              href="https://talent.upxero.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-semibold text-lg transition shadow-lg"
+            >
+              Bezoek talent.upxero.com
+            </a>
+          </div>
+
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">
               Niet zeker welk plan bij u past? Neem contact met ons op voor persoonlijk advies.
@@ -437,7 +496,7 @@ const Pricing = () => {
               <div className="mt-8 text-center">
                 <Link to="/contact">
                   <Button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-5 text-lg rounded-lg font-semibold transition-all hover:shadow-lg">
-                    Vraag gratis demo aan
+                    Vraag gratis preview aan
                   </Button>
                 </Link>
               </div>

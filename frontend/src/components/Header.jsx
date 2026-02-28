@@ -67,13 +67,30 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button Desktop */}
-          <div className="hidden md:block">
+          {/* CTA Buttons Desktop */}
+          <div className="hidden md:flex items-center gap-4">
+
+            {/* Plaats Gratis Vacature */}
+            <a
+              href="https://talent.upxero.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-6 py-2.5 rounded-lg font-semibold transition-all hover:shadow-md"
+              >
+                Plaats Gratis Vacature
+              </Button>
+            </a>
+
+            {/* Vraag Gratis Preview */}
             <Link to="/contact">
               <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all hover:shadow-lg hover:scale-105">
                 Vraag Gratis Preview Aan
               </Button>
             </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,6 +107,8 @@ export const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="px-4 py-4 space-y-3">
+
+            {/* Navigatie links */}
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -104,11 +123,36 @@ export const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-semibold">
-                Vraag Gratis Preview Aan
-              </Button>
-            </Link>
+
+            {/* Divider */}
+            <div className="pt-4 mt-4 border-t border-gray-200 flex flex-col gap-4">
+
+              {/* Plaats Gratis Vacature */}
+              <a
+                href="https://talent.upxero.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Button
+                  variant="outline"
+                  className="w-full border-2 border-blue-900 text-blue-900 hover:bg-blue-50 py-2.5 rounded-lg font-semibold"
+                >
+                  Plaats Gratis Vacature
+                </Button>
+              </a>
+
+              {/* Vraag Gratis Preview */}
+              <Link
+                to="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-semibold">
+                  Vraag Gratis Preview Aan
+                </Button>
+              </Link>
+
+            </div>
           </nav>
         </div>
       )}

@@ -290,6 +290,7 @@ const Contact = () => {
                         <option value="linkedin">LinkedIn</option>
                         <option value="facebook">Facebook</option>
                         <option value="mario">Persoonlijk contact via Mario</option>
+                        <option value="email">Via email</option>
                         <option value="referral">Via een andere horecazaak</option>
                         <option value="other">Overige</option>
                       </select>

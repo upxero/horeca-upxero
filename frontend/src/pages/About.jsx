@@ -62,8 +62,8 @@ const About = () => {
   ];
 
   const stats = [
-    { number: "150+", label: "Tevreden Restaurants", icon: Users },
-    { number: "25.000+", label: "Bestellingen/Maand", icon: TrendingUp },
+    { number: "50+", label: "Tevreden Restaurants", icon: Users },
+    { number: "10.000+", label: "Bestellingen/Maand", icon: TrendingUp },
     { number: "45%", label: "Gemiddelde Groei", icon: Award },
     { number: "98%", label: "Klanttevredenheid", icon: Heart }
   ];

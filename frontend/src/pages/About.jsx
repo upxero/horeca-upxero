@@ -367,7 +367,7 @@ const About = () => {
           </p>
           <Link to="/contact">
             <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2">
-              Vraag Gratis Demo Aan
+              Vraag Gratis Preview Aan
               <ArrowRight size={20} />
             </Button>
           </Link>

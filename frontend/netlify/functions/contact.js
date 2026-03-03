@@ -1,41 +1,102 @@
-const { Resend } = require('resend');
+const { Resend } = require("resend");
 
 const headers = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Content-Type': 'application/json'
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Content-Type": "application/json",
 };
 
 exports.handler = async (event) => {
   // Handle OPTIONS preflight request
-  if (event.httpMethod === 'OPTIONS') {
+  if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
       headers,
-      body: ''
+      body: "",
     };
   }
 
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
       headers,
-      body: JSON.stringify({ error: 'Method not allowed' })
+      body: JSON.stringify({ error: "Method not allowed" }),
     };
   }
 
   try {
     const data = JSON.parse(event.body);
-    const { name, email, phone, business, planInterest, source, message } = data;
 
+    const {
+      name,
+      email,
+      phone,
+      business,
+      planInterest,
+      source,
+      message,
+      turnstileToken,
+      company, // honeypot field
+    } = data;
+
+    // Honeypot check (bots vullen verborgen velden vaak in)
+    if (company) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Bot detected" }),
+      };
+    }
+
+    // Required field check
     if (!name || !email || !phone || !business || !planInterest) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({ error: 'Missing required fields' })
+        body: JSON.stringify({ error: "Missing required fields" }),
       };
     }
+
+    // Turnstile token verplicht
+    if (!turnstileToken) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Verification required" }),
+      };
+    }
+
+    // =========================
+    // Verify Cloudflare Turnstile
+    // =========================
+    const verifyResponse = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.TURNSTILE_SECRET_KEY,
+          response: turnstileToken,
+        }),
+      }
+    );
+
+    const verifyData = await verifyResponse.json();
+
+    if (!verifyData.success) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Bot verification failed" }),
+      };
+    }
+
+    // =========================
+    // Send email via Resend
+    // =========================
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -121,15 +182,23 @@ exports.handler = async (event) => {
                 <div class="field-value">${planInterest.charAt(0).toUpperCase() + planInterest.slice(1)}</div>
             </div>
 
-            ${source ? `<div class="field">
-              <div class="field-label">Hoe heeft de klant ons gevonden:</div>
-              <div class="field-value">${source}</div>
-            </div>` : ''}
+            ${
+              source
+                ? `<div class="field">
+                    <div class="field-label">Hoe heeft de klant ons gevonden:</div>
+                    <div class="field-value">${source}</div>
+                  </div>`
+                : ""
+            }
             
-            ${message ? `<div class="field">
-                <div class="field-label">Bericht:</div>
-                <div class="field-value">${message}</div>
-            </div>` : ''}
+            ${
+              message
+                ? `<div class="field">
+                    <div class="field-label">Bericht:</div>
+                    <div class="field-value">${message}</div>
+                  </div>`
+                : ""
+            }
         </div>
         <div class="footer">
             <p>Deze email is verzonden via het Upxero contact formulier</p>
@@ -137,35 +206,34 @@ exports.handler = async (event) => {
     </div>
 </body>
 </html>
-    `;
+`;
 
     const result = await resend.emails.send({
-      from: 'no-reply@upxero.com',
-      to: 'info@upxero.com',
+      from: "no-reply@upxero.com",
+      to: "info@upxero.com",
       replyTo: email,
       subject: `Nieuwe Demo Aanvraag van ${name} (${business})`,
-      html: htmlContent
+      html: htmlContent,
     });
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ 
-        success: true, 
-        message: 'Demo aanvraag succesvol verzonden',
-        id: result.id
-      })
+      body: JSON.stringify({
+        success: true,
+        message: "Demo aanvraag succesvol verzonden",
+        id: result.id,
+      }),
     };
-
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error("Error sending email:", error);
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ 
-        error: 'Er is een fout opgetreden bij het verzenden van uw aanvraag. Probeer het later opnieuw.',
-        details: error.message
-      })
+      body: JSON.stringify({
+        error:
+          "Er is een fout opgetreden bij het verzenden van uw aanvraag. Probeer het later opnieuw.",
+      }),
     };
   }
 };

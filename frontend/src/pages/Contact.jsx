@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { useSEO } from '../hooks/useSEO';
+import Turnstile from "react-turnstile";
 
 const Contact = () => {
 
@@ -78,7 +79,10 @@ const Contact = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken
+        }),
       });
 
       if (!response.ok) {
@@ -109,6 +113,8 @@ const Contact = () => {
       toast.error('Er is een fout opgetreden. Probeer het later opnieuw of neem direct contact met ons op.');
     }
   };
+
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const contactInfo = [
     {
@@ -310,6 +316,11 @@ const Contact = () => {
                         className="w-full px-4 py-3 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                       />
                     </div>
+
+                    <Turnstile
+                      sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                      onVerify={(token) => setTurnstileToken(token)}
+                    />
 
                     <Button
                       type="submit"

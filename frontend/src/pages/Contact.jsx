@@ -318,7 +318,7 @@ const Contact = () => {
                     </div>
 
                     <Turnstile
-                      sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                      sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                       onVerify={(token) => setTurnstileToken(token)}
                     />
 

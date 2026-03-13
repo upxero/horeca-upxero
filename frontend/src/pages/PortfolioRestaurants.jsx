@@ -50,26 +50,32 @@ const PortfolioRestaurants = () => {
       note: 'Website + online reservatie (Happy Chef)',
       logo: '/assets/logos/logo-sanito.png',
     },
+    {
+      name: 'Aroma Cubana',
+      url: 'https://www.aroma-cubana.be/',
+      note: 'Nieuwe website online',
+      logo: '/assets/logos/logo-aroma-cubana.jpg',
+    },
   ];
 
   const upcomingRestaurants = [
     {
-      name: 'Aroma Cubana',
-      url: 'https://aromacubana.netlify.app/',
-      note: 'Bijna klaar – nieuwe website',
-      logo: '/assets/logos/logo-aroma-cubana.jpg',
-    },
-    {
-      name: 'Taverne Kopenhagen',
-      url: 'https://tavernekopenhagen.com/',
-      note: 'Bijna klaar – website in afronding',
-      logo: '/assets/logos/logo-kopenhagen.jpg',
+      name: 'Okaya Sushi Restaurant',
+      url: 'https://okaya-sushi.vercel.app/',
+      note: 'Nieuwe website – oplevering volgt',
+      logo: '/assets/logos/logo-okaya.jpg',
     },
     {
       name: 'Armenian House',
       url: 'https://armenianhouse.netlify.app/',
       note: 'Nieuwe website – oplevering volgt',
       logo: '/assets/logos/armenian-house-logo.jpeg',
+    },
+    {
+      name: 'Taverne Kopenhagen',
+      url: 'https://tavernekopenhagen.com/',
+      note: 'Bijna klaar – website in afronding',
+      logo: '/assets/logos/logo-kopenhagen.jpg',
     },
   ];
 
@@ -143,9 +149,9 @@ const PortfolioRestaurants = () => {
                 <CardContent className="p-5">
                   <div className="h-36 bg-gray-50 rounded mb-4 flex items-center justify-center p-4">
                     <img
-                        src={r.logo}
-                        alt={`${r.name} logo`}
-                        className="max-h-full max-w-full object-contain"
+                      src={r.logo}
+                      alt={`${r.name} logo`}
+                      className="max-h-full max-w-full object-contain"
                     />
                   </div>
 
@@ -184,9 +190,9 @@ const PortfolioRestaurants = () => {
                 <CardContent className="p-5">
                   <div className="h-36 bg-gray-50 rounded mb-4 flex items-center justify-center p-4">
                     <img
-                        src={r.logo}
-                        alt={`${r.name} logo`}
-                        className="max-h-full max-w-full object-contain"
+                      src={r.logo}
+                      alt={`${r.name} logo`}
+                      className="max-h-full max-w-full object-contain"
                     />
                   </div>
 
@@ -225,9 +231,9 @@ const PortfolioRestaurants = () => {
                 <CardContent className="p-5">
                   <div className="h-36 bg-gray-50 rounded mb-4 flex items-center justify-center p-4">
                     <img
-                    src={p.logo}
-                    alt={`${p.name} logo`}
-                    className="max-h-full max-w-full object-contain"
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      className="max-h-full max-w-full object-contain"
                     />
                   </div>
 

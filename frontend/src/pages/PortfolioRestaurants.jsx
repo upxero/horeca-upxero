@@ -60,6 +60,12 @@ const PortfolioRestaurants = () => {
 
   const upcomingRestaurants = [
     {
+      name: 'Copper75',
+      url: 'https://copper75.vercel.app/',
+      note: 'Nieuwe website – oplevering volgt',
+      logo: '/assets/logos/copper75.png',
+    },
+    {
       name: 'Okaya Sushi Restaurant',
       url: 'https://okaya-sushi.vercel.app/',
       note: 'Nieuwe website – oplevering volgt',

@@ -87,18 +87,46 @@ const TermsConditions = () => {
               </p>
             </section>
 
-            <section>
+           <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 4. Prijzen en betaling
               </h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Alle prijzen zijn exclusief btw, tenzij anders vermeld</li>
-                <li>Betaling gebeurt maandelijks vooraf</li>
+                <li>Alle prijzen zijn exclusief btw, tenzij anders vermeld.</li>
+                <li>Facturen zijn betaalbaar op de vervaldatum zoals vermeld op de factuur.</li>
+                <li>Betaling gebeurt maandelijks vooraf, tenzij schriftelijk anders overeengekomen.</li>
                 <li>
-                  Bij niet-tijdige betaling kan Upxero de dienstverlening opschorten
+                  De dienstverlening start of wordt verdergezet uitsluitend na ontvangst van de betaling.
                 </li>
                 <li>
-                  Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd
+                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling
+                  een nalatigheidsinterest verschuldigd conform de wettelijke rente voor
+                  handelstransacties, berekend vanaf de vervaldatum tot de dag van volledige betaling.
+                </li>
+                <li>
+                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40 verschuldigd,
+                  vermeerderd met eventuele bijkomende redelijke invorderingskosten.
+                </li>
+                <li>
+                  Alle kosten verbonden aan invordering, inclusief gerechtelijke en buitengerechtelijke kosten,
+                  zijn ten laste van de Klant.
+                </li>
+                <li>
+                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor om de dienstverlening
+                  geheel of gedeeltelijk onmiddellijk op te schorten zonder voorafgaande kennisgeving,
+                  zonder dat dit recht geeft op enige schadevergoeding.
+                </li>
+                <li>
+                  Bij niet-betaling kan de toegang tot de website, hosting en andere diensten tijdelijk
+                  of definitief worden geblokkeerd.
+                </li>
+                <li>
+                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor om de overeenkomst
+                  eenzijdig te beëindigen, de dienstverlening onmiddellijk stop te zetten en het openstaande
+                  bedrag via gerechtelijke weg te innen.
+                </li>
+                <li>
+                  Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd.
                 </li>
               </ul>
             </section>
@@ -109,12 +137,18 @@ const TermsConditions = () => {
               </h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  Overeenkomsten worden aangegaan voor een minimumduur van 6 maanden
+                  Overeenkomsten worden aangegaan voor een minimumduur van 6 maanden en kunnen niet
+                  voortijdig worden beëindigd, tenzij mits betaling van de resterende periode.
                 </li>
                 <li>Daarna maandelijks opzegbaar</li>
                 <li>Opzegging dient schriftelijk per e-mail te gebeuren</li>
                 <li>
                   Bij beëindiging vervalt het gebruiksrecht op de geleverde diensten
+                </li>
+                <li>
+                  Upxero behoudt zich het recht voor om de overeenkomst onmiddellijk en zonder
+                  voorafgaande ingebrekestelling te beëindigen in geval van wanbetaling of
+                  contractbreuk door de Klant.
                 </li>
               </ul>
             </section>
@@ -138,6 +172,10 @@ const TermsConditions = () => {
               <p>
                 Alle ontwikkelde websites, configuraties en automatisaties blijven
                 eigendom van Upxero, tenzij schriftelijk anders overeengekomen.
+              </p>
+              <p className="mt-2">
+                De Klant verkrijgt enkel een gebruiksrecht op de geleverde diensten zolang alle facturen
+                volledig zijn betaald. Bij openstaande bedragen kan dit gebruiksrecht onmiddellijk worden ingetrokken.
               </p>
             </section>
 

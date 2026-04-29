@@ -213,8 +213,7 @@ const TermsConditions = () => {
                 10. Toepasselijk recht
               </h2>
               <p>
-                Op alle overeenkomsten is Belgisch recht van toepassing.
-                Geschillen worden voorgelegd aan de bevoegde rechtbank in België.
+                Op alle overeenkomsten is Belgisch recht van toepassing. Alle geschillen behoren tot de exclusieve bevoegdheid van de rechtbanken van België.
               </p>
             </section>
 

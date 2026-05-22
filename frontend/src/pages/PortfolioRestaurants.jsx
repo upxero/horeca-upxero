@@ -49,11 +49,11 @@ const PortfolioRestaurants = () => {
     { name: 'Nakhon Thai', url: 'https://nakhon-thai.be/', note: 'Website + online reservatie', logo: '/assets/logos/nakhon-logo.png' },
     { name: 'Little Thai by Sanito', url: 'https://littlethaibysanito.be/', note: 'Website + online reservatie (Happy Chef)', logo: '/assets/logos/logo-sanito.png' },
     { name: 'Aroma Cubana', url: 'https://www.aroma-cubana.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-aroma-cubana.jpg' },
+    { name: 'Okaya Sushi Restaurant', url: 'https://okayasushi.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-okaya.jpg' },
   ];
 
   const upcomingRestaurants = [
     { name: 'Copper75', url: 'https://copper75.vercel.app/', note: 'Nieuwe website – oplevering volgt', logo: '/assets/logos/copper75.png' },
-    { name: 'Okaya Sushi Restaurant', url: 'https://okaya-sushi.vercel.app/', note: 'Nieuwe website – oplevering volgt', logo: '/assets/logos/logo-okaya.jpg' },
     { name: 'Armenian House', url: 'https://armenianhouse.netlify.app/', note: 'Nieuwe website – oplevering volgt', logo: '/assets/logos/armenian-house-logo.jpeg' },
     { name: 'Taverne Kopenhagen', url: 'https://tavernekopenhagen.com/', note: 'Bijna klaar – website in afronding', logo: '/assets/logos/logo-kopenhagen.jpg' },
   ];

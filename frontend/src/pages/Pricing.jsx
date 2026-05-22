@@ -42,7 +42,7 @@ const Pricing = () => {
           {
             "@type": "Offer",
             "name": "Start",
-            "price": "29",
+            "price": "19",
             "priceCurrency": "EUR",
             "description":
               "Online bestellen voor restaurants met bestaande website, inclusief hosting en support.",
@@ -51,7 +51,7 @@ const Pricing = () => {
           {
             "@type": "Offer",
             "name": "Grow",
-            "price": "49",
+            "price": "29",
             "priceCurrency": "EUR",
             "description":
               "Complete horeca website met online bestellen en WhatsApp assistent.",
@@ -60,7 +60,7 @@ const Pricing = () => {
           {
             "@type": "Offer",
             "name": "Boost",
-            "price": "79",
+            "price": "49",
             "priceCurrency": "EUR",
             "description":
               "Alles-in-één groeipakket met optimalisatie, Google integratie en rapportage.",

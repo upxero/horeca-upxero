@@ -169,7 +169,7 @@ export const pricingPlans = [
   {
     id: 1,
     name: "Start",
-    price: "29",
+    price: "19",
     period: "maand",
     setupPrice: 99,
     description:
@@ -188,7 +188,7 @@ export const pricingPlans = [
   {
     id: 2,
     name: "Grow",
-    price: "49",
+    price: "29",
     period: "maand",
     setupPrice: 199,
     description:
@@ -212,7 +212,7 @@ export const pricingPlans = [
   {
     id: 3,
     name: "Boost",
-    price: "79",
+    price: "49",
     period: "maand",
     setupPrice: 249,
     description:

@@ -232,7 +232,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founders Section 
+      {/* Founders Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -240,14 +240,13 @@ const About = () => {
               Wie zit achter Upxero?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Upxero wordt geleid door twee complementaire profielen:
-              technologie en marketing, perfect afgestemd op de dagelijkse realiteit
-              van moderne horecazaken.
+              Upxero wordt gebouwd door developers met een passie voor moderne horecawebsites, 
+              online bestellingen en slimme digitale automatisatie.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {/* Michael 
+            {/* Michael */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
@@ -274,34 +273,38 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Mario 
+            {/* Safi */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md">
                   <img
-                    src="/images/mario.png"
-                    alt="Portret van Mario"
+                    src="/images/safi.png"
+                    alt="Portret van Safi"
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Mario
+                  Safi
                 </h3>
+
                 <p className="text-blue-900 font-semibold mb-4">
-                  Marketing & strategische communicatie
+                  Full Stack Development & software architectuur
                 </p>
+
                 <p className="text-gray-600 leading-relaxed">
-                  Mario helpt horecazaken om online zichtbaar te worden
-                  en meer directe bestellingen te genereren.
-                  Hij vertaalt technologie en automatisatie naar duidelijke communicatie
-                  en strategie, zodat klanten maximaal rendement halen
-                  uit hun website en online bestelkanalen.
+                  Safi ondersteunt Upxero bij de ontwikkeling van schaalbare digitale oplossingen
+                  voor horeca en online dienstverlening. Zijn expertise ligt zowel in frontend
+                  als backend development, waardoor performante websites, slimme integraties
+                  en stabiele systemen naadloos gecombineerd worden.
+                  Samen bouwen we moderne platformen die gebruiksvriendelijkheid,
+                  automatisatie en betrouwbaarheid centraal zetten.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
-      </section> */}
+      </section> 
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">

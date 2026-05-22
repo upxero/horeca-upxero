@@ -87,7 +87,7 @@ const Pricing = () => {
       category: "Basis online bestellen",
       features: [
         {
-          name: "Online bestelsysteem voor afhaling & takeaway",
+          name: "Online bestelsysteem voor afhaling & levering",
           start: true,
           grow: true,
           boost: true,
@@ -99,7 +99,13 @@ const Pricing = () => {
           boost: true,
         },
         {
-          name: "Koppeling met GloriaFood (betrouwbaar & commissievrij)",
+          name: "Koppeling met GloriaFood (commissievrij)",
+          start: true,
+          grow: true,
+          boost: true,
+        },
+        {
+          name: "Online betalingen via Stripe mogelijk (+€25/maand) inclusief Bancontact, iDEAL en kredietkaart",
           start: true,
           grow: true,
           boost: true,
@@ -133,6 +139,12 @@ const Pricing = () => {
           grow: true,
           boost: true,
         },
+        {
+          name: "Domeinnaam inbegrepen (.be / .nl / .com)",
+          start: false,
+          grow: true,
+          boost: true,
+        },
       ],
     },
     {
@@ -145,13 +157,13 @@ const Pricing = () => {
           boost: true,
         },
         {
-          name: "WhatsApp bestel-flow (vaste antwoorden, geen AI)",
+          name: "WhatsApp bestel-flow met automatische antwoorden",
           start: true,
           grow: true,
           boost: true,
         },
         {
-          name: "Klanten automatisch doorsturen naar online bestellen",
+          name: "Automatische doorverwijzing naar online bestellen",
           start: false,
           grow: true,
           boost: true,
@@ -168,13 +180,13 @@ const Pricing = () => {
           boost: true,
         },
         {
-          name: "AI beantwoordt vrije vragen (menu, allergenen, openingstijden)",
+          name: "AI beantwoordt vrije vragen over menu, allergenen en openingsuren",
           start: false,
           grow: false,
           boost: true,
         },
         {
-          name: "AI stuurt actief aan op bestellen via de website",
+          name: "AI begeleidt klanten richting online bestelling",
           start: false,
           grow: false,
           boost: true,
@@ -185,13 +197,13 @@ const Pricing = () => {
       category: "Optimalisatie & groei",
       features: [
         {
-          name: "Conversie-optimalisatie (meer bestellingen uit hetzelfde verkeer)",
+          name: "Conversie-optimalisatie",
           start: false,
           grow: false,
           boost: true,
         },
         {
-          name: "Google Business integratie (bestellen via Google)",
+          name: "Google Business integratie",
           start: false,
           grow: false,
           boost: true,
@@ -220,7 +232,7 @@ const Pricing = () => {
           boost: "5 vacatures",
         },
         {
-          name: "Featured badge voor extra zichtbaarheid",
+          name: "Featured vacature badge",
           start: false,
           grow: true,
           boost: true,
@@ -232,7 +244,7 @@ const Pricing = () => {
           boost: true,
         },
         {
-          name: "Prioritaire plaatsing boven andere vacatures",
+          name: "Prioritaire vacatureplaatsing",
           start: false,
           grow: false,
           boost: true,
@@ -282,7 +294,7 @@ const Pricing = () => {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Kies het plan dat bij uw restaurant past. Geen verborgen kosten, 
-              geen commissies per bestelling. Maandelijks opzegbaar.
+              geen commissies op bestellingen. Maandelijks opzegbaar.
             </p>
             <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold">
               <Check size={20} />

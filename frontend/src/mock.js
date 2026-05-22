@@ -84,6 +84,12 @@ export const faqs = [
     question: "Kan ik opzeggen wanneer ik wil?",
     answer:
       "Ja. Er geldt een minimumduur van 6 maanden. Daarna is het abonnement maandelijks opzegbaar."
+  },
+  {
+    id: 10,
+    question: "Welke online betaalmethodes zijn mogelijk?",
+    answer:
+      "Via de optionele Stripe betaalmodule (+€25/maand) kunnen klanten betalen met Bancontact, iDEAL, kredietkaart, Apple Pay en andere populaire betaalmethodes."
   }
 ];
 
@@ -100,7 +106,7 @@ export const services = [
     id: 2,
     title: "Online Bestellen Zonder Commissie",
     description:
-      "Directe bestellingen via uw eigen website voor afhaling en takeaway. Geen tussenpartijen, geen commissie per bestelling.",
+      "Directe bestellingen via uw eigen website voor afhaling en levering. Geen tussenpartijen, geen commissie per bestelling.",
     icon: "ShoppingCart",
     image: "https://images.pexels.com/photos/12935041/pexels-photo-12935041.jpeg"
   },
@@ -175,7 +181,7 @@ export const pricingPlans = [
     description:
       "Voor restaurants met een bestaande website die online willen verkopen én 1 vacature willen publiceren.",
     features: [
-      "Online bestelsysteem (afhaling & takeaway)",
+      "Online bestelsysteem voor afhaling & levering",
       "WhatsApp bestel-flow (vaste antwoorden, geen AI)",
       "Menu setup & volledige integratie",
       "Hosting, updates & beveiliging",
@@ -195,7 +201,7 @@ export const pricingPlans = [
       "Complete professionele horeca website met automatisatie, domeinnaam en verhoogde zichtbaarheid.",
     features: [
       "Professionele horeca website (mobile-first)",
-      "Online bestelsysteem",
+      "Online bestelsysteem voor afhaling & levering",
       "WhatsApp bestel-flow (vaste antwoorden, geen AI)",
       "Klanten automatisch doorsturen naar online bestellen",
       "Menu setup & integratie",

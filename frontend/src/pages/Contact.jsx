@@ -263,15 +263,15 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
                         <option value="start">
-                          Start – bestaande website uitbreiden met online bestellen (€29/maand)
+                          Start – bestaande website uitbreiden met online bestellen (€19/maand)
                         </option>
 
                         <option value="grow">
-                          Grow – nieuwe horeca website + automatisatie (€49/maand)
+                          Grow – nieuwe horeca website + automatisatie (€29/maand)
                         </option>
 
                         <option value="boost">
-                          Boost – AI-Assistent & extra conversie-optimalisatie (€79/maand)
+                          Boost – AI-Assistent & extra conversie-optimalisatie (€49/maand)
                         </option>
 
                         <option value="not-sure">

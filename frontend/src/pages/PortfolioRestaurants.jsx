@@ -48,6 +48,7 @@ const PortfolioRestaurants = () => {
     { name: 'Akira Sushi', url: 'https://akirasushi.be/', note: 'Website + reservatieformulier', logo: '/assets/logos/akirasushi.png' },
     { name: 'Nakhon Thai', url: 'https://nakhon-thai.be/', note: 'Website + online reservatie', logo: '/assets/logos/nakhon-logo.png' },
     { name: 'Little Thai by Sanito', url: 'https://littlethaibysanito.be/', note: 'Website + online reservatie (Happy Chef)', logo: '/assets/logos/logo-sanito.png' },
+    { name: 'Aroma Cubana', url: 'https://www.aroma-cubana.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-aroma-cubana.jpg' },
     { name: 'Okaya Sushi Restaurant', url: 'https://okayasushi.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-okaya.jpg' },
   ];
 

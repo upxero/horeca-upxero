@@ -260,18 +260,18 @@ const Home = () => {
                     </span>
                   </div>
 
-                  {/* SETUP ACTIE – exact hetzelfde */}
+                  {/* SETUP ACTIE */}
                   {plan.setupPrice && (
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-green-700">
-                        Nu tijdelijk: gratis setup
+                      <p className="text-sm font-semibold text-red-600">
+                        Tijdelijke actie: 50% korting op de setup
                       </p>
                       <p className="text-sm text-gray-500">
                         <span className="line-through mr-1">
-                          €{plan.setupPrice} setup
+                          €{plan.setupPrice}
                         </span>
                         <span className="text-green-700 font-semibold">
-                          €0
+                          €{plan.setupPrice / 2} setup
                         </span>
                       </p>
                     </div>

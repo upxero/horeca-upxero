@@ -177,7 +177,7 @@ export const pricingPlans = [
     name: "Start",
     price: "19",
     period: "maand",
-    setupPrice: 99,
+    setupPrice: 100,
     description:
       "Voor restaurants met een bestaande website die online willen verkopen én 1 vacature willen publiceren.",
     features: [
@@ -196,7 +196,7 @@ export const pricingPlans = [
     name: "Grow",
     price: "29",
     period: "maand",
-    setupPrice: 199,
+    setupPrice: 200,
     description:
       "Complete professionele horeca website met automatisatie, domeinnaam en verhoogde zichtbaarheid.",
     features: [
@@ -220,7 +220,7 @@ export const pricingPlans = [
     name: "Boost",
     price: "49",
     period: "maand",
-    setupPrice: 249,
+    setupPrice: 250,
     description:
       "Voor restaurants die maximale groei willen: AI automatisatie, premium zichtbaarheid en volledige business infrastructuur.",
     features: [

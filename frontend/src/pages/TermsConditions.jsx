@@ -93,38 +93,39 @@ const TermsConditions = () => {
               </h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Alle prijzen zijn exclusief btw, tenzij anders vermeld.</li>
-                <li>Facturen zijn betaalbaar op de vervaldatum zoals vermeld op de factuur.</li>
+
+                <li>Facturen zijn betaalbaar uiterlijk op de vervaldatum zoals vermeld op de factuur.</li>
+
                 <li>Betaling gebeurt maandelijks vooraf, tenzij schriftelijk anders overeengekomen.</li>
+
                 <li>
-                  De dienstverlening start of wordt verdergezet uitsluitend na ontvangst van de betaling.
+                  De dienstverlening wordt uitsluitend gestart of verdergezet nadat de verschuldigde betaling volledig is ontvangen.
                 </li>
+
                 <li>
-                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling
-                  een nalatigheidsinterest verschuldigd conform de wettelijke rente voor
-                  handelstransacties, berekend vanaf de vervaldatum tot de dag van volledige betaling.
+                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling een nalatigheidsinterest verschuldigd conform de wettelijke rente voor handelstransacties, berekend vanaf de vervaldatum tot de dag van volledige betaling.
                 </li>
+
                 <li>
-                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40 verschuldigd,
-                  vermeerderd met eventuele bijkomende redelijke invorderingskosten.
+                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40 verschuldigd, onverminderd eventuele bijkomende redelijke invorderings-, gerechtelijke en buitengerechtelijke kosten.
                 </li>
+
                 <li>
-                  Alle kosten verbonden aan invordering, inclusief gerechtelijke en buitengerechtelijke kosten,
-                  zijn ten laste van de Klant.
+                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor de dienstverlening geheel of gedeeltelijk onmiddellijk op te schorten, zonder voorafgaande kennisgeving en zonder dat de Klant aanspraak kan maken op enige schadevergoeding.
                 </li>
+
                 <li>
-                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor om de dienstverlening
-                  geheel of gedeeltelijk onmiddellijk op te schorten zonder voorafgaande kennisgeving,
-                  zonder dat dit recht geeft op enige schadevergoeding.
+                  Bij opschorting wegens wanbetaling kan de toegang tot de website, hosting, e-mail en andere geleverde diensten tijdelijk of definitief worden geblokkeerd.
                 </li>
+
                 <li>
-                  Bij niet-betaling kan de toegang tot de website, hosting en andere diensten tijdelijk
-                  of definitief worden geblokkeerd.
+                  Voor de heractivering van de dienstverlening na een opschorting wegens wanbetaling wordt een administratieve heractiveringskost van €25 aangerekend. De dienstverlening wordt pas opnieuw geactiveerd nadat alle openstaande bedragen, inclusief eventuele interesten, invorderingskosten en de heractiveringskost, volledig zijn voldaan.
                 </li>
+
                 <li>
-                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor om de overeenkomst
-                  eenzijdig te beëindigen, de dienstverlening onmiddellijk stop te zetten en het openstaande
-                  bedrag via gerechtelijke weg te innen.
+                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor de overeenkomst eenzijdig te beëindigen, de dienstverlening definitief stop te zetten en het openstaande bedrag via gerechtelijke weg te innen.
                 </li>
+
                 <li>
                   Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd.
                 </li>
@@ -213,7 +214,7 @@ const TermsConditions = () => {
                 10. Toepasselijk recht
               </h2>
               <p>
-                Op alle overeenkomsten is Belgisch recht van toepassing. Alle geschillen behoren tot de exclusieve bevoegdheid van de rechtbanken van België.
+                Op alle overeenkomsten is Belgisch recht van toepassing. Alle geschillen worden uitsluitend voorgelegd aan de bevoegde rechtbanken van het gerechtelijk arrondissement Antwerpen, afdeling Dendermonde.
               </p>
             </section>
 

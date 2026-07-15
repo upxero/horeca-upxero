@@ -39,6 +39,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/restaurant-portfolio" element={<PortfolioRestaurants />} />
+          <Route path="/bedankt" element={<ThankYou />} />
         </Routes>
 
         <ScrollToTop />

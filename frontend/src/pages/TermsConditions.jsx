@@ -45,8 +45,9 @@ const TermsConditions = () => {
               <p>In deze algemene voorwaarden wordt verstaan onder:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Upxero:</strong> De dienstverlener die digitale oplossingen
-                  aanbiedt voor horecazaken binnen België en Nederland.
+                  <strong>Upxero:</strong> Upxero: De dienstverlener die digitale oplossingen, websites, 
+                  onderhoud en technische ondersteuning aanbiedt aan bedrijven binnen België, Nederland en 
+                  andere Europese landen.
                 </li>
                 <li>
                   <strong>Klant:</strong> De natuurlijke of rechtspersoon die gebruik
@@ -91,43 +92,87 @@ const TermsConditions = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 4. Prijzen en betaling
               </h2>
+
               <ul className="list-disc pl-6 space-y-2">
-                <li>Alle prijzen zijn exclusief btw, tenzij anders vermeld.</li>
-
-                <li>Facturen zijn betaalbaar uiterlijk op de vervaldatum zoals vermeld op de factuur.</li>
-
-                <li>Betaling gebeurt maandelijks vooraf, tenzij schriftelijk anders overeengekomen.</li>
-
                 <li>
-                  De dienstverlening wordt uitsluitend gestart of verdergezet nadat de verschuldigde betaling volledig is ontvangen.
+                  Alle prijzen zijn exclusief btw, tenzij anders vermeld.
                 </li>
 
                 <li>
-                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling een nalatigheidsinterest verschuldigd conform de wettelijke rente voor handelstransacties, berekend vanaf de vervaldatum tot de dag van volledige betaling.
+                  Facturen zijn betaalbaar uiterlijk op de vervaldatum zoals vermeld op de factuur.
+                  Voor abonnementen en terugkerende diensten kan betaling plaatsvinden via automatische
+                  betaling volgens de gekozen betaalmethode.
                 </li>
 
                 <li>
-                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40 verschuldigd, onverminderd eventuele bijkomende redelijke invorderings-, gerechtelijke en buitengerechtelijke kosten.
+                  Betaling gebeurt maandelijks vooraf, tenzij schriftelijk anders overeengekomen.
                 </li>
 
                 <li>
-                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor de dienstverlening geheel of gedeeltelijk onmiddellijk op te schorten, zonder voorafgaande kennisgeving en zonder dat de Klant aanspraak kan maken op enige schadevergoeding.
+                  Voor abonnementen en terugkerende diensten kan Upxero gebruikmaken van automatische
+                  betalingen via een externe betaalprovider. De Klant geeft hiervoor een geldige
+                  betaalmachtiging af via de aangeboden betaalomgeving.
                 </li>
 
                 <li>
-                  Bij opschorting wegens wanbetaling kan de toegang tot de website, hosting, e-mail en andere geleverde diensten tijdelijk of definitief worden geblokkeerd.
+                  Door het activeren van een automatische betaling geeft de Klant toestemming voor het
+                  periodiek verwerken van de overeengekomen abonnementsbedragen gedurende de looptijd
+                  van de overeenkomst.
                 </li>
 
                 <li>
-                  Voor de heractivering van de dienstverlening na een opschorting wegens wanbetaling wordt een administratieve heractiveringskost van €25 aangerekend. De dienstverlening wordt pas opnieuw geactiveerd nadat alle openstaande bedragen, inclusief eventuele interesten, invorderingskosten en de heractiveringskost, volledig zijn voldaan.
+                  De Klant blijft verantwoordelijk voor het beschikbaar houden van een geldige
+                  betaalmethode gedurende de volledige looptijd van de overeenkomst. Indien een
+                  automatische betaling niet kan worden uitgevoerd, blijft het verschuldigde bedrag
+                  volledig opeisbaar.
                 </li>
 
                 <li>
-                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor de overeenkomst eenzijdig te beëindigen, de dienstverlening definitief stop te zetten en het openstaande bedrag via gerechtelijke weg te innen.
+                  De dienstverlening wordt uitsluitend gestart of verdergezet nadat de verschuldigde
+                  betaling volledig is ontvangen.
                 </li>
 
                 <li>
-                  Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd.
+                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling
+                  een nalatigheidsinterest verschuldigd conform de wettelijke rente voor handelstransacties,
+                  berekend vanaf de vervaldatum tot de dag van volledige betaling.
+                </li>
+
+                <li>
+                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40
+                  verschuldigd, onverminderd eventuele bijkomende redelijke invorderings-, gerechtelijke
+                  en buitengerechtelijke kosten.
+                </li>
+
+                <li>
+                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor de dienstverlening geheel
+                  of gedeeltelijk onmiddellijk op te schorten, zonder voorafgaande kennisgeving en zonder
+                  dat de Klant aanspraak kan maken op enige schadevergoeding.
+                </li>
+
+                <li>
+                  Bij opschorting wegens wanbetaling kan de toegang tot de website, hosting, e-mail en
+                  andere geleverde diensten tijdelijk of definitief worden geblokkeerd.
+                </li>
+
+                <li>
+                  Voor de heractivering van de dienstverlening na een opschorting wegens wanbetaling
+                  wordt een administratieve heractiveringskost van €25 aangerekend. De dienstverlening
+                  wordt pas opnieuw geactiveerd nadat alle openstaande bedragen, inclusief eventuele
+                  interesten, invorderingskosten en de heractiveringskost, volledig zijn voldaan.
+                </li>
+
+                <li>
+                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor de overeenkomst
+                  eenzijdig te beëindigen, de dienstverlening definitief stop te zetten en het openstaande
+                  bedrag via gerechtelijke weg te innen.
+                </li>
+
+                <li>
+                  Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd. Bij een aangekondigde
+                  prijswijziging heeft de Klant het recht de overeenkomst vóór de ingangsdatum van de
+                  prijswijziging schriftelijk te beëindigen indien de Klant niet akkoord gaat met de
+                  nieuwe tarieven.
                 </li>
               </ul>
             </section>
@@ -136,20 +181,29 @@ const TermsConditions = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 5. Looptijd en opzegging
               </h2>
+
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  Overeenkomsten worden aangegaan voor een minimumduur van 6 maanden en kunnen niet
-                  voortijdig worden beëindigd, tenzij mits betaling van de resterende periode.
+                  Overeenkomsten worden aangegaan voor een minimumduur van 12 maanden.
                 </li>
-                <li>Daarna maandelijks opzegbaar</li>
-                <li>Opzegging dient schriftelijk per e-mail te gebeuren</li>
+
                 <li>
-                  Bij beëindiging vervalt het gebruiksrecht op de geleverde diensten
+                  Na afloop van de minimumduur wordt de overeenkomst automatisch verlengd voor
+                  onbepaalde tijd, tenzij de Klant schriftelijk opzegt met een opzegtermijn van 30 dagen.
                 </li>
+
+                <li>
+                  Opzegging dient schriftelijk per e-mail te gebeuren.
+                </li>
+
+                <li>
+                  Bij beëindiging vervalt het gebruiksrecht op de geleverde diensten.
+                </li>
+
                 <li>
                   Upxero behoudt zich het recht voor om de overeenkomst onmiddellijk en zonder
-                  voorafgaande ingebrekestelling te beëindigen in geval van wanbetaling of
-                  contractbreuk door de Klant.
+                  voorafgaande ingebrekestelling te beëindigen in geval van wanbetaling of contractbreuk
+                  door de Klant.
                 </li>
               </ul>
             </section>

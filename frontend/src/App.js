@@ -12,6 +12,7 @@ import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PortfolioRestaurants from './pages/PortfolioRestaurants';
+import ThankYou from './pages/ThankYou';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/restaurant-portfolio" element={<PortfolioRestaurants />} />
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
 
         <ScrollToTop />

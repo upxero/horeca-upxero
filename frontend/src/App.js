@@ -43,6 +43,9 @@ function App() {
         </Routes>
 
         <ScrollToTop />
+        <ScrollToTop />
+
+        {/*
         <FloatingSupportHint />
 
         <WhatsAppButton onClick={() => setWhatsappOpen(true)} />
@@ -50,6 +53,7 @@ function App() {
         {whatsappOpen && (
           <WhatsAppPopup onClose={() => setWhatsappOpen(false)} />
         )}
+        */}
       </BrowserRouter>
 
       <CookieBanner />

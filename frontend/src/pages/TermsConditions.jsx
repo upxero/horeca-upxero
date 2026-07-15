@@ -45,7 +45,7 @@ const TermsConditions = () => {
               <p>In deze algemene voorwaarden wordt verstaan onder:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Upxero:</strong> Upxero: De dienstverlener die digitale oplossingen, websites, 
+                  <strong>Upxero:</strong> De dienstverlener die digitale oplossingen, websites, 
                   onderhoud en technische ondersteuning aanbiedt aan bedrijven binnen België, Nederland en 
                   andere Europese landen.
                 </li>
@@ -169,10 +169,11 @@ const TermsConditions = () => {
                 </li>
 
                 <li>
-                  Prijswijzigingen worden minimaal 30 dagen vooraf aangekondigd. Bij een aangekondigde
-                  prijswijziging heeft de Klant het recht de overeenkomst vóór de ingangsdatum van de
-                  prijswijziging schriftelijk te beëindigen indien de Klant niet akkoord gaat met de
-                  nieuwe tarieven.
+                  Abonnementsprijzen kunnen door Upxero worden aangepast indien noodzakelijk door
+                  wijzigingen in kosten van externe diensten, hosting, software, licenties,
+                  infrastructuur of andere bedrijfskosten. De Klant wordt hiervan vooraf op de hoogte
+                  gesteld. Indien de Klant niet akkoord gaat met de nieuwe prijs, kan de Klant de
+                  overeenkomst beëindigen vóór de ingangsdatum van de prijswijziging.
                 </li>
               </ul>
             </section>

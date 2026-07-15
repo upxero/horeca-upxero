@@ -6,16 +6,16 @@ import { CookieBanner } from './components/CookieBanner';
 import { ScrollToTop } from './components/ScrollToTop';
 import ScrollToTopOnMount from './components/ScrollToTopOnMount';
 
-import Home from './pages/Home';
+import Maintenance from './pages/Maintenance';
 import Services from './pages/Services';
 import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PortfolioRestaurants from './pages/PortfolioRestaurants';
-import ThankYou from './pages/ThankYou';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
+import ThankYou from './pages/ThankYou';
 
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { WhatsAppPopup } from './components/WhatsAppPopup';
@@ -30,7 +30,7 @@ function App() {
         <ScrollToTopOnMount />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Maintenance />} />
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
@@ -39,7 +39,6 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/restaurant-portfolio" element={<PortfolioRestaurants />} />
-          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
 
         <ScrollToTop />

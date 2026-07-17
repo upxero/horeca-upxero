@@ -31,14 +31,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Maintenance />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Maintenance />} />
+          <Route path="/pricing" element={<Maintenance />} />
+          <Route path="/about" element={<Maintenance />} />
+          <Route path="/contact" element={<Maintenance />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/restaurant-portfolio" element={<PortfolioRestaurants />} />
+          <Route path="/restaurant-portfolio" element={<Maintenance />} />
           <Route path="/bedankt" element={<ThankYou />} />
         </Routes>
 

@@ -48,13 +48,13 @@ const PortfolioRestaurants = () => {
     { name: 'Akira Sushi', url: 'https://akirasushi.be/', note: 'Website + reservatieformulier', logo: '/assets/logos/akirasushi.png' },
     { name: 'Nakhon Thai', url: 'https://nakhon-thai.be/', note: 'Website + online reservatie', logo: '/assets/logos/nakhon-logo.png' },
     { name: 'Little Thai by Sanito', url: 'https://littlethaibysanito.be/', note: 'Website + online reservatie (Happy Chef)', logo: '/assets/logos/logo-sanito.png' },
-    { name: 'Aroma Cubana', url: 'https://www.aroma-cubana.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-aroma-cubana.jpg' },
+    { name: 'Taverne Kopenhagen', url: 'https://tavernekopenhagen.com/', note: 'Nieuwe website online', logo: '/assets/logos/logo-kopenhagen.jpg' },
     { name: 'Okaya Sushi Restaurant', url: 'https://okayasushi.be/', note: 'Nieuwe website online', logo: '/assets/logos/logo-okaya.jpg' },
+    { name: 'AK Taekwondo Pakchong', url: 'https://www.aktaekwondopakchong.com/', note: 'Nieuwe website online', logo: '/assets/logos/ak-logo.jpg' },
   ];
 
   const upcomingRestaurants = [
-    { name: 'Armenian House', url: 'https://armenianhouse.netlify.app/', note: 'Nieuwe website – oplevering volgt', logo: '/assets/logos/armenian-house-logo.jpeg' },
-    { name: 'Taverne Kopenhagen', url: 'https://tavernekopenhagen.com/', note: 'Bijna klaar – website in afronding', logo: '/assets/logos/logo-kopenhagen.jpg' },
+    { name: 'De Grave VOF', url: 'https://de-grave-vof.vercel.app/', note: 'Bijna klaar – website in afronding', logo: '/assets/logos/degrave.png' },
   ];
 
   const otherProjects = [

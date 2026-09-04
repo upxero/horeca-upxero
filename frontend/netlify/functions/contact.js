@@ -210,7 +210,7 @@ exports.handler = async (event) => {
 
     const result = await resend.emails.send({
       from: "no-reply@upxero.com",
-      to: "info@upxero.com",
+      to: "mike.upxero@gmail.com",
       replyTo: email,
       subject: `Nieuwe Demo Aanvraag van ${name} (${business})`,
       html: htmlContent,

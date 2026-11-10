@@ -117,6 +117,32 @@ test.each(pages)('%s supports direct Dutch entry', async (ns, path, Page, englis
   expect(host.textContent).not.toContain('MISSING:');
 });
 
+test.each(['/', '/nl/', '/services', '/nl/services', '/pricing', '/nl/pricing'])('Ordering brand is clear without repeated logos at %s', async pathname => {
+  await mount(pathname);
+  const logos = host.querySelectorAll('main img[src="/images/upxero-ordering-logo.png"]');
+  expect(logos).toHaveLength(1);
+  expect(logos[0].getAttribute('alt')).toBe(''); // Adjacent heading/row label already names the product.
+  expect(logos[0].getAttribute('width')).toBe('2172');
+  expect(logos[0].getAttribute('height')).toBe('724');
+  expect(host.querySelector('header img').getAttribute('src')).toBe('/images/logo-white.png');
+  const label = pathname.startsWith('/nl') ? 'Probeer Ordering gratis' : 'Try Ordering Free';
+  expect(host.querySelector('header a[href="https://ordering.upxero.com"]').textContent.trim()).toBe(label);
+  if (pathname.endsWith('/pricing')) {
+    expect(logos[0].closest('th').textContent).toContain(instance.t('content:orderingProIncluded'));
+    const cells = logos[0].closest('tr').querySelectorAll('td');
+    expect(cells[0].textContent).toContain(instance.t('content:notIncluded'));
+    expect(cells[1].textContent).toContain(instance.t('content:included'));
+    expect(cells[2].textContent).toContain(instance.t('content:included'));
+  } else if (!pathname.includes('services')) {
+    const card = logos[0].parentElement;
+    expect(card.textContent).toContain(instance.t('home:orderingIntro'));
+    expect(card.querySelector('a').getAttribute('href')).toBe('https://ordering.upxero.com');
+    expect(card.querySelector('a').textContent).toBe(label);
+    expect(card.querySelector('a').getAttribute('rel')).toBe('noopener noreferrer');
+  }
+  expect(host.textContent).not.toContain('MISSING:');
+});
+
 test.each(['en', 'nl'])('About founder and collaborator roles are distinct in %s', async language => {
   await mount(language === 'nl' ? '/nl/about' : '/about');
   const dictionary = resources[language].about;

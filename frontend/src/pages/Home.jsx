@@ -113,11 +113,12 @@ const Home = () => {
 
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
-                <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-3xl">📞</span>
-                </div>
+                <img src="/images/upxero-ordering-logo.png" alt="" width={2172} height={724} loading="lazy" className="w-64 max-w-full h-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{t("orderingTitle")}</h3>
                 <p className="text-gray-600">{t("orderingIntro")}</p>
+                <Button asChild variant="outline" className="mt-6 border-2 border-blue-900 text-blue-900 hover:bg-blue-50 rounded-lg font-semibold">
+                  <a href="https://ordering.upxero.com" target="_blank" rel="noopener noreferrer">{t('common:header.startForFree')}</a>
+                </Button>
               </CardContent>
             </Card>
           </div>

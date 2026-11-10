@@ -43,7 +43,7 @@ const Pricing = () => {
     ...['prioritySupport', 'monthlyChanges'].map(key => ({ name: t('content:' + key), start: false, grow: false, boost: true })),
   ] }, { category: t('orderingProduct'), features: [
     { name: t('content:orderingFreeAvailable'), start: true, grow: false, boost: false },
-    { name: t('content:orderingProIncluded'), start: false, grow: true, boost: true },
+    { name: t('content:orderingProIncluded'), start: false, grow: true, boost: true, orderingBrand: true },
   ] }];
 
   return (
@@ -233,7 +233,10 @@ const Pricing = () => {
                           key={featureIndex}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                         >
-                          <th scope="row" className="px-6 py-4 text-left font-normal text-gray-700">{feature.name}</th>
+                          <th scope="row" className="px-6 py-4 text-left font-normal text-gray-700">
+                            {feature.orderingBrand && <img src="/images/upxero-ordering-logo.png" alt="" width={2172} height={724} loading="lazy" className="w-36 max-w-full h-auto mb-2" />}
+                            {feature.name}
+                          </th>
                           <td className="px-6 py-4 text-center">
                             {typeof feature.start === 'string' ? feature.start : feature.start ? (
                               <><Check aria-hidden="true" className="text-green-600 mx-auto" size={20} /><span className="sr-only">{t('content:included')}</span></>

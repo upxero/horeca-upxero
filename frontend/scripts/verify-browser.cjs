@@ -103,7 +103,7 @@ module.exports = async function verifyBrowser({ origin, manifest }) {
       assert.equal(state.overflow, false, 'Horizontal overflow: ' + pathname);
     }
     if (process.argv.includes('--ui-only')) {
-      await require('./verify-home-ui.cjs')({ send, evaluate, ready, until, origin, artifacts });
+      await require(process.argv.includes('--ordering-brand-only') ? './verify-ordering-brand.cjs' : './verify-home-ui.cjs')({ send, evaluate, ready, until, origin, artifacts });
       console.log('Focused UI screenshots: ' + artifacts);
       return;
     }

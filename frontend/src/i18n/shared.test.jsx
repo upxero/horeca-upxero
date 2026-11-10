@@ -60,11 +60,11 @@ test.each([
   expect(desktop.querySelector('[aria-current="page"]').getAttribute('href')).toBe(url);
   expect(host.querySelector('img').getAttribute('src')).toBe('/images/logo-white.png');
   expect(host.querySelector('header a:not(.skip-link)').getAttribute('href')).toBe(lang === 'nl' ? '/nl/' : '/');
-  expect(host.querySelector('a[href="https://ordering.upxero.com"]').textContent.trim()).toBe(lang === 'nl' ? 'Gratis starten' : 'Start for Free');
+  expect(host.querySelector('a[href="https://ordering.upxero.com"]').textContent.trim()).toBe(lang === 'nl' ? 'Probeer Ordering gratis' : 'Try Ordering Free');
   expect(button(menu).getAttribute('aria-expanded')).toBe('false');
   await click(button(menu));
   const mobile = host.querySelector('#mobile-navigation');
-  expect(mobile.querySelector('a[href="https://ordering.upxero.com"]').textContent.trim()).toBe(lang === 'nl' ? 'Gratis starten' : 'Start for Free');
+  expect(mobile.querySelector('a[href="https://ordering.upxero.com"]').textContent.trim()).toBe(lang === 'nl' ? 'Probeer Ordering gratis' : 'Try Ordering Free');
   expect(mobile.className).toContain('xl:hidden');
   expect(host.querySelectorAll('[role="group"]')).toHaveLength(1);
   expect(mobile.textContent).toContain(services);

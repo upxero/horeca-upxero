@@ -117,6 +117,23 @@ test.each(pages)('%s supports direct Dutch entry', async (ns, path, Page, englis
   expect(host.textContent).not.toContain('MISSING:');
 });
 
+test.each(['en', 'nl'])('About founder and collaborator roles are distinct in %s', async language => {
+  await mount(language === 'nl' ? '/nl/about' : '/about');
+  const dictionary = resources[language].about;
+  const michael = [...host.querySelectorAll('h3')].find(node => node.textContent.trim() === 'Michael Bernard');
+  const safi = [...host.querySelectorAll('h3')].find(node => node.textContent.trim() === 'Safi');
+  expect(michael).toBeTruthy(); expect(safi).toBeTruthy();
+  expect(michael.parentElement.textContent).toContain(language === 'nl' ? 'Oprichter & eigenaar van Upxero OÜ' : 'Founder & Owner of Upxero OÜ');
+  expect(safi.parentElement.textContent).toContain(language === 'nl' ? 'Technisch samenwerkingspartner' : 'Technical Collaboration Partner');
+  expect(safi.parentElement.textContent).not.toMatch(/founder|owner|oprichter|eigenaar/i);
+  for (const key of ['teamDescription', 'teamCollaboration', 'michaelDescription', 'michaelBackground', 'michaelGoal', 'safiSupportsUpxeroInDevelopingScalableDigitalSolutions', 'safiCollaboration']) {
+    expect(host.textContent).toContain(dictionary[key]);
+  }
+  expect(michael.parentElement.querySelector('img').getAttribute('src')).toBe('/images/michael.png');
+  expect(safi.parentElement.querySelector('img').getAttribute('src')).toBe('/images/safi.png');
+  expect(host.textContent).not.toContain('MISSING:');
+});
+
 test('all namespaces are registered with matching, nonempty translations and English fallback', async () => {
   expect(Object.keys(resources.en).sort()).toEqual(['common', ...pages.map(p => p[0]), 'content', 'seo'].sort());
   const flatten = (object, prefix = '') => Object.entries(object).flatMap(([key, value]) =>

@@ -1,9 +1,14 @@
 import React from 'react';
+import { useCurrentYear } from '../hooks/useCurrentYear';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
+  const { localize } = useLanguage();
+  const currentYear = useCurrentYear();
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -14,20 +19,19 @@ export const Footer = () => {
             <div className="flex items-center space-x-2 mb-4">
               <div className="bg-gradient-to-br from-blue-900 to-blue-700 w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
                 <img
-                  src="images/logo-white.png"
-                  alt="Upxero logo"
+                  src="/images/logo-white.png"
+                  alt={t('logoAlt')}
                   className="w-6 h-6"
                 />
               </div>
               <span className="text-2xl font-bold text-white">UPXERO</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Upxero helpt horecazaken in België en Nederland met commissievrij
-              online bestellen via hun eigen website en een slimme WhatsApp-flow.
-              Uitbreidbaar met een AI-assistent.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-3">
               <a
+                aria-label="Facebook"
                 href="https://www.facebook.com/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,6 +40,7 @@ export const Footer = () => {
                 <Facebook size={18} />
               </a>
               <a
+                aria-label="Instagram"
                 href="https://www.instagram.com/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -44,6 +49,7 @@ export const Footer = () => {
                 <Instagram size={18} />
               </a>
               <a
+                aria-label="LinkedIn"
                 href="https://www.linkedin.com/company/upxero"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -56,31 +62,31 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Snelle Links</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-orange-500 transition-colors">
-                  Home
+                <Link to={localize("/")} className="text-sm hover:text-orange-500 transition-colors">
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-sm hover:text-orange-500 transition-colors">
-                  Diensten
+                <Link to={localize("/services")} className="text-sm hover:text-orange-500 transition-colors">
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-sm hover:text-orange-500 transition-colors">
-                  Prijzen
+                <Link to={localize("/pricing")} className="text-sm hover:text-orange-500 transition-colors">
+                  {t('nav.pricing')}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm hover:text-orange-500 transition-colors">
-                  Contact
+                <Link to={localize("/contact")} className="text-sm hover:text-orange-500 transition-colors">
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm hover:text-orange-500 transition-colors">
-                  Over Ons
+                <Link to={localize("/about")} className="text-sm hover:text-orange-500 transition-colors">
+                  {t('nav.about')}
                 </Link>
               </li>
             </ul>
@@ -88,19 +94,18 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Diensten</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">{t('nav.services')}</h3>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Professionele horeca website</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Online bestellen zonder commissie</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">WhatsApp bestel-flow (geen AI)</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">AI-assistent (optioneel – Boost)</li>
-              <li className="hover:text-orange-500 transition-colors cursor-pointer">Hosting, updates & support</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">{t('footer.website')}</li>
+              <li><a href="https://ordering.upxero.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors">{t('footer.ordering')}</a></li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">{t('footer.maintenance')}</li>
+              <li className="hover:text-orange-500 transition-colors cursor-pointer">{t('footer.hosting')}</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Contact</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">{t('nav.contact')}</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
                 <Mail size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
@@ -121,7 +126,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
               <MapPin size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
-              <span>België & Nederland</span>
+              <span>{t('footer.region')}</span>
             </li>
             </ul>
           </div>
@@ -130,19 +135,22 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
-              © {currentYear} Upxero — gebouwd voor horeca in België & Nederland
+            <p className="text-sm text-gray-400 pr-20 sm:pr-0">
+              {t('footer.copyright', { year: currentYear })}
             </p>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy-policy" className="hover:text-orange-500 transition-colors">
-                Privacybeleid
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <Link to={localize("/privacy-policy")} className="hover:text-orange-500 transition-colors">
+                {t('footer.privacy')}
               </Link>
-              <Link to="/terms-conditions" className="hover:text-orange-500 transition-colors">
-                Algemene Voorwaarden
+              <Link to={localize("/terms-conditions")} className="hover:text-orange-500 transition-colors">
+                {t('footer.terms')}
               </Link>
-              <Link to="/cookie-policy" className="hover:text-orange-500 transition-colors">
-                Cookies
+              <Link to={localize("/cookie-policy")} className="hover:text-orange-500 transition-colors">
+                {t('footer.cookies')}
               </Link>
+              <button type="button" className="hover:text-orange-500 transition-colors" onClick={event => {
+                window.dispatchEvent(new CustomEvent('upxero:privacy-settings', { detail: event.currentTarget }));
+              }}>{t('cookie.settings')}</button>
             </div>
           </div>
         </div>

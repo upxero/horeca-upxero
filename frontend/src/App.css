@@ -26,3 +26,17 @@ html {
     background-color: #FF6B35;
     color: white;
 }
+
+/* Let active privacy/navigation interfaces take priority without changing consent. */
+.App:has([data-privacy-panel]) .floating-support-control,
+.App:has(#mobile-navigation) .floating-support-control { visibility:hidden; }
+.privacy-settings-bar { text-align:center; background:#f8fafc; color:#1e3a8a; }
+.skip-link { position:fixed; top:-6rem; left:1rem; z-index:100; background:white; color:#1e3a8a; padding:1rem; border:2px solid #1e3a8a; }
+.skip-link:focus { top:0.5rem; }
+:where(a, button, input, select, textarea):focus-visible { outline:3px solid #1e3a8a; outline-offset:3px; }
+main { min-width:0; }
+main h1, main h2 { overflow-wrap:break-word; }
+main a:not(.skip-link) { max-width:100%; }
+main a.inline-flex { white-space:normal; height:auto; min-height:2.75rem; text-align:center; overflow-wrap:anywhere; }
+/* Preserve the orange accent with readable white action text. */
+.bg-orange-500.text-white { background-color:#c2410c; }

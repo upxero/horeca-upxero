@@ -1,151 +1,109 @@
+import { Trans, useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useSEO } from '../hooks/useSEO';
 
 const PrivacyPolicy = () => {
+  const { t } = useTranslation('privacy');
+  const { localize } = useLanguage();
 
-  useSEO({
-    title: "Privacy Policy | Upxero",
-    description:
-      "Lees hoe Upxero omgaat met persoonsgegevens en privacy volgens de AVG/GDPR.",
-    canonical: "https://www.upxero.com/privacy-policy",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Privacy Policy",
-      "url": "https://www.upxero.com/privacy-policy",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Upxero",
-        "url": "https://www.upxero.com"
-      }
-    }
-  });
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main id="main-content" tabIndex={-1}>
       
       <section className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-8">Privacybeleid</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-8">{t("privacyPolicy")}</h1>
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
-            <p className="text-lg text-gray-600">
-              Laatst bijgewerkt: 7 januari 2025
-            </p>
+            <p className="text-lg text-gray-600">{t("lastUpdated7January2025")}</p>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">1. Inleiding</h2>
-              <p>
-                Upxero ("wij", "ons", "onze") respecteert uw privacy en zet zich in voor de bescherming 
-                van uw persoonlijke gegevens. Dit privacybeleid beschrijft hoe we uw gegevens verzamelen, 
-                gebruiken en beschermen wanneer u onze website bezoekt of gebruik maakt van onze diensten.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text1Introduction")}</h2>
+              <p>{t("upxeroWeUsOurRespectsYourPrivacyAnd")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">2. Gegevens die we verzamelen</h2>
-              <p>We kunnen de volgende soorten gegevens verzamelen:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text2DataWeCollect")}</h2>
+              <p>{t("weMayCollectTheFollowingTypesOfData")}</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Contactgegevens:</strong> Naam, e-mailadres, telefoonnummer en bedrijfsnaam 
-                  wanneer u een demo aanvraagt of contact met ons opneemt
-                </li>
+                  <strong>{t("contactDetails")}</strong>{' '}{t("nameEmailAddressPhoneNumberAndBusinessName")}</li>
                 <li>
-                  <strong>Technische gegevens:</strong> IP-adres, browsertype, apparaatinformatie en 
-                  websitegebruiksgegevens via cookies
-                </li>
+                  <strong>{t("technicalData")}</strong>{' '}{t("ipAddressBrowserTypeDeviceInformationAndWebsite")}</li>
                 <li>
-                  <strong>Communicatiegegevens:</strong> Berichten en vragen die u naar ons stuurt
-                </li>
+                  <strong>{t("communicationData")}</strong>{' '}{t("messagesAndQuestionsYouSendUs")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Hoe we uw gegevens gebruiken</h2>
-              <p>We gebruiken uw persoonlijke gegevens voor:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text3HowWeUseYourData")}</h2>
+              <p>{t("weUseYourPersonalDataFor")}</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Het beantwoorden van uw vragen en demo-aanvragen</li>
-                <li>Het verstrekken van informatie over onze diensten</li>
-                <li>Het verbeteren van onze website en diensten</li>
-                <li>Het voldoen aan wettelijke verplichtingen</li>
+                <li>{t("respondingToYourQuestionsAndDemoRequests")}</li>
+                <li>{t("providingInformationAboutOurServices")}</li>
+                <li>{t("improvingOurWebsiteAndServices")}</li>
+                <li>{t("complyingWithLegalObligations")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">4. Gegevensdeling</h2>
-              <p>
-                We verkopen of verhuren uw persoonlijke gegevens niet aan derden. We kunnen uw gegevens 
-                alleen delen met:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text4DataSharing")}</h2>
+              <p>{t("weDoNotSellOrRentYourPersonal")}</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Dienstverleners die ons helpen bij het leveren van onze diensten (bijv. e-mailservices)</li>
-                <li>Wetshandhavingsinstanties wanneer wettelijk vereist</li>
+                <li>{t("serviceProvidersThatHelpUsDeliverOurServices")}</li>
+                <li>{t("lawEnforcementAuthoritiesWhereRequiredByLaw")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">5. Gegevensbeveiliging</h2>
-              <p>
-                We nemen passende technische en organisatorische maatregelen om uw persoonlijke gegevens 
-                te beschermen tegen ongeoorloofde toegang, verlies of wijziging.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text5DataSecurity")}</h2>
+              <p>{t("weTakeAppropriateTechnicalAndOrganisationalMeasuresTo")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">6. Uw rechten</h2>
-              <p>Volgens de AVG heeft u de volgende rechten:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text6YourRights")}</h2>
+              <p>{t("underTheGdprYouHaveTheFollowingRights")}</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Recht op inzage van uw persoonlijke gegevens</li>
-                <li>Recht op rectificatie van onjuiste gegevens</li>
-                <li>Recht op verwijdering van uw gegevens</li>
-                <li>Recht op beperking van de verwerking</li>
-                <li>Recht op gegevensoverdraagbaarheid</li>
-                <li>Recht van bezwaar tegen verwerking</li>
+                <li>{t("theRightToAccessYourPersonalData")}</li>
+                <li>{t("theRightToRectifyInaccurateData")}</li>
+                <li>{t("theRightToErasureOfYourData")}</li>
+                <li>{t("theRightToRestrictProcessing")}</li>
+                <li>{t("theRightToDataPortability")}</li>
+                <li>{t("theRightToObjectToProcessing")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">7. Cookies</h2>
-              <p>
-                We gebruiken essentiële cookies om de functionaliteit van onze website te waarborgen. 
-                Raadpleeg ons <a href="/cookie-policy" className="text-blue-900 underline hover:text-orange-500">cookiebeleid</a> voor 
-                meer informatie.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text7Cookies")}</h2>
+              <p><Trans t={t} i18nKey="cookieInformation" components={{ policy: <a href={localize("/cookie-policy")} className="text-blue-900 underline hover:text-orange-500" /> }} /></p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">8. Bewaartermijn</h2>
-              <p>
-                We bewaren uw persoonlijke gegevens niet langer dan noodzakelijk is voor de doeleinden 
-                waarvoor ze zijn verzameld, of zoals wettelijk vereist.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text8RetentionPeriod")}</h2>
+              <p>{t("weRetainYourPersonalDataNoLongerThan")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">9. Wijzigingen in dit beleid</h2>
-              <p>
-                We kunnen dit privacybeleid van tijd tot tijd bijwerken. De meest recente versie is 
-                altijd beschikbaar op deze pagina.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text9ChangesToThisPolicy")}</h2>
+              <p>{t("weMayUpdateThisPrivacyPolicyFromTime")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">10. Contact</h2>
-              <p>
-                Voor vragen over dit privacybeleid of het uitoefenen van uw rechten, kunt u contact 
-                met ons opnemen via:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text10Contact")}</h2>
+              <p>{t("forQuestionsAboutThisPrivacyPolicyOrTo")}</p>
               <ul className="list-none space-y-2">
-                <li><strong>Email:</strong> info@upxero.com</li>
+                <li><strong>{t("email")}</strong> info@upxero.com</li>
               </ul>
             </section>
           </div>
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

@@ -1,0 +1,57 @@
+{
+  "homeLabel": "Home",
+  "interactiveNotice": "Enable JavaScript to use interactive features, including the contact form.",
+  "imageAlt": "Upxero logo",
+  "pages": {
+    "/": {
+      "name": "Home",
+      "title": "Restaurant Websites, Hosting & Maintenance | Upxero",
+      "description": "Professional restaurant websites, hosting and maintenance in Belgium and the Netherlands. Explore Upxero website packages and standalone Ordering Free."
+    },
+    "/services": {
+      "name": "Services",
+      "title": "Restaurant Website Services & Hosting | Upxero",
+      "description": "Discover Upxero restaurant website design, hosting and maintenance. Learn about website services and the separate Upxero Ordering platform."
+    },
+    "/pricing": {
+      "name": "Pricing",
+      "title": "Website Packages: Start, Grow & Boost | Upxero",
+      "description": "Start €19, Grow €29 or Boost €49 per month. Pro is included with Grow and Boost after manual activation. Ordering Free is available separately."
+    },
+    "/about": {
+      "name": "About Upxero",
+      "title": "About Upxero | Restaurant Websites & Digital Services",
+      "description": "Meet Upxero, providing restaurant websites, hosting and maintenance in Belgium and the Netherlands. Learn about our approach and the team behind our services."
+    },
+    "/contact": {
+      "name": "Contact",
+      "title": "Contact Upxero | Discuss Your Restaurant Website",
+      "description": "Contact Upxero about your restaurant website, hosting, maintenance or a website package upgrade. Request a no-obligation initial preview."
+    },
+    "/restaurant-portfolio": {
+      "name": "Portfolio",
+      "title": "Restaurant & Custom Website Portfolio | Upxero",
+      "description": "Explore a selection of restaurant websites and custom web projects developed by Upxero. View examples of our work across hospitality and other sectors."
+    },
+    "/privacy-policy": {
+      "name": "Privacy Policy",
+      "title": "Privacy Policy | Upxero OÜ",
+      "description": "Read Upxero OÜ's privacy policy, including how personal data is handled, your privacy rights and how to contact us about data protection."
+    },
+    "/terms-conditions": {
+      "name": "Terms & Conditions",
+      "title": "Terms & Conditions | Upxero OÜ",
+      "description": "Read the terms and conditions for Upxero OÜ website services, including agreements, payments, responsibilities and company contact details."
+    },
+    "/cookie-policy": {
+      "name": "Cookie Policy",
+      "title": "Cookie Policy | Upxero",
+      "description": "Read the Upxero cookie policy for information about cookies used by this website, their purposes and your browser settings."
+    },
+    "/bedankt": {
+      "name": "Thank You",
+      "title": "Thank You | Upxero",
+      "description": "Thank you for choosing Upxero. Find contact details for questions about your website services."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "language": {
+    "label": "Taal",
+    "en": "Engels",
+    "nl": "Nederlands"
+  },
+  "logoAlt": "Upxero logo",
+  "close": "Sluiten",
+  "scrollTop": "Scroll naar boven",
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "pricing": "Prijzen",
+    "about": "Over Ons",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "header": {
+    "startForFree": "Gratis starten",
+    "preview": "Vraag Gratis Preview Aan",
+    "openMenu": "Navigatiemenu openen",
+    "closeMenu": "Navigatiemenu sluiten",
+    "navigation": "Hoofdnavigatie",
+    "mobileNavigation": "Mobiele navigatie"
+  },
+  "footer": {
+    "description": "Upxero verzorgt horecawebsites, hosting en onderhoud in België en Nederland. Upxero Ordering is ons zelfstandige bestelplatform voor restaurants.",
+    "quickLinks": "Snelle Links",
+    "website": "Professionele horeca website",
+    "ordering": "Upxero Ordering",
+    "hosting": "Hosting, updates & support",
+    "region": "België & Nederland",
+    "copyright": "© {{year}} Upxero — gebouwd voor horeca in België & Nederland",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene Voorwaarden",
+    "cookies": "Cookies",
+    "maintenance": "Websiteonderhoud"
+  },
+  "cookie": {
+    "title": "Uw privacykeuzes",
+    "description": "We bewaren uw taal- en privacyvoorkeuren in uw browser. Met uw toestemming gebruiken we PostHog om paginabezoeken te meten. Analyses blijven uitgeschakeld totdat u toestemming geeft. U kunt uw keuze wijzigen via Privacyinstellingen.",
+    "policy": "cookiebeleid",
+    "accept": "Analyses toestaan",
+    "reject": "Analyses weigeren",
+    "settings": "Privacyinstellingen"
+  },
+  "chat": {
+    "prefill": "Hallo 👋 Ik heb een vraag over Upxero",
+    "welcome": "👋 Welkom bij Upxero",
+    "subtitle": "Chat direct met ons",
+    "help": "Hoe kunnen we u helpen?",
+    "choose": "Kies hieronder waarover u meer informatie wilt 👇",
+    "hospitality": "📍 Voor horeca",
+    "pricing": "💳 Wat kost het?",
+    "commission": "⚡ Website- en Ordering-opties",
+    "contact": "📞 Contact opnemen via WhatsApp",
+    "open": "Open chat opties"
+  },
+  "support": {
+    "desktop": "👉 Vragen? Neem contact op",
+    "mobile": "👉 Stel ons een vraag"
+  },
+  "skip": "Ga naar de inhoud",
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina is mogelijk verplaatst of het adres is onjuist.",
+    "home": "Terug naar Home"
+  }
+}

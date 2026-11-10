@@ -1,53 +1,52 @@
-import { X } from "lucide-react";
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
+import { useRef } from 'react';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
 import { Link } from "react-router-dom";
 
 export const WhatsAppPopup = ({ onClose }) => {
+  const { t } = useTranslation();
+  const opener = useRef(typeof document === 'undefined' ? null : document.activeElement);
+  const { localize } = useLanguage();
   const businessWhatsAppUrl =
-    "https://wa.me/3197010268675?text=Hallo%20👋%20Ik%20heb%20een%20vraag%20over%20Upxero";
+    'https://wa.me/3197010268675?text=' + encodeURIComponent(t('chat.prefill'));
 
   return (
-    <>
-      {/* Overlay */}
-      <div className="fixed inset-0 bg-black/40 z-40" onClick={onClose} />
-
-      {/* Popup */}
-      <div className="fixed bottom-[168px] right-6 w-80 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden">
-
+    <Dialog open onOpenChange={open => { if (!open) onClose(); }}>
+      <DialogContent aria-modal="true" closeLabel={t('close')} className="p-0 gap-0 overflow-hidden rounded-2xl w-[calc(100%_-_2rem)] max-w-sm" onCloseAutoFocus={event => { event.preventDefault(); opener.current?.focus(); }}>
         {/* Header */}
         <div className="bg-green-500 text-white p-4 flex justify-between items-center">
           <div>
-            <p className="font-semibold">👋 Welkom bij Upxero</p>
-            <p className="text-xs opacity-90">Chat direct met ons</p>
+            <DialogTitle>{t('chat.welcome')}</DialogTitle>
+            <DialogDescription className="text-white text-xs">{t('chat.subtitle')}</DialogDescription>
           </div>
-          <button onClick={onClose}>
-            <X size={18} />
-          </button>
+
         </div>
 
         {/* Body */}
         <div className="p-4 space-y-3 text-sm bg-gray-50">
 
           <div className="bg-white rounded-lg p-3 shadow">
-            Hoe kunnen we je helpen?
+            {t('chat.help')}
             <br />
-            Kies hieronder waarover je meer info wil 👇
+            {t('chat.choose')}
           </div>
 
           <div className="space-y-2">
 
-            <Link to="/services" onClick={onClose}
+            <Link to={localize("/services")} onClick={onClose}
               className="block bg-white border rounded-lg py-2 px-3">
-              📍 Voor horeca
+              {t('chat.hospitality')}
             </Link>
 
-            <Link to="/pricing#plans" onClick={onClose}
+            <Link to={localize("/pricing#plans")} onClick={onClose}
               className="block bg-white border rounded-lg py-2 px-3">
-              💳 Wat kost het?
+              {t('chat.pricing')}
             </Link>
 
-            <Link to="/pricing#no-commissions" onClick={onClose}
+            <Link to={localize("/pricing#no-commissions")} onClick={onClose}
               className="block bg-white border rounded-lg py-2 px-3">
-              ⚡ Waarom geen commissies?
+              {t('chat.commission')}
             </Link>
 
             {/* WhatsApp */}
@@ -57,12 +56,12 @@ export const WhatsAppPopup = ({ onClose }) => {
               rel="noopener noreferrer"
               className="block bg-green-500 text-white text-center rounded-lg py-2 font-medium"
             >
-              📞 Contact opnemen via WhatsApp
+              {t('chat.contact')}
             </a>
 
           </div>
         </div>
-      </div>
-    </>
+      </DialogContent>
+    </Dialog>
   );
 };

@@ -1,299 +1,160 @@
+import { Trans, useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useSEO } from '../hooks/useSEO';
 
 const TermsConditions = () => {
+  const { t } = useTranslation('terms');
+  const { localize } = useLanguage();
 
-  useSEO({
-    title: "Algemene Voorwaarden | Upxero",
-    description:
-      "De algemene voorwaarden van Upxero voor diensten en overeenkomsten.",
-    canonical: "https://www.upxero.com/terms-conditions",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Algemene Voorwaarden",
-      "url": "https://www.upxero.com/terms-conditions",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Upxero",
-        "url": "https://www.upxero.com"
-      }
-    }
-  });
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main id="main-content" tabIndex={-1}>
 
       <section className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-8">
-            Algemene Voorwaarden
-          </h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-8">{t("termsConditions")}</h1>
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
-            <p className="text-lg text-gray-600">
-              Laatst bijgewerkt: 7 januari 2025
-            </p>
+            <p className="text-lg text-gray-600">{t("lastUpdated7January2025")}</p>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                1. Definities
-              </h2>
-              <p>In deze algemene voorwaarden wordt verstaan onder:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text1Definitions")}</h2>
+              <p>{t("inTheseTermsAndConditionsTheFollowingDefinitions")}</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Upxero:</strong> De dienstverlener die digitale oplossingen, websites, 
-                  onderhoud en technische ondersteuning aanbiedt aan bedrijven binnen België, Nederland en 
-                  andere Europese landen.
-                </li>
+                  <strong>{t("upxero")}</strong>{' '}{t("theServiceProviderOfferingDigitalSolutionsWebsitesMaintenance")}</li>
                 <li>
-                  <strong>Klant:</strong> De natuurlijke of rechtspersoon die gebruik
-                  maakt van de diensten van Upxero.
-                </li>
+                  <strong>{t("customer")}</strong>{' '}{t("theNaturalOrLegalPersonUsingUpxeroS")}</li>
                 <li>
-                  <strong>Diensten:</strong> Alle door Upxero aangeboden diensten,
-                  waaronder websites, online bestelsystemen, WhatsApp-automatisatie,
-                  hosting en onderhoud.
-                </li>
+                  <strong>{t("services")}</strong>{' '}{t("allServicesOfferedByUpxeroIncludingWebsitesOnline")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                2. Toepasselijkheid
-              </h2>
-              <p>
-                Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen,
-                overeenkomsten en dienstverlening tussen Upxero en de Klant.
-                Afwijkingen zijn uitsluitend geldig indien schriftelijk overeengekomen.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text2Applicability")}</h2>
+              <p>{t("theseTermsAndConditionsApplyToAllOffers")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                3. Dienstverlening
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text3ProvisionOfServices")}</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Ontwikkeling en hosting van professionele horeca websites</li>
-                <li>Integratie van online bestelsystemen</li>
-                <li>WhatsApp-assistenten via externe providers (zoals Twilio)</li>
-                <li>Technische ondersteuning en onderhoud</li>
+                <li>{t("developmentAndHostingOfProfessionalHospitalityWebsites")}</li>
+                <li>{t("integrationOfOnlineOrderingSystems")}</li>
+                <li>{t("whatsappAssistantsThroughExternalProvidersSuchAsTwilio")}</li>
+                <li>{t("technicalSupportAndMaintenance")}</li>
               </ul>
-              <p>
-                Upxero behoudt zich het recht voor om diensten technisch te wijzigen
-                of te optimaliseren.
-              </p>
+              <p>{t("upxeroReservesTheRightToMakeTechnicalChanges")}</p>
             </section>
 
            <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                4. Prijzen en betaling
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text4PricesAndPayment")}</h2>
 
               <ul className="list-disc pl-6 space-y-2">
-                <li>
-                  Alle prijzen zijn exclusief btw, tenzij anders vermeld.
-                </li>
+                <li>{t("allPricesExcludeVatUnlessOtherwiseStated")}</li>
 
-                <li>
-                  Facturen zijn betaalbaar uiterlijk op de vervaldatum zoals vermeld op de factuur.
-                  Voor abonnementen en terugkerende diensten kan betaling plaatsvinden via automatische
-                  betaling volgens de gekozen betaalmethode.
-                </li>
+                <li>{t("invoicesArePayableNoLaterThanTheDue")}</li>
 
-                <li>
-                  Betaling gebeurt maandelijks vooraf, tenzij schriftelijk anders overeengekomen.
-                </li>
+                <li>{t("paymentIsMadeMonthlyInAdvanceUnlessOtherwise")}</li>
 
-                <li>
-                  Voor abonnementen en terugkerende diensten kan Upxero gebruikmaken van automatische
-                  betalingen via een externe betaalprovider. De Klant geeft hiervoor een geldige
-                  betaalmachtiging af via de aangeboden betaalomgeving.
-                </li>
+                <li>{t("forSubscriptionsAndRecurringServicesUpxeroMayUse")}</li>
 
-                <li>
-                  Door het activeren van een automatische betaling geeft de Klant toestemming voor het
-                  periodiek verwerken van de overeengekomen abonnementsbedragen gedurende de looptijd
-                  van de overeenkomst.
-                </li>
+                <li>{t("byActivatingAutomaticPaymentTheCustomerAuthorisesThe")}</li>
 
-                <li>
-                  De Klant blijft verantwoordelijk voor het beschikbaar houden van een geldige
-                  betaalmethode gedurende de volledige looptijd van de overeenkomst. Indien een
-                  automatische betaling niet kan worden uitgevoerd, blijft het verschuldigde bedrag
-                  volledig opeisbaar.
-                </li>
+                <li>{t("theCustomerRemainsResponsibleForMaintainingAValid")}</li>
 
-                <li>
-                  De dienstverlening wordt uitsluitend gestart of verdergezet nadat de verschuldigde
-                  betaling volledig is ontvangen.
-                </li>
+                <li>{t("servicesWillOnlyStartOrContinueOnceThe")}</li>
 
-                <li>
-                  Bij niet-tijdige betaling is van rechtswege en zonder voorafgaande ingebrekestelling
-                  een nalatigheidsinterest verschuldigd conform de wettelijke rente voor handelstransacties,
-                  berekend vanaf de vervaldatum tot de dag van volledige betaling.
-                </li>
+                <li>{t("inTheEventOfLatePaymentLatePayment")}</li>
 
-                <li>
-                  Daarnaast is bij laattijdige betaling een forfaitaire invorderingskost van €40
-                  verschuldigd, onverminderd eventuele bijkomende redelijke invorderings-, gerechtelijke
-                  en buitengerechtelijke kosten.
-                </li>
+                <li>{t("inAdditionLatePaymentIncursAFixedRecovery")}</li>
 
-                <li>
-                  Bij niet-tijdige betaling behoudt Upxero zich het recht voor de dienstverlening geheel
-                  of gedeeltelijk onmiddellijk op te schorten, zonder voorafgaande kennisgeving en zonder
-                  dat de Klant aanspraak kan maken op enige schadevergoeding.
-                </li>
+                <li>{t("inTheEventOfLatePaymentUpxeroReserves")}</li>
 
-                <li>
-                  Bij opschorting wegens wanbetaling kan de toegang tot de website, hosting, e-mail en
-                  andere geleverde diensten tijdelijk of definitief worden geblokkeerd.
-                </li>
+                <li>{t("ifServicesAreSuspendedDueToNonPayment")}</li>
 
-                <li>
-                  Voor de heractivering van de dienstverlening na een opschorting wegens wanbetaling
-                  wordt een administratieve heractiveringskost van €25 aangerekend. De dienstverlening
-                  wordt pas opnieuw geactiveerd nadat alle openstaande bedragen, inclusief eventuele
-                  interesten, invorderingskosten en de heractiveringskost, volledig zijn voldaan.
-                </li>
+                <li>{t("anAdministrativeReactivationFeeOf25IsCharged")}</li>
 
-                <li>
-                  Indien de Klant in gebreke blijft, behoudt Upxero zich het recht voor de overeenkomst
-                  eenzijdig te beëindigen, de dienstverlening definitief stop te zetten en het openstaande
-                  bedrag via gerechtelijke weg te innen.
-                </li>
+                <li>{t("ifTheCustomerRemainsInDefaultUpxeroReserves")}</li>
 
-                <li>
-                  Abonnementsprijzen kunnen door Upxero worden aangepast indien noodzakelijk door
-                  wijzigingen in kosten van externe diensten, hosting, software, licenties,
-                  infrastructuur of andere bedrijfskosten. De Klant wordt hiervan vooraf op de hoogte
-                  gesteld. Indien de Klant niet akkoord gaat met de nieuwe prijs, kan de Klant de
-                  overeenkomst beëindigen vóór de ingangsdatum van de prijswijziging.
-                </li>
+                <li>{t("upxeroMayAdjustSubscriptionPricesWhereNecessaryDue")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                5. Looptijd en opzegging
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text5TermAndTermination")}</h2>
 
               <ul className="list-disc pl-6 space-y-2">
-                <li>
-                  Overeenkomsten worden aangegaan voor een minimumduur van 12 maanden.
-                </li>
+                <li>{t("agreementsAreEnteredIntoForAMinimumTerm")}</li>
 
-                <li>
-                  Na afloop van de minimumduur wordt de overeenkomst automatisch verlengd voor
-                  onbepaalde tijd, tenzij de Klant schriftelijk opzegt met een opzegtermijn van 30 dagen.
-                </li>
+                <li>{t("afterTheMinimumTermTheAgreementIsAutomatically")}</li>
 
-                <li>
-                  Opzegging dient schriftelijk per e-mail te gebeuren.
-                </li>
+                <li>{t("noticeOfTerminationMustBeGivenInWriting")}</li>
 
-                <li>
-                  Bij beëindiging vervalt het gebruiksrecht op de geleverde diensten.
-                </li>
+                <li>{t("uponTerminationTheRightToUseTheServices")}</li>
 
-                <li>
-                  Upxero behoudt zich het recht voor om de overeenkomst onmiddellijk en zonder
-                  voorafgaande ingebrekestelling te beëindigen in geval van wanbetaling of contractbreuk
-                  door de Klant.
-                </li>
+                <li>{t("upxeroReservesTheRightToTerminateTheAgreement")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                6. Verplichtingen van de Klant
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text6CustomerObligations")}</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Tijdig correcte informatie aanleveren</li>
-                <li>Wijzigingen onmiddellijk doorgeven</li>
-                <li>Diensten gebruiken conform wetgeving</li>
-                <li>Geen misbruik maken van systemen</li>
+                <li>{t("provideAccurateInformationOnTime")}</li>
+                <li>{t("reportChangesImmediately")}</li>
+                <li>{t("useServicesInAccordanceWithTheLaw")}</li>
+                <li>{t("doNotMisuseSystems")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                7. Intellectueel eigendom
-              </h2>
-              <p>
-                Alle ontwikkelde websites, configuraties en automatisaties blijven
-                eigendom van Upxero, tenzij schriftelijk anders overeengekomen.
-              </p>
-              <p className="mt-2">
-                De Klant verkrijgt enkel een gebruiksrecht op de geleverde diensten zolang alle facturen
-                volledig zijn betaald. Bij openstaande bedragen kan dit gebruiksrecht onmiddellijk worden ingetrokken.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text7IntellectualProperty")}</h2>
+              <p>{t("allWebsitesConfigurationsAndAutomationsDevelopedRemainThe")}</p>
+              <p className="mt-2">{t("theCustomerOnlyReceivesARightToUse")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                8. Aansprakelijkheid
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text8Liability")}</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Geen garantie op ononderbroken beschikbaarheid</li>
-                <li>Geen aansprakelijkheid voor indirecte schade of omzetverlies</li>
-                <li>
-                  Maximale aansprakelijkheid is beperkt tot één maand dienstverlening
-                </li>
-                <li>Overmacht en externe storingen zijn uitgesloten</li>
+                <li>{t("noGuaranteeOfUninterruptedAvailability")}</li>
+                <li>{t("noLiabilityForIndirectDamageOrLossOf")}</li>
+                <li>{t("maximumLiabilityIsLimitedToOneMonthOf")}</li>
+                <li>{t("forceMajeureAndExternalDisruptionsAreExcluded")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                9. Privacy en gegevensverwerking
-              </h2>
-              <p>
-                Persoonsgegevens worden verwerkt conform GDPR. Zie ons{' '}
-                <a
-                  href="/privacy-policy"
-                  className="text-blue-900 underline hover:text-orange-500"
-                >
-                  privacybeleid
-                </a>.
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text9PrivacyAndDataProcessing")}</h2>
+              <p><Trans t={t} i18nKey="privacyInformation" components={{ policy: <a href={localize("/privacy-policy")} className="text-blue-900 underline hover:text-orange-500" /> }} />
               </p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                10. Toepasselijk recht
-              </h2>
-              <p>
-                Op alle overeenkomsten is Belgisch recht van toepassing. Alle geschillen worden uitsluitend voorgelegd aan de bevoegde rechtbanken van het gerechtelijk arrondissement Antwerpen, afdeling Dendermonde.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text10ApplicableLaw")}</h2>
+              <p>{t("belgianLawAppliesToAllAgreementsAllDisputes")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                11. Contact & bedrijfsgegevens
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text11ContactCompanyDetails")}</h2>
               <ul className="list-none space-y-2">
-                <li><strong>Bedrijfsnaam:</strong> Upxero OÜ</li>
-                <li><strong>Registratieadres:</strong> Ahtri 12, 10151 Tallinn, Estland</li>
-                <li><strong>Land van vestiging:</strong> Estland (EU)</li>
-                <li><strong>Handelsregister:</strong> 16534146</li>
-                <li><strong>BTW-nummer:</strong> EE102522936</li>
-                <li><strong>Email:</strong> info@upxero.com</li>
-                <li><strong>Website:</strong> https://www.upxero.com</li>
-                <li className="text-sm text-gray-500">
-                  Upxero is geregistreerd in Estland via het e-Residency-programma.
-                </li>
+                <li><strong>{t("companyName")}</strong> Upxero OÜ</li>
+                <li><strong>{t("registeredAddress")}</strong>{' '}{t("ahtri1210151TallinnEstonia")}</li>
+                <li><strong>{t("countryOfEstablishment")}</strong>{' '}{t("estoniaEu")}</li>
+                <li><strong>{t("commercialRegister")}</strong> 16534146</li>
+                <li><strong>{t("vatNumber")}</strong> EE102522936</li>
+                <li><strong>{t("email")}</strong> info@upxero.com</li>
+                <li><strong>{t("website")}</strong> https://www.upxero.com</li>
+                <li className="text-sm text-gray-500">{t("upxeroIsRegisteredInEstoniaThroughTheE")}</li>
               </ul>
             </section>
           </div>
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

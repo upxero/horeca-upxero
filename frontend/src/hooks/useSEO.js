@@ -1,86 +1,38 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { getSEO, headElements } from '../seo/model';
 
-export const useSEO = ({
-  title,
-  description,
-  canonical,
-  structuredData,
-}) => {
-  useEffect(() => {
-    /* ===== TITLE ===== */
-    if (title) {
-      document.title = title;
-    }
+// Own the complete SEO tag set. Route transitions replace it atomically,
+// including removal of noindex when leaving a confirmation page.
+export function applySEO(seo, pathname = '/') {
+  document.head.querySelectorAll(
+    'title, meta[name="description"], meta[name="robots"], link[rel="canonical"], link[rel="alternate"][hreflang], meta[property^="og:"], meta[name^="twitter:"], script[type="application/ld+json"]'
+  ).forEach(element => element.remove());
+  const title = document.createElement('title');
+  title.textContent = seo ? seo.title : (pathname.startsWith('/nl/') ? 'Pagina niet gevonden | Upxero' : 'Page not found | Upxero');
+  document.head.appendChild(title);
+  if (!seo) {
+    const robots = document.createElement('meta');
+    robots.name = 'robots';
+    robots.content = 'noindex,follow';
+    document.head.appendChild(robots);
+    return;
+  }
+  document.documentElement.lang = seo.language;
+  for (const { tag, attrs } of headElements(seo)) {
+    const element = document.createElement(tag);
+    for (const [key, value] of Object.entries(attrs)) element.setAttribute(key, value);
+    element.dataset.upxeroSeo = 'true';
+    document.head.appendChild(element);
+  }
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.dataset.upxeroSeo = 'true';
+  script.textContent = JSON.stringify(seo.structuredData);
+  document.head.appendChild(script);
+}
 
-    /* ===== META DESCRIPTION ===== */
-    if (description) {
-      let meta = document.querySelector("meta[name='description']");
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.name = "description";
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", description);
-    }
-
-    /* ===== CANONICAL ===== */
-    if (canonical) {
-      let link = document.querySelector("link[rel='canonical']");
-      if (!link) {
-        link = document.createElement("link");
-        link.rel = "canonical";
-        document.head.appendChild(link);
-      }
-      link.href = canonical;
-    }
-
-    /* ===== OPEN GRAPH ===== */
-    const setOG = (property, content) => {
-      if (!content) return;
-      let meta = document.querySelector(`meta[property='${property}']`);
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.setAttribute("property", property);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", content);
-    };
-
-    setOG("og:title", title);
-    setOG("og:description", description);
-    setOG("og:url", canonical);
-    setOG("og:type", "website");
-
-    /* ===== TWITTER ===== */
-    const setTwitter = (name, content) => {
-      if (!content) return;
-      let meta = document.querySelector(`meta[name='${name}']`);
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.name = name;
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", content);
-    };
-
-    setTwitter("twitter:card", "summary_large_image");
-    setTwitter("twitter:title", title);
-    setTwitter("twitter:description", description);
-
-    /* ===== STRUCTURED DATA ===== */
-    let script;
-    if (structuredData) {
-      script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-    }
-
-    /* ===== CLEANUP ===== */
-    return () => {
-      if (script) {
-        document.head.removeChild(script);
-      }
-    };
-  }, [title, description, canonical, structuredData]);
-};
+export function useSEO() {
+  const { pathname } = useLocation();
+  useEffect(() => applySEO(getSEO(pathname), pathname), [pathname]);
+}

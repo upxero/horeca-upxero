@@ -1,105 +1,76 @@
+import { Trans, useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useSEO } from '../hooks/useSEO';
 
 const CookiePolicy = () => {
+  const { t } = useTranslation('cookies');
+  const { localize } = useLanguage();
 
-  useSEO({
-    title: "Cookiebeleid | Upxero",
-    description:
-      "Informatie over het gebruik van cookies op de website van Upxero.",
-    canonical: "https://www.upxero.com/cookie-policy",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Cookie Policy",
-      "url": "https://www.upxero.com/cookie-policy",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Upxero",
-        "url": "https://www.upxero.com"
-      }
-    }
-  });
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main id="main-content" tabIndex={-1}>
       
       <section className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-8">Cookiebeleid</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-8">{t("cookiePolicy")}</h1>
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
-            <p className="text-lg text-gray-600">
-              Laatst bijgewerkt: 7 januari 2025
-            </p>
+            <p className="text-lg text-gray-600">{t("lastUpdated7January2025")}</p>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">1. Wat zijn cookies?</h2>
-              <p>
-                Cookies zijn kleine tekstbestanden die op uw computer of mobiele apparaat worden 
-                geplaatst wanneer u een website bezoekt. Ze helpen websites om informatie over uw 
-                bezoek te onthouden, zoals uw voorkeuren en instellingen.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text1WhatAreCookies")}</h2>
+              <p>{t("cookiesAreSmallTextFilesPlacedOnYour")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">2. Hoe we cookies gebruiken</h2>
-              <p>
-                Upxero gebruikt alleen essentiële cookies die noodzakelijk zijn voor het correct 
-                functioneren van de website. Deze cookies verzamelen geen persoonlijke informatie 
-                en kunnen niet worden uitgeschakeld.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text2HowWeUseCookies")}</h2>
+              <p>{t("upxeroOnlyUsesEssentialCookiesNecessaryForThe")}</p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Soorten cookies die we gebruiken</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text3TypesOfCookiesWeUse")}</h2>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 mt-6">Essentiële cookies</h3>
-              <p>Deze cookies zijn noodzakelijk voor de basisfunctionaliteit van de website:</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 mt-6">{t("essentialCookies")}</h3>
+              <p>{t("theseCookiesAreNecessaryForTheWebsiteS")}</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Cookie consent:</strong> Onthoudt dat u de cookiebanner heeft geaccepteerd, 
-                  zodat deze niet bij elk bezoek opnieuw verschijnt
-                </li>
+                  <strong>{t("cookieConsent")}</strong>{' '}{t("remembersThatYouHaveAcceptedTheCookieBanner")}</li>
                 <li>
-                  <strong>Sessie cookies:</strong> Zorgen ervoor dat de website correct functioneert 
-                  tijdens uw bezoek
-                </li>
+                  <strong>{t("sessionCookies")}</strong>{' '}{t("ensureThatTheWebsiteFunctionsCorrectlyDuringYour")}</li>
               </ul>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 mt-6">Cookies die we NIET gebruiken</h3>
-              <p>We gebruiken momenteel geen:</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 mt-6">{t("cookiesWeDoNotUse")}</h3>
+              <p>{t("weCurrentlyDoNotUse")}</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Analytische cookies (zoals Google Analytics)</li>
-                <li>Marketing of tracking cookies</li>
-                <li>Social media cookies</li>
-                <li>Cookies van derden voor advertenties</li>
+                <li>{t("analyticsCookiesSuchAsGoogleAnalytics")}</li>
+                <li>{t("marketingOrTrackingCookies")}</li>
+                <li>{t("socialMediaCookies")}</li>
+                <li>{t("thirdPartyAdvertisingCookies")}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">4. Cookie overzicht</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text4CookieOverview")}</h2>
               <div className="overflow-x-auto">
                 <table className="min-w-full border-collapse border border-gray-300">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">Naam</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">Doel</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">Looptijd</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">Type</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">{t("name")}</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">{t("purpose")}</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">{t("duration")}</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-bold">{t("type")}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-2">cookieConsent</td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Onthoudt cookievoorkeuren
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">1 jaar</td>
-                      <td className="border border-gray-300 px-4 py-2">Essentieel</td>
+                      <td className="border border-gray-300 px-4 py-2">upxero.privacy.v1 (localStorage)</td>
+                      <td className="border border-gray-300 px-4 py-2">{t("remembersCookiePreferences")}</td>
+                      <td className="border border-gray-300 px-4 py-2">{t("text1Year")}</td>
+                      <td className="border border-gray-300 px-4 py-2">{t("essential")}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -107,13 +78,10 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">5. Cookies beheren</h2>
-              <p>
-                U kunt cookies beheren via de instellingen van uw browser. Let op: als u alle cookies 
-                uitschakelt, werken sommige delen van de website mogelijk niet correct.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text5ManagingCookies")}</h2>
+              <p>{t("youCanManageCookiesThroughYourBrowserSettings")}</p>
               <p className="mt-4">
-                <strong>Instructies per browser:</strong>
+                <strong>{t("instructionsByBrowser")}</strong>
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
@@ -160,34 +128,28 @@ const CookiePolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">6. Updates van dit cookiebeleid</h2>
-              <p>
-                We kunnen dit cookiebeleid van tijd tot tijd bijwerken om nieuwe ontwikkelingen of 
-                wettelijke vereisten te weerspiegelen. Controleer deze pagina regelmatig voor updates.
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text6UpdatesToThisCookiePolicy")}</h2>
+              <p>{t("weMayUpdateThisCookiePolicyFromTime")}</p>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text7MoreInformation")}</h2>
+              <p><Trans t={t} i18nKey="privacyInformation" components={{ policy: <a href={localize("/privacy-policy")} className="text-blue-900 underline hover:text-orange-500" /> }} />
               </p>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">7. Meer informatie</h2>
-              <p>
-                Voor meer informatie over hoe we uw gegevens verwerken, raadpleeg ons{' '}
-                <a href="/privacy-policy" className="text-blue-900 underline hover:text-orange-500">
-                  privacybeleid
-                </a>.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">8. Contact</h2>
-              <p>Voor vragen over ons cookiebeleid kunt u contact met ons opnemen:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("text8Contact")}</h2>
+              <p>{t("ifYouHaveQuestionsAboutOurCookiePolicy")}</p>
               <ul className="list-none space-y-2">
-                <li><strong>Email:</strong> info@upxero.com</li>
+                <li><strong>{t("email")}</strong> info@upxero.com</li>
               </ul>
             </section>
           </div>
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

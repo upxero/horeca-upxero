@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import React, { useEffect, useRef, useState } from 'react';
 import { Mail, MessageCircle, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -8,47 +9,37 @@ import { Label } from '../components/ui/label';
 import { toast } from 'sonner';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useSEO } from '../hooks/useSEO';
 import Turnstile from "react-turnstile";
+import { useLocation } from 'react-router-dom';
+
+const updateValidationMessage = (field, translate) => {
+  if (typeof field.setCustomValidity !== 'function') return;
+  field.setCustomValidity('');
+  if (field.validity.valueMissing) {
+    field.setCustomValidity(translate('validationRequired'));
+  } else if (field.type === 'email' && field.validity.typeMismatch) {
+    field.setCustomValidity(translate('validationEmail'));
+  }
+};
 
 const Contact = () => {
+  const { t } = useTranslation('contact');
+  const formRef = useRef(null);
+  const { search } = useLocation();
+  // Only the known request code is recognised; arbitrary query text is ignored.
+  const [isHydrated, setIsHydrated] = useState(false);
+  useEffect(() => setIsHydrated(true), []);
+  const isGrowUpgrade = new URLSearchParams(search).get('subject') === 'upgrade-grow';
 
-  useSEO({
-    title: "Contact | Vraag een gratis preview aan voor uw restaurant | Upxero",
-    description:
-      "Vraag een preview aan bij Upxero. Ontdek hoe restaurants in België en Nederland meer directe online bestellingen krijgen zonder commissies.",
-    canonical: "https://www.upxero.com/contact",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact Upxero",
-      "url": "https://www.upxero.com/contact",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Upxero",
-        "url": "https://www.upxero.com/",
-        "logo": "https://www.upxero.com/logo.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "url": "https://wa.me/3197010268675",
-            "availableLanguage": ["Dutch"],
-            "areaServed": ["BE", "NL"]
-          }
-        ],
-        "areaServed": [
-          { "@type": "Country", "name": "Belgium" },
-          { "@type": "Country", "name": "Netherlands" }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/upxero",
-          "https://www.instagram.com/upxero",
-          "https://www.linkedin.com/company/upxero"
-        ]
-      }
+  useEffect(() => {
+    // Refresh messages already shown by the browser without resetting drafts.
+    for (const field of formRef.current?.elements || []) {
+      if (field.validity?.customError) updateValidationMessage(field, t);
     }
-  });
+  }, [t]);
+
+  const handleValidation = (event) => updateValidationMessage(event.target, t);
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -61,6 +52,16 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const appliedSearch = useRef(null);
+  useEffect(() => {
+    // Apply once per query change, after hydration. Locale-only switches retain
+    // the same component and query, so they cannot overwrite an edited draft.
+    if (appliedSearch.current === search) return;
+    appliedSearch.current = search;
+    const query = new URLSearchParams(search);
+    const plan = query.get('subject') === 'upgrade-grow' ? 'grow' : query.get('plan');
+    if (['start', 'grow', 'boost'].includes(plan)) setFormData(data => ({ ...data, planInterest: plan }));
+  }, [search]);
 
   const handleChange = (e) => {
     setFormData({
@@ -81,6 +82,9 @@ const Contact = () => {
         },
         body: JSON.stringify({
           ...formData,
+          ...(isGrowUpgrade ? {
+            message: [t('upgradeSubject'), formData.message].filter(Boolean).join('\n\n'),
+          } : {}),
           turnstileToken
         }),
       });
@@ -92,7 +96,7 @@ const Contact = () => {
       const result = await response.json();
       setIsSubmitting(false);
       setIsSubmitted(true);
-      toast.success('Bedankt voor uw aanvraag! We nemen binnen 24 uur contact met u op.');
+      toast.success(t("thankYouForYourEnquiryWeWillContact"));
       
       // Reset form after 3 seconds
       setTimeout(() => {
@@ -110,7 +114,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       setIsSubmitting(false);
-      toast.error('Er is een fout opgetreden. Probeer het later opnieuw of neem direct contact met ons op.');
+      toast.error(t("somethingWentWrongPleaseTryAgainLaterOr"));
     }
   };
 
@@ -119,26 +123,26 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      title: t("email"),
       content: "info@upxero.com",
       link: "mailto:info@upxero.com"
     },
     {
       icon: MessageCircle,
-      title: "WhatsApp",
-      content: "Chat via WhatsApp",
+      title: t("whatsapp"),
+      content: t("chatViaWhatsapp"),
       link: "https://wa.me/3197010268675"
     },
     {
       icon: MapPin,
-      title: "Regio",
-      content: "België & Nederland",
+      title: t("region"),
+      content: t("belgiumTheNetherlands"),
       link: null
     },
     {
       icon: Clock,
-      title: "Werkdagen",
-      content: "Ma-Vr: 8:00 - 17:00",
+      title: t("weekdays"),
+      content: t("monFri8001700"),
       link: null
     }
   ];
@@ -146,25 +150,17 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main id="main-content" tabIndex={-1}>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Vraag een{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
-                vrijblijvende eerste preview
-              </span>{' '}
-              aan
+              <Trans t={t} i18nKey="heroTitle" components={{ accent: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700" /> }} />
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Ontdek hoe uw website, online bestellen en WhatsApp perfect kunnen samenwerken.
-              <br className="hidden sm:block" />
-              Een aanpak die vandaag al wordt ingezet door moderne horecazaken,
-              volledig afgestemd op uw zaak.
-            </p>
+            <p className="text-xl text-gray-600 leading-relaxed">{t("coreIntro")}<br className="hidden sm:block" />{t("anApproachAlreadyUsedByModernHospitalityBusinesses")}</p>
           </div>
         </div>
       </section>
@@ -177,19 +173,19 @@ const Contact = () => {
             <div>
               <Card className="bg-white border-0 shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Vraag uw gratis preview aan
-                  </h2>
-                  <p className="text-gray-600 mb-8">
-                    We laten u zien hoe klanten automatisch worden geholpen
-                    en rechtstreeks online bestellen, zonder onderbrekingen in uw zaak.
-                  </p>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">{t("requestYourFreePreview")}</h2>
+                  <p className="text-gray-600 mb-8">{t("previewIntro")}</p>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form ref={formRef} onSubmit={handleSubmit} onInvalid={handleValidation} onInput={handleValidation} className="space-y-6">
+                    {isGrowUpgrade && isHydrated && (
+                      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+                        <Label htmlFor="upgrade-subject" className="font-semibold mb-2 block">{t('enquirySubject')}</Label>
+                        <Input id="upgrade-subject" value={t('upgradeSubject')} readOnly />
+                        <p className="text-sm text-gray-600 mt-2">{t('upgradeManualConfirmation')}</p>
+                      </div>
+                    )}
                     <div>
-                      <Label htmlFor="name" className="text-gray-900 font-semibold mb-2 block">
-                        Uw Naam *
-                      </Label>
+                      <Label htmlFor="name" className="text-gray-900 font-semibold mb-2 block">{t("yourName")}</Label>
                       <Input
                         id="name"
                         name="name"
@@ -203,9 +199,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="email" className="text-gray-900 font-semibold mb-2 block">
-                        Email Adres *
-                      </Label>
+                      <Label htmlFor="email" className="text-gray-900 font-semibold mb-2 block">{t("emailAddress")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -219,9 +213,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="phone" className="text-gray-900 font-semibold mb-2 block">
-                        Telefoonnummer *
-                      </Label>
+                      <Label htmlFor="phone" className="text-gray-900 font-semibold mb-2 block">{t("phoneNumber")}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -235,9 +227,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="business" className="text-gray-900 font-semibold mb-2 block">
-                        Naam Restaurant/Zaak *
-                      </Label>
+                      <Label htmlFor="business" className="text-gray-900 font-semibold mb-2 block">{t("restaurantBusinessName")}</Label>
                       <Input
                         id="business"
                         name="business"
@@ -251,9 +241,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="planInterest" className="text-gray-900 font-semibold mb-2 block">
-                        Wat past het best bij uw huidige situatie?
-                      </Label>
+                      <Label htmlFor="planInterest" className="text-gray-900 font-semibold mb-2 block">{t("whichOptionBestDescribesYourCurrentSituation")}</Label>
 
                       <select
                         id="planInterest"
@@ -262,28 +250,19 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
-                        <option value="start">
-                          Start – bestaande website uitbreiden met online bestellen (€19/maand)
-                        </option>
+                        <option value="start">{t("startWebsiteOption")}</option>
 
-                        <option value="grow">
-                          Grow – nieuwe horeca website + automatisatie (€29/maand)
-                        </option>
+                        <option value="grow">{t("growWebsiteOption")}</option>
 
-                        <option value="boost">
-                          Boost – AI-Assistent & extra conversie-optimalisatie (€49/maand)
-                        </option>
+                        <option value="boost">{t("boostWebsiteOption")}</option>
 
-                        <option value="not-sure">
-                          Ik weet het nog niet, ik wil eerst advies
-                        </option>
+                        <option value="not-sure">{t("iAmNotSureYetIWouldLike")}</option>
                       </select>
+                      <p className="text-xs text-gray-600 mt-2">{t('content:vat')}</p>
                     </div>
 
                     <div>
-                      <Label htmlFor="source" className="text-gray-900 font-semibold mb-2 block">
-                        Hoe heeft u ons gevonden?
-                      </Label>
+                      <Label htmlFor="source" className="text-gray-900 font-semibold mb-2 block">{t("howDidYouFindUs")}</Label>
                       <select
                         id="source"
                         name="source"
@@ -291,27 +270,25 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                       >
-                        <option value="">Selecteer een optie</option>
+                        <option value="">{t("selectAnOption")}</option>
                         <option value="google">Google</option>
                         <option value="linkedin">LinkedIn</option>
                         <option value="facebook">Facebook</option>
-                        <option value="email">Via email</option>
-                        <option value="referral">Via een andere horecazaak</option>
-                        <option value="other">Overige</option>
+                        <option value="email">{t("byEmail")}</option>
+                        <option value="referral">{t("throughAnotherHospitalityBusiness")}</option>
+                        <option value="other">{t("other")}</option>
                       </select>
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-gray-900 font-semibold mb-2 block">
-                        Uw Bericht (Optioneel)
-                      </Label>
+                      <Label htmlFor="message" className="text-gray-900 font-semibold mb-2 block">{t("yourMessageOptional")}</Label>
                       <Textarea
                         id="message"
                         name="message"
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Wat kost u vandaag tijd of omzet? Bijvoorbeeld: telefonische bestellingen, WhatsApp-vragen of commissies van platformen."
+                        placeholder={t("messagePlaceholder")}
                         className="w-full px-4 py-3 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                       />
                     </div>
@@ -323,7 +300,7 @@ const Contact = () => {
 
                     <Button
                       type="submit"
-                      disabled={isSubmitting || isSubmitted}
+                      disabled={!isHydrated || isSubmitting || isSubmitted}
                       className={`w-full py-6 text-lg font-semibold rounded-lg transition-all ${
                         isSubmitted
                           ? 'bg-green-600 hover:bg-green-600'
@@ -332,26 +309,17 @@ const Contact = () => {
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                          Versturen...
-                        </>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />{t("sending")}</>
                       ) : isSubmitted ? (
                         <>
-                          <CheckCircle size={20} />
-                          Verzonden!
-                        </>
+                          <CheckCircle size={20} />{t("sent")}</>
                       ) : (
                         <>
-                          <Send size={20} />
-                          Verstuur Aanvraag
-                        </>
+                          <Send size={20} />{t("sendEnquiry")}</>
                       )}
                     </Button>
 
-                    <p className="text-sm text-gray-600 text-center">
-                      Uw gegevens worden enkel gebruikt om contact op te nemen over uw preview.
-                      Geen spam, geen verplichtingen.
-                    </p>
+                    <p className="text-sm text-gray-600 text-center">{t("yourDetailsWillOnlyBeUsedToContact")}</p>
                   </form>
                 </CardContent>
               </Card>
@@ -362,13 +330,13 @@ const Contact = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 lg:h-80">
                 <img
                   src="https://images.unsplash.com/photo-1685040235380-a42a129ade4e"
-                  alt="Contact Upxero"
+                  alt={t("contactUpxero")}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Eenvoudige flow</h3>
-                  <p className="text-blue-100">Website, online bestellen en WhatsApp perfect op elkaar afgestemd</p>
+                  <h3 className="text-2xl font-bold mb-2">{t("coreServicesTitle")}</h3>
+                  <p className="text-blue-100">{t("coreServicesCaption")}</p>
                 </div>
               </div>
 
@@ -397,45 +365,34 @@ const Contact = () => {
 
               <Card className="bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 shadow-lg">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Wat gebeurt er na uw aanvraag?
-                  </h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t("whatHappensAfterYourEnquiry")}</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         1
                       </div>
-                      <span className="text-gray-700">
-                        We bespreken kort uw huidige situatie en doelstellingen
-                      </span>
+                      <span className="text-gray-700">{t("weBrieflyDiscussYourCurrentSituationAndGoals")}</span>
                     </li>
 
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         2
                       </div>
-                      <span className="text-gray-700">
-                        U krijgt een preview van de website, het online bestelsysteem en de WhatsApp-flow
-                        (met optionele AI-assistent)
-                      </span>
+                      <span className="text-gray-700">{t("previewStep")}</span>
                     </li>
 
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         3
                       </div>
-                      <span className="text-gray-700">
-                        We stellen een oplossing voor die perfect past bij uw zaak en manier van werken
-                      </span>
+                      <span className="text-gray-700">{t("weProposeASolutionThatFitsYourBusiness")}</span>
                     </li>
 
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                         4
                       </div>
-                      <span className="text-gray-700">
-                        Binnen 1 à 2 weken kunnen klanten automatisch online bestellen
-                      </span>
+                      <span className="text-gray-700">{t("activationStep")}</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -445,6 +402,7 @@ const Contact = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

@@ -1,0 +1,57 @@
+{
+  "homeLabel": "Home",
+  "interactiveNotice": "Schakel JavaScript in om interactieve functies te gebruiken, waaronder het contactformulier.",
+  "imageAlt": "Logo van Upxero",
+  "pages": {
+    "/": {
+      "name": "Home",
+      "title": "Horecawebsites, hosting en onderhoud | Upxero",
+      "description": "Professionele horecawebsites, hosting en onderhoud in België en Nederland. Ontdek de websitepakketten van Upxero en het zelfstandige Ordering Free."
+    },
+    "/services": {
+      "name": "Diensten",
+      "title": "Horecawebsites en hosting: onze diensten | Upxero",
+      "description": "Ontdek websiteontwikkeling, hosting en onderhoud voor restaurants bij Upxero. Lees over onze websitediensten en het zelfstandige Upxero Ordering-platform."
+    },
+    "/pricing": {
+      "name": "Prijzen",
+      "title": "Websitepakketten: Start, Grow en Boost | Upxero",
+      "description": "Start €19, Grow €29 en Boost €49 per maand. Pro is inbegrepen bij Grow en Boost na handmatige activering. Ordering Free is ook apart beschikbaar."
+    },
+    "/about": {
+      "name": "Over Upxero",
+      "title": "Over Upxero | Horecawebsites en digitale diensten",
+      "description": "Maak kennis met Upxero, aanbieder van horecawebsites, hosting en onderhoud in België en Nederland. Lees over onze aanpak en het team achter onze diensten."
+    },
+    "/contact": {
+      "name": "Contact",
+      "title": "Contact met Upxero | Bespreek uw horecawebsite",
+      "description": "Neem contact op over uw horecawebsite, hosting, onderhoud of een upgrade van uw websitepakket. Vraag een vrijblijvende eerste preview aan."
+    },
+    "/restaurant-portfolio": {
+      "name": "Portfolio",
+      "title": "Portfolio van horecawebsites en maatwerk | Upxero",
+      "description": "Bekijk een selectie van horecawebsites en maatwerk webprojecten ontwikkeld door Upxero. Ontdek ons werk voor de horeca en andere sectoren."
+    },
+    "/privacy-policy": {
+      "name": "Privacybeleid",
+      "title": "Privacybeleid | Upxero OÜ",
+      "description": "Lees het privacybeleid van Upxero OÜ: hoe persoonsgegevens worden verwerkt, welke privacyrechten u heeft en hoe u ons bereikt over gegevensbescherming."
+    },
+    "/terms-conditions": {
+      "name": "Algemene voorwaarden",
+      "title": "Algemene voorwaarden | Upxero OÜ",
+      "description": "Lees de algemene voorwaarden voor de websitediensten van Upxero OÜ, waaronder overeenkomsten, betalingen, verantwoordelijkheden en bedrijfsgegevens."
+    },
+    "/cookie-policy": {
+      "name": "Cookiebeleid",
+      "title": "Cookiebeleid | Upxero",
+      "description": "Lees het cookiebeleid van Upxero voor informatie over cookies op deze website, hun doeleinden en uw browserinstellingen."
+    },
+    "/bedankt": {
+      "name": "Bedankt",
+      "title": "Bedankt | Upxero",
+      "description": "Bedankt dat u voor Upxero kiest. Bekijk onze contactgegevens voor vragen over uw websitediensten."
+    }
+  }
+}

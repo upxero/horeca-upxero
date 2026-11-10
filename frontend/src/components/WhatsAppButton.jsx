@@ -1,15 +1,18 @@
+import { useTranslation } from 'react-i18next';
 import { MessageCircle } from "lucide-react";
 
 export const WhatsAppButton = ({ onClick }) => {
+  const { t } = useTranslation();
   return (
     <button
       onClick={onClick}
-      aria-label="Open chat opties"
+      aria-label={t('chat.open')}
       className="
+        floating-support-control
         fixed
-        bottom-[96px]
-        right-6
-        z-50
+        bottom-24
+        right-4
+        z-40
         bg-green-500
         hover:bg-green-600
         text-white

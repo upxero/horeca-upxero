@@ -1,0 +1,69 @@
+{
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "nl": "Dutch"
+  },
+  "logoAlt": "Upxero logo",
+  "close": "Close",
+  "scrollTop": "Scroll to top",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "header": {
+    "startForFree": "Start for Free",
+    "preview": "Request a Free Preview",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "navigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation"
+  },
+  "footer": {
+    "description": "Upxero provides restaurant websites, hosting and maintenance in Belgium and the Netherlands. Upxero Ordering is our independent restaurant ordering platform.",
+    "quickLinks": "Quick Links",
+    "website": "Professional hospitality website",
+    "ordering": "Upxero Ordering",
+    "hosting": "Hosting, updates & support",
+    "region": "Belgium & the Netherlands",
+    "copyright": "© {{year}} Upxero — built for hospitality in Belgium & the Netherlands",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "cookies": "Cookies",
+    "maintenance": "Website maintenance"
+  },
+  "cookie": {
+    "title": "Your privacy choices",
+    "description": "We store your language and privacy preferences in your browser. With your permission, we use PostHog for page-view analytics. Analytics remain off unless you allow them. You can change your choice through Privacy settings.",
+    "policy": "cookie policy",
+    "accept": "Allow analytics",
+    "reject": "Reject analytics",
+    "settings": "Privacy settings"
+  },
+  "chat": {
+    "prefill": "Hello 👋 I have a question about Upxero",
+    "welcome": "👋 Welcome to Upxero",
+    "subtitle": "Chat directly with us",
+    "help": "How can we help you?",
+    "choose": "Choose what you would like to know more about 👇",
+    "hospitality": "📍 For hospitality businesses",
+    "pricing": "💳 How much does it cost?",
+    "commission": "⚡ Website & Ordering options",
+    "contact": "📞 Contact us via WhatsApp",
+    "open": "Open chat options"
+  },
+  "support": {
+    "desktop": "👉 Questions? Contact us",
+    "mobile": "👉 Ask us a question"
+  },
+  "skip": "Skip to content",
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page may have moved, or the address may be incorrect.",
+    "home": "Back to Home"
+  }
+}

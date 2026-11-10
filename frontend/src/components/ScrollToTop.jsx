@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronUp } from 'lucide-react';
 
 export const ScrollToTop = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,9 +33,10 @@ export const ScrollToTop = () => {
         <button
           onClick={scrollToTop}
           className="
+            floating-support-control
             fixed
-            bottom-8
-            left-8
+            bottom-4
+            left-4
             z-40
             bg-blue-900
             hover:bg-orange-500
@@ -48,7 +51,7 @@ export const ScrollToTop = () => {
             transition
             hover:scale-110
           "
-          aria-label="Scroll naar boven"
+          aria-label={t('scrollTop')}
         >
           <ChevronUp size={22} />
         </button>

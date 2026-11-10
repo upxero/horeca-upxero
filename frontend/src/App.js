@@ -1,6 +1,9 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import { LanguageProvider } from "./i18n/LanguageProvider";
+import LocalizedRoutes from "./i18n/LocalizedRoutes";
 import { useState } from "react";
+import { useSEO } from "./hooks/useSEO";
 import { Toaster } from "./components/ui/sonner";
 import { CookieBanner } from "./components/CookieBanner";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -16,48 +19,56 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import CookiePolicy from "./pages/CookiePolicy";
 import ThankYou from "./pages/ThankYou";
+import NotFound from './pages/NotFound';
 
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { WhatsAppPopup } from "./components/WhatsAppPopup";
-import { FloatingSupportHint } from "./components/FloatingSupportHint";
+
+export function AppContent() {
+  const [whatsappOpen, setWhatsappOpen] = useState(false);
+  useSEO();
+
+  return (
+    <>
+          <ScrollToTopOnMount />
+
+          <LocalizedRoutes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route
+              path="/restaurant-portfolio"
+              element={<PortfolioRestaurants />}
+            />
+            <Route path="/bedankt" element={<ThankYou />} />
+            <Route path="*" element={<main id="main-content" tabIndex={-1}><NotFound /></main>} />
+          </LocalizedRoutes>
+
+          <ScrollToTop />
+          <WhatsAppButton onClick={() => setWhatsappOpen(true)} />
+
+          {whatsappOpen && (
+            <WhatsAppPopup onClose={() => setWhatsappOpen(false)} />
+          )}
+          <CookieBanner />
+          <Toaster position="top-right" />
+    </>
+  );
+}
 
 function App() {
-  const [whatsappOpen, setWhatsappOpen] = useState(false);
-
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTopOnMount />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route
-            path="/restaurant-portfolio"
-            element={<PortfolioRestaurants />}
-          />
-          <Route path="/bedankt" element={<ThankYou />} />
-        </Routes>
-
-        <ScrollToTop />
-
-        <FloatingSupportHint />
-
-        <WhatsAppButton onClick={() => setWhatsappOpen(true)} />
-
-        {whatsappOpen && (
-          <WhatsAppPopup onClose={() => setWhatsappOpen(false)} />
-        )}
+        <LanguageProvider>
+          <AppContent />
+        </LanguageProvider>
       </BrowserRouter>
-
-      <CookieBanner />
-      <Toaster position="top-right" />
     </div>
   );
 }

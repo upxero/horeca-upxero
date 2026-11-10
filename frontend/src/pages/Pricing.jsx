@@ -1,3 +1,5 @@
+import { Trans, useTranslation } from 'react-i18next';
+import { useLanguage } from '../i18n/LanguageProvider';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -11,65 +13,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../components/ui/accordion';
-import { pricingPlans, faqs } from '../mock';
+import { getPricingPlans, getFaqs } from '../mock';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useSEO } from '../hooks/useSEO';
 
 const Pricing = () => {
+  const { t } = useTranslation('pricing');
+  const { localize } = useLanguage();
+  const pricingPlans = getPricingPlans(t);
+  const faqs = getFaqs(t);
 
-  useSEO({
-    title: "Prijzen horeca website & online bestellen | Upxero",
-    description:
-      "Bekijk de transparante prijzen van Upxero voor horeca websites, online bestellen en WhatsApp automatisatie. Commissievrij, maandelijks opzegbaar in België & Nederland.",
-    canonical: "https://www.upxero.com/pricing",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Prijzen Upxero",
-      "url": "https://www.upxero.com/pricing",
-      "description":
-        "Overzicht van prijzen voor horeca websites, online bestellen en WhatsApp automatisatie zonder commissies.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Upxero",
-        "url": "https://www.upxero.com"
-      },
-      "mainEntity": {
-        "@type": "OfferCatalog",
-        "name": "Upxero Horeca Pakketten",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Start",
-            "price": "19",
-            "priceCurrency": "EUR",
-            "description":
-              "Online bestellen voor restaurants met bestaande website, inclusief hosting en support.",
-            "url": "https://www.upxero.com/pricing"
-          },
-          {
-            "@type": "Offer",
-            "name": "Grow",
-            "price": "29",
-            "priceCurrency": "EUR",
-            "description":
-              "Complete horeca website met online bestellen en WhatsApp assistent.",
-            "url": "https://www.upxero.com/pricing"
-          },
-          {
-            "@type": "Offer",
-            "name": "Boost",
-            "price": "49",
-            "priceCurrency": "EUR",
-            "description":
-              "Alles-in-één groeipakket met optimalisatie, Google integratie en rapportage.",
-            "url": "https://www.upxero.com/pricing"
-          }
-        ]
-      }
-    }
-  });
 
   const location = useLocation();
 
@@ -82,203 +35,21 @@ const Pricing = () => {
     }
   }, [location]);
 
-  const comparisonFeatures = [
-    {
-      category: "Basis online bestellen",
-      features: [
-        {
-          name: "Online bestelsysteem voor afhaling & levering",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Menu setup & volledige integratie",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Koppeling met GloriaFood (commissievrij)",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Online betalingen via Stripe mogelijk (+€25/maand) inclusief Bancontact, iDEAL en kredietkaart",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Hosting, updates & beveiliging volledig beheerd",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "Website & uitstraling",
-      features: [
-        {
-          name: "Gebruik van bestaande website",
-          start: true,
-          grow: false,
-          boost: false,
-        },
-        {
-          name: "Professionele horeca website (mobile-first)",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "SEO-basis voor lokale vindbaarheid",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Domeinnaam inbegrepen (.be / .nl / .com)",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "WhatsApp & klantenservice",
-      features: [
-        {
-          name: "WhatsApp-knop op de website",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "WhatsApp bestel-flow met automatische antwoorden",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Automatische doorverwijzing naar online bestellen",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "AI Assistant (alleen Boost)",
-      features: [
-        {
-          name: "AI Bestel- & Klantenassistent (24/7)",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-        {
-          name: "AI beantwoordt vrije vragen over menu, allergenen en openingsuren",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-        {
-          name: "AI begeleidt klanten richting online bestelling",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "Optimalisatie & groei",
-      features: [
-        {
-          name: "Conversie-optimalisatie",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-        {
-          name: "Google Business integratie",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-        {
-          name: "Rapportage & continue optimalisatie",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "Vacatures via Talent by Upxero",
-      features: [
-        {
-          name: "Publicatie op talent.upxero.com",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Aantal actieve vacatures tegelijk",
-          start: "1 vacature",
-          grow: "3 vacatures",
-          boost: "5 vacatures",
-        },
-        {
-          name: "Featured vacature badge",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Voorrang in zoekresultaten",
-          start: false,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Prioritaire vacatureplaatsing",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-        {
-          name: "Extra promotionele ondersteuning",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-      ],
-    },
-    {
-      category: "Support & ontzorging",
-      features: [
-        {
-          name: "Email & WhatsApp support",
-          start: true,
-          grow: true,
-          boost: true,
-        },
-        {
-          name: "Prioriteit support & persoonlijk advies",
-          start: false,
-          grow: false,
-          boost: true,
-        },
-      ],
-    },
-  ];
+  const comparisonFeatures = [{ category: t('websitePackages'), features: [
+    { name: t('content:pageLimit'), start: false, grow: '5', boost: '10' },
+    { name: t('content:emailAccounts'), start: false, grow: '2', boost: '5' },
+    ...['domainAllowance', 'hostingUpdatesSecurity', 'websiteMaintenance', 'technicalSeo'].map(key => ({ name: t('content:' + key), start: false, grow: true, boost: true })),
+    ...['basicIntegration', 'setupAssistance', 'emailSupport'].map(key => ({ name: t('content:' + key), start: true, grow: true, boost: true })),
+    ...['prioritySupport', 'monthlyChanges'].map(key => ({ name: t('content:' + key), start: false, grow: false, boost: true })),
+  ] }, { category: t('orderingProduct'), features: [
+    { name: t('content:orderingFreeAvailable'), start: true, grow: false, boost: false },
+    { name: t('content:orderingProIncluded'), start: false, grow: true, boost: true },
+  ] }];
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main id="main-content" tabIndex={-1}>
 
       {/* Hero Section */}
       <section 
@@ -286,20 +57,12 @@ const Pricing = () => {
       className="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Transparante{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">
-                Prijzen
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 break-words">
+              <Trans t={t} i18nKey="heroTitle" components={{ accent: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700" /> }} />
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Kies het plan dat bij uw restaurant past. Geen verborgen kosten, 
-              geen commissies op bestellingen. Maandelijks opzegbaar.
-            </p>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">{t("packageIntro")}</p>
             <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold">
-              <Check size={20} />
-              Alle plannen zijn commissievrij
-            </div>
+              <Check size={20} />{t("packageBadge")}</div>
           </div>
         </div>
       </section>
@@ -307,11 +70,11 @@ const Pricing = () => {
       {/* Pricing Cards */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {pricingPlans.map((plan) => (
               <Card
                 key={plan.id}
-                className={`relative bg-white transition-all hover:shadow-2xl ${
+                className={`relative min-w-0 bg-white transition-all hover:shadow-2xl ${
                   plan.popular
                     ? 'border-2 border-orange-500 shadow-xl scale-105'
                     : 'border border-gray-200 hover:scale-105'
@@ -319,9 +82,7 @@ const Pricing = () => {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                      MEEST POPULAIR
-                    </div>
+                    <div className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">{t("mostPopular")}</div>
                   </div>
                 )}
                 <CardContent className="p-8">
@@ -340,21 +101,8 @@ const Pricing = () => {
                     </div>
 
                     {/* SETUP ACTIE */}
-                    {plan.setupPrice && (
-                      <div className="mb-4">
-                        <p className="text-sm font-semibold text-red-600">
-                          Tijdelijke actie: 50% korting op de setup
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          <span className="line-through mr-1">
-                            €{plan.setupPrice}
-                          </span>
-                          <span className="text-green-700 font-semibold">
-                            €{plan.setupPrice / 2} setup
-                          </span>
-                        </p>
-                      </div>
-                    )}
+                    <p className="text-sm text-gray-600 mb-4">{t('content:setupCharge', { price: plan.setupPrice })}</p>
+                  <p className="text-xs text-gray-600 mb-4">{t('content:vat')}</p>
 
                     <p className="text-gray-600">
                       {plan.description}
@@ -365,153 +113,80 @@ const Pricing = () => {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="min-w-0 break-words text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <Link to="/contact">
-                    <Button
-                      className={`w-full py-6 rounded-lg font-semibold text-lg transition-all ${
+                  <Button asChild
+                      className={`w-full whitespace-normal h-auto min-h-12 py-3 rounded-lg font-semibold text-lg transition-all ${
                         plan.popular
                           ? 'bg-orange-500 hover:bg-orange-600 text-white hover:shadow-xl'
                           : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                       }`}
-                    >
-                      {plan.popular ? 'Start Nu' : 'Kies Dit Plan'}
-                    </Button>
-                  </Link>
+                    ><Link to={localize(`/contact?plan=${plan.name.toLowerCase()}`)}>
+                      {t("content:discussPlan", { plan: plan.name })}
+                    </Link></Button>
+                  {plan.id === 1 && (
+                    <Link to={localize('/contact?subject=upgrade-grow')} className="block mt-4 text-center text-blue-900 underline font-semibold">
+                      {t('requestGrowUpgrade')}
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl p-10 text-center shadow-xl">
-            <h3 className="text-3xl font-bold mb-4">
-              Op zoek naar personeel?
-            </h3>
-            <p className="text-lg mb-6 text-blue-100">
-              Publiceer uw vacatures via ons horeca jobplatform en bereik actief werkzoekenden.
-            </p>
+          <div className="mt-8 text-sm text-gray-700 space-y-3" data-package-conditions>
+            <h3 className="font-bold">{t('content:detailsTitle')}</h3>
+            {['pageCounting', 'domainDetails', 'emailDetails', 'changesDetails', 'yesThereIsAMinimumTermOf6'].map(key => <p key={key}>{t('content:' + key)}</p>)}
+          </div>
+
+          <div id="ordering" className="mt-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl p-10 text-center shadow-xl">
+            <h3 className="text-3xl font-bold mb-4">{t("orderingFreeTitle")}</h3>
+            <p className="text-4xl font-bold mb-4">{t("orderingFreePrice")}</p>
+            <p className="text-lg mb-4 text-blue-100">{t("orderingFreeDescription")}</p>
+            <p className="text-lg mb-6 text-blue-100">{t("orderingIndependent")}</p>
 
             <a
-              href="https://talent.upxero.com"
+              href="https://ordering.upxero.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-semibold text-lg transition shadow-lg"
-            >
-              Bezoek talent.upxero.com
-            </a>
+            >{t("startForFree")}</a>
+            <h4 className="text-2xl font-bold mt-8 mb-3">{t("orderingProTitle")}</h4>
+            <p className="text-lg text-blue-100 mb-4">{t("orderingProDescription")}</p>
+            <p className="text-lg text-blue-100">{t("proActivation")}</p>
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">
-              Niet zeker welk plan bij u past? Neem contact met ons op voor persoonlijk advies.
-            </p>
-            <Link to="/contact">
-              <Button variant="outline" className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold">
-                Ontvang Voorstel Op Maat
-              </Button>
-            </Link>
+            <p className="text-gray-600 mb-4">{t("notSureWhichPlanSuitsYouContactUs")}</p>
+            <Button asChild variant="outline" className="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg font-semibold"><Link to={localize("/contact")}>{t("getATailoredProposal")}</Link></Button>
           </div>
         </div>
       </section>
 
-      {/* No Commission Section */}
-      <section
-        id="no-commissions"
-        className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100"
-      >
+      {/* Retain the existing hash for saved links. */}
+      <section id="no-commissions" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Waarom wij{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">
-                geen commissies
-              </span>{' '}
-              aanrekenen
+              <Trans t={t} i18nKey="orderingSectionTitle" components={{ accent: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600" /> }} />
             </h2>
-            <p className="text-xl text-gray-600">
-              Uw bestellingen zijn van u. Niet van een platform.
-            </p>
+            <p className="text-xl text-gray-600">{t('orderingSectionIntro')}</p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            
-            {/* Left: explanation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6 text-gray-700 text-lg">
-              <p>
-                Grote bestelplatformen rekenen vaak{' '}
-                <strong>15% tot 30% commissie per bestelling</strong>.  
-                Dat lijkt misschien handig, maar op lange termijn kost het u
-                duizenden euro’s per jaar.
-              </p>
-
-              <p>
-                Bij <strong>Upxero</strong> werken we anders.  
-                U betaalt een <strong>vast maandbedrag</strong>, ongeacht hoeveel
-                bestellingen u ontvangt.
-              </p>
-
-              <p>
-                Zo houdt u:
-              </p>
-
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="text-blue-900 mt-1" size={22} />
-                  <span>
-                    <strong>100% van uw omzet</strong> — geen afroming per bestelling
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-blue-900 mt-1" size={22} />
-                  <span>
-                    <strong>Direct contact met uw klanten</strong>
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-blue-900 mt-1" size={22} />
-                  <span>
-                    <strong>Volledige controle</strong> over uw menu, prijzen en acties
-                  </span>
-                </li>
-              </ul>
+              <p>{t('websiteSectionDescription')}</p>
+              <p>{t('orderingSectionDescription')}</p>
+              <p>{t('proActivation')}</p>
             </div>
-
-            {/* Right: visual card */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                Concreet verschil
-              </h3>
-
-              <div className="space-y-4">
-                <div className="flex justify-between items-center bg-red-50 p-4 rounded-lg">
-                  <span className="font-semibold text-gray-700">
-                    Platformen met commissie
-                  </span>
-                  <span className="text-red-600 font-bold">
-                    −15% tot −30% per bestelling
-                  </span>
-                </div>
-
-                <div className="flex justify-between items-center bg-blue-50 p-4 rounded-lg">
-                  <span className="font-semibold text-gray-700">
-                    Upxero
-                  </span>
-                  <span className="text-blue-900 font-bold">
-                    € vast bedrag / maand
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 text-center">
-                <Link to="/contact">
-                  <Button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-5 text-lg rounded-lg font-semibold transition-all hover:shadow-lg">
-                    Vraag gratis preview aan
-                  </Button>
-                </Link>
-              </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('websiteContact')}</h3>
+              <Button asChild className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-5 text-lg rounded-lg font-semibold"><Link to={localize('/contact')}>{t('requestAFreePreview')}</Link></Button>
+              <Link to={localize('/contact?subject=upgrade-grow')} className="block mt-6 text-blue-900 underline font-semibold">
+                {t('requestGrowUpgrade')}
+              </Link>
             </div>
           </div>
         </div>
@@ -521,29 +196,23 @@ const Pricing = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Alles inbegrepen, duidelijk vergeleken
-            </h2>
-            <p className="text-xl text-gray-600">
-              Geen technische details, wel volledige duidelijkheid over wat wij voor u regelen.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t("everythingIncludedClearlyCompared")}</h2>
+            <p className="text-xl text-gray-600">{t("aClearOverviewOfWhatWeTakeCare")}</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
+            <div className="relative overflow-x-auto">
               <table className="w-full">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">
-                      Functie
-                    </th>
-                    <th className="px-6 py-4 text-center text-sm font-bold text-gray-900">
+                    <th scope="col" className="px-6 py-4 text-left text-sm font-bold text-gray-900">{t("feature")}</th>
+                    <th scope="col" className="px-6 py-4 text-center text-sm font-bold text-gray-900">
                       Start
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-bold text-gray-900 bg-orange-50">
+                    <th scope="col" className="px-6 py-4 text-center text-sm font-bold text-gray-900 bg-orange-50">
                       Grow
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-bold text-gray-900">
+                    <th scope="col" className="px-6 py-4 text-center text-sm font-bold text-gray-900">
                       Boost
                     </th>
                   </tr>
@@ -564,26 +233,26 @@ const Pricing = () => {
                           key={featureIndex}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                         >
-                          <td className="px-6 py-4 text-gray-700">{feature.name}</td>
+                          <th scope="row" className="px-6 py-4 text-left font-normal text-gray-700">{feature.name}</th>
                           <td className="px-6 py-4 text-center">
-                            {feature.start ? (
-                              <Check className="text-green-600 mx-auto" size={20} />
+                            {typeof feature.start === 'string' ? feature.start : feature.start ? (
+                              <><Check aria-hidden="true" className="text-green-600 mx-auto" size={20} /><span className="sr-only">{t('content:included')}</span></>
                             ) : (
-                              <span className="text-gray-300">—</span>
+                              <><span aria-hidden="true" className="text-gray-300">—</span><span className="sr-only">{t('content:notIncluded')}</span></>
                             )}
                           </td>
                           <td className="px-6 py-4 text-center bg-orange-50/30">
-                            {feature.grow ? (
-                              <Check className="text-green-600 mx-auto" size={20} />
+                            {typeof feature.grow === 'string' ? feature.grow : feature.grow ? (
+                              <><Check aria-hidden="true" className="text-green-600 mx-auto" size={20} /><span className="sr-only">{t('content:included')}</span></>
                             ) : (
-                              <span className="text-gray-300">—</span>
+                              <><span aria-hidden="true" className="text-gray-300">—</span><span className="sr-only">{t('content:notIncluded')}</span></>
                             )}
                           </td>
                           <td className="px-6 py-4 text-center">
-                            {feature.boost ? (
-                              <Check className="text-green-600 mx-auto" size={20} />
+                            {typeof feature.boost === 'string' ? feature.boost : feature.boost ? (
+                              <><Check aria-hidden="true" className="text-green-600 mx-auto" size={20} /><span className="sr-only">{t('content:included')}</span></>
                             ) : (
-                              <span className="text-gray-300">—</span>
+                              <><span aria-hidden="true" className="text-gray-300">—</span><span className="sr-only">{t('content:notIncluded')}</span></>
                             )}
                           </td>
                         </tr>
@@ -604,12 +273,8 @@ const Pricing = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
               <HelpCircle className="text-blue-900" size={32} />
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Veelgestelde Vragen
-            </h2>
-            <p className="text-xl text-gray-600">
-              Antwoorden op de meest gestelde vragen over prijzen en diensten
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t("frequentlyAskedQuestions")}</h2>
+            <p className="text-xl text-gray-600">{t("answersToCommonQuestionsAboutPricingAndServices")}</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -630,22 +295,15 @@ const Pricing = () => {
           </Accordion>
 
           <div className="mt-12 text-center p-8 bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Nog vragen?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Neem contact met ons op en we helpen u graag verder
-            </p>
-            <Link to="/contact">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-xl inline-flex items-center gap-2">
-                Contacteer Ons
-                <ArrowRight size={20} />
-              </Button>
-            </Link>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t("stillHaveQuestions")}</h3>
+            <p className="text-gray-600 mb-6">{t("contactUsAndWeWillBeHappyTo")}</p>
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:shadow-xl inline-flex items-center gap-2"><Link to={localize("/contact")}>{t("contactUs")}<ArrowRight size={20} />
+              </Link></Button>
           </div>
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );
